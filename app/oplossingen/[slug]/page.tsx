@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InnerHero } from "../../components/inner-hero";
 import { SectionCta } from "../../components/section-cta";
-import { getSolution, solutions } from "../../site-data";
+import { cases, getSolution, solutions } from "../../site-data";
 
 export function generateStaticParams() {
   return solutions.map((solution) => ({ slug: solution.slug }));
@@ -16,15 +17,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const solution = getSolution(slug);
-
-  if (!solution) {
-    return {};
-  }
-
-  return {
-    title: solution.name,
-    description: solution.shortDescription,
-  };
+  return solution
+    ? { title: solution.name, description: solution.shortDescription }
+    : {};
 }
 
 export default async function SolutionPage({
@@ -39,49 +34,27 @@ export default async function SolutionPage({
     notFound();
   }
 
-  const moreSolutions = solutions
-    .filter((item) => item.slug !== solution.slug)
-    .slice(0, 3);
+  const caseStudy = cases[0];
 
   return (
     <main>
-      <InnerHero />
-      <section className="page-intro solution-intro">
-        <div className="container">
-          <Link className="back-link" href="/#oplossingen">
-            ← Alle oplossingen
-          </Link>
-          <p className="eyebrow">{solution.sector}</p>
-          <h1>{solution.name}</h1>
-          <p className="large-copy">{solution.tagline}</p>
-          <div className="solution-intro-actions">
-            <Link className="button button-dark" href="/contact">
-              Plan een gesprek
-            </Link>
-          </div>
+      <InnerHero title={solution.name} />
+
+      <section className="product-intro">
+        <div className="container product-intro-inner">
+          <p>{solution.description}</p>
         </div>
       </section>
 
-      <section className="section mint-section">
-        <div className="container solution-content-grid">
-          <div className="copy-block">
-            <p className="eyebrow">Wat het doet</p>
-            <h2>Gebouwd rondom jouw zorgpraktijk</h2>
-            <p className="large-copy">{solution.description}</p>
-            <ul className="feature-list">
-              {solution.features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="spec-panel">
-            <p className="eyebrow">In één oogopslag</p>
-            <h2>Eigenschappen</h2>
-            <div className="spec-grid">
-              {solution.specs.map((spec) => (
-                <article className="spec-card" key={spec.title}>
-                  <h3>{spec.title}</h3>
-                  <p>{spec.description}</p>
+      <section className="applications-section">
+        <div className="container">
+          <div className="applications-panel">
+            <h2>Toepassingen</h2>
+            <div className="applications-grid">
+              {solution.features.map((feature, index) => (
+                <article key={feature}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{feature}</h3>
                 </article>
               ))}
             </div>
@@ -89,25 +62,72 @@ export default async function SolutionPage({
         </div>
       </section>
 
-      <section className="section dark-section">
+      <section className="agents-section">
         <div className="container">
-          <div className="section-heading light-copy">
-            <p className="eyebrow">Verder ontdekken</p>
-            <h2>Meer oplossingen</h2>
+          <h2>AI agents in de praktijk</h2>
+        </div>
+        <div className="agent-feature agent-feature-mint">
+          <div className="container agent-feature-inner">
+            <div className="agent-feature-image">
+              <Image
+                src="/assets/figma/product-screenshot.png"
+                fill
+                sizes="(max-width: 800px) 100vw, 50vw"
+                alt="Carecogni AI-toepassing"
+              />
+            </div>
+            <div>
+              <h3>{solution.tagline}</h3>
+              <p>{solution.shortDescription}</p>
+              <ul>
+                {solution.specs.slice(0, 3).map((spec) => (
+                  <li key={spec.title}>
+                    <strong>{spec.title}</strong>
+                    <span>{spec.description}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="more-solutions">
-            {moreSolutions.map((item, index) => (
-              <Link
-                className={`more-solution solution-tone-${index + 1}`}
-                href={`/oplossingen/${item.slug}`}
-                key={item.slug}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{item.name}</h3>
-                <p>{item.shortDescription}</p>
-                <strong>Meer informatie →</strong>
+        </div>
+        <div className="agent-feature agent-feature-dark">
+          <div className="container agent-feature-inner reverse">
+            <div className="agent-abstract" aria-hidden="true">
+              <span>AI</span>
+              <i />
+            </div>
+            <div>
+              <h3>Betrouwbaar geïntegreerd in jouw zorgpraktijk</h3>
+              <p>
+                De oplossing sluit aan op bestaande systemen en processen.
+                Uitkomsten zijn begrijpelijk en herleidbaar, terwijl de
+                zorgprofessional altijd de regie houdt.
+              </p>
+              <Link className="button button-teal button-small" href="/methode">
+                Bekijk onze aanpak
               </Link>
-            ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="featured-product-case">
+        <div className="container agent-feature-inner">
+          <div className="featured-product-image">
+            <Image
+              src="/assets/figma/home-case-photo.png"
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+              alt="AI in de praktijk"
+            />
+          </div>
+          <div>
+            <p className="practice-org">{caseStudy.organization}</p>
+            <h2>Kwalitatieve en snelle terugkoppeling door AI</h2>
+            <p>{caseStudy.description}</p>
+            <Link className="button button-dark button-small" href={`/cases/${caseStudy.slug}`}>
+              Meer over deze case
+            </Link>
           </div>
         </div>
       </section>

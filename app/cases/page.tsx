@@ -13,29 +13,9 @@ export const metadata: Metadata = {
 export default function CasesPage() {
   return (
     <main>
-      <InnerHero />
-      <section className="page-intro">
-        <div className="container center-heading">
-          <p className="eyebrow">In de praktijk</p>
-          <h1>Slimme AI-oplossingen in de praktijk</h1>
-          <p className="large-copy intro-copy">
-            Van GGZ tot langdurige zorg en farmacovigilantie: ontdek hoe
-            Carecogni samen met zorgorganisaties van complexe data een
-            begrijpelijke, bruikbare oplossing maakt.
-          </p>
-        </div>
-      </section>
-
-      <section className="section cases-overview">
-        <div className="container">
-          <CaseGrid items={cases} />
-        </div>
-      </section>
-
-      <SectionCta
-        title="Benieuwd wat wij voor jou kunnen betekenen?"
-        text="Wij denken graag mee over een AI-toepassing die jouw dagelijkse zorgpraktijk verbetert."
-      />
+      <InnerHero title="Slimme AI oplossingen in de praktijk" />
+      <CaseGrid items={cases} />
+      <SectionCta />
     </main>
   );
 }

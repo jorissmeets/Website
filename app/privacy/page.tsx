@@ -16,7 +16,7 @@ export default function PrivacyPage() {
           <div className="legal-copy">
             <h2>Wie zijn wij?</h2>
             <p>
-              Carecogni, gevestigd aan Europalaan 400 in Utrecht, is
+              Carecogni, gevestigd aan Mercatorlaan 1200 in Utrecht, is
               gespecialiseerd in AI-consultancy, AI-engineering, dashboarding,
               Large Language Models en data-engineering.
             </p>

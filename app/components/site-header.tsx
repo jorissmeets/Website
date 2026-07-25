@@ -115,6 +115,9 @@ export function SiteHeader() {
             Contact
           </Link>
         </nav>
+        <span className="nav-language" aria-label="Taal: Nederlands">
+          <span aria-hidden="true">◎</span> NL
+        </span>
       </div>
     </header>
   );

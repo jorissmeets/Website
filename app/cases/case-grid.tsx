@@ -1,61 +1,46 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import type { CaseStudy } from "../site-data";
 
-const filters = [
-  "Alle cases",
-  "GGZ",
-  "WLZ / VVT",
-  "Farmacovigilantie",
-  "IT & Servicedesk",
-] as const;
-
 export function CaseGrid({ items }: { items: CaseStudy[] }) {
-  const [activeFilter, setActiveFilter] =
-    useState<(typeof filters)[number]>("Alle cases");
-  const visible =
-    activeFilter === "Alle cases"
-      ? items
-      : items.filter((item) => item.category === activeFilter);
-
   return (
-    <>
-      <div className="filter-bar" aria-label="Filter cases">
-        {filters.map((filter) => (
-          <button
-            className={filter === activeFilter ? "filter-button active" : "filter-button"}
-            key={filter}
-            type="button"
-            onClick={() => setActiveFilter(filter)}
-          >
-            {filter}
-          </button>
+    <section className="cases-overview">
+      <div className="cases-rows">
+        {items.map((item, index) => (
+          <article className="case-overview-row" key={item.slug}>
+            <div className="container case-overview-inner">
+              <div className={`case-overview-visual case-overview-visual-${index + 1}`}>
+                {index === 0 ? (
+                  <Image
+                    src="/assets/figma/home-case-photo.png"
+                    fill
+                    priority
+                    sizes="(max-width: 800px) 100vw, 50vw"
+                    alt="Instituut Verantwoord Medicijngebruik"
+                  />
+                ) : (
+                  <div className="case-placeholder" aria-hidden="true">
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <i />
+                  </div>
+                )}
+              </div>
+              <div className="case-overview-copy">
+                <p className="practice-org">{item.organization}</p>
+                <h2>
+                  {index === 0
+                    ? "Kwalitatieve en snelle terugkoppeling door AI"
+                    : item.title}
+                </h2>
+                <p>{item.description}</p>
+                <Link className="button button-dark button-small" href={`/cases/${item.slug}`}>
+                  Meer over deze case
+                </Link>
+              </div>
+            </div>
+          </article>
         ))}
       </div>
-
-      <div className="cases-full-grid" aria-live="polite">
-        {visible.map((item, index) => (
-          <Link
-            className={`case-full-card case-card-tone-${(index % 3) + 1}`}
-            href={`/cases/${item.slug}`}
-            key={item.organization}
-          >
-            <div className="case-art" aria-hidden="true">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <span className="case-art-ring" />
-            </div>
-            <div className="case-full-body">
-              <span className="case-sector">{item.sector}</span>
-              <p className="case-org">{item.organization}</p>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <span className="case-read">Bekijk de case →</span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </>
+    </section>
   );
 }

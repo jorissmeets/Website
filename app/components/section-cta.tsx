@@ -1,26 +1,20 @@
 import Link from "next/link";
 
 export function SectionCta({
-  title = "Plan een vrijblijvend kennismakingsgesprek",
-  text = "In 30 minuten ontdekt u welke AI-oplossing het meeste oplevert voor uw zorginstelling.",
+  title = "Benieuwd wat wij voor jou kunnen betekenen?",
+  text = "Ben je nieuwsgierig naar wat wij voor jou kunnen betekenen? Wil je een keer brainstormen over mogelijke AI toepassingen of heb je een beslismodel dat je naar de praktijk zou willen brengen? Wij denken graag met je mee! Stuur ons een berichtje, dan nemen wij contact op.",
 }: {
   title?: string;
   text?: string;
 }) {
   return (
-    <section className="section section-cta">
+    <section className="section-cta">
       <div className="container cta-inner">
-        <p className="eyebrow">Samen verder</p>
         <h2>{title}</h2>
-        <p className="large-copy">{text}</p>
-        <div className="cta-buttons">
-          <Link className="button button-dark" href="/contact">
-            Contact
-          </Link>
-          <a className="text-link" href="mailto:hello@carecogni.com">
-            hello@carecogni.com
-          </a>
-        </div>
+        <p>{text}</p>
+        <Link className="button button-dark button-small" href="/contact">
+          Contact
+        </Link>
       </div>
     </section>
   );

@@ -16,12 +16,12 @@ export function SiteFooter() {
         <div className="footer-col">
           <h2>Contact</h2>
           <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
-          <span>© 2026 Carecogni</span>
+          <span>© 2024 Carecogni</span>
           <Link href="/privacy">Privacy statement</Link>
         </div>
         <div className="footer-col">
           <h2>Bezoek</h2>
-          <p>Dotslash Utrecht<br />Europalaan 400<br />3526 KS Utrecht</p>
+          <p>Domus Medica<br />Mercatorlaan 1200<br />3528 BL Utrecht</p>
           <a
             href="https://www.linkedin.com/company/carecogni"
             rel="noreferrer"

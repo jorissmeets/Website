@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export function InnerHero() {
+export function InnerHero({ title }: { title?: string }) {
   return (
-    <section className="inner-hero" aria-label="Carecogni">
+    <section className={`inner-hero${title ? " inner-hero-titled" : ""}`} aria-label="Carecogni">
       <div className="brand-lockup">
         <Image
           src="/assets/carecogni-mark-light.svg"
@@ -12,6 +12,7 @@ export function InnerHero() {
           alt="Carecogni"
         />
       </div>
+      {title ? <h1>{title}</h1> : null}
     </section>
   );
 }

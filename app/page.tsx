@@ -3,28 +3,13 @@ import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
 import { cases, solutions } from "./site-data";
 
-const questions = [
-  "Zijn er verbeteracties openstaand voor mijn afdeling?",
-  "Heb ik morgen nog diensten gepland?",
-  "Wanneer is ontslag waarschijnlijk voor deze patiënt?",
-];
-
-const principles = [
-  {
-    number: "01",
-    title: "Wij bouwen het.",
-    text: "Een oplossing rondom jouw data, processen en bestaande zorgsystemen.",
-  },
-  {
-    number: "02",
-    title: "Jij gebruikt het.",
-    text: "Begrijpelijk, veilig en direct beschikbaar in de dagelijkse workflow.",
-  },
-  {
-    number: "03",
-    title: "Jij bent eigenaar.",
-    text: "Grip op data, modellen en doorontwikkeling — zonder leveranciersafhankelijkheid.",
-  },
+const solutionLabels = [
+  "Logische data & AI agents",
+  "AI Care Assistant",
+  "Betekenis halen & NER Agents",
+  "Voorspelmodellen",
+  "Real-time Monitoring",
+  "IoT & Domotica Agents",
 ];
 
 export default function Home() {
@@ -43,7 +28,7 @@ export default function Home() {
           <h1>Meer zorg, minder last</h1>
           <p>Agentic AI voor de langdurige zorg</p>
           <div className="hero-actions">
-            <Link className="button button-mint" href="#oplossingen">
+            <Link className="button button-teal" href="#oplossingen">
               Onze oplossingen
             </Link>
             <Link className="button button-purple" href="/cases">
@@ -53,158 +38,144 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section intro-section">
-        <div className="container narrow-copy">
-          <p className="eyebrow">AI die meewerkt</p>
-          <h2>AI die meewerkt in je workflow</h2>
-          <p className="large-copy">
-            Antwoord én actie in één. Onze AI-assistenten en voorspelmodellen
-            geven realtime inzicht en pakken routinetaken op, direct in je
-            workflow. Aansluitend op je bestaande systemen, met beheer en
-            veiligheid geregeld.
+      <section className="figma-intro">
+        <div className="container figma-intro-copy">
+          <p>
+            Steeds meer taken, steeds minder tijd. Wij geloven dat AI in de
+            zorg geen losstaande oplossing is, maar een geïntegreerde strategie
+            die medewerkers versterkt zodat de aandacht gaat naar waar het
+            hoort: de patiënt.
           </p>
-          <div className="question-stack" aria-label="Voorbeeldvragen">
-            {questions.map((question) => (
-              <div className="question-pill" key={question}>
-                <span>{question}</span>
-                <span aria-hidden="true">→</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section className="section mint-section">
-        <div className="container split-layout">
-          <div className="copy-block">
-            <p className="eyebrow">Betere beslissingen</p>
-            <h2>AI die ondersteunt, terwijl jij de regie behoudt.</h2>
-            <p>
-              Wij ontwikkelen oplossingen die niet alleen voorspellend zijn,
-              maar ook uitlegbaar en ingebed in je bestaande systemen. Van
-              patiëntenzorg tot kwaliteitsmonitoring en capaciteitsplanning:
-              minder handwerk, betere besluitvorming en meer tijd voor zorg.
-            </p>
-            <Link className="text-link" href="/methode">
-              Bekijk onze aanpak <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          <div className="image-card image-card-dashboard">
+      <section className="figma-about">
+        <div className="container figma-split">
+          <div className="figma-dashboard">
             <Image
-              src="/assets/dashboard.jpg"
+              src="/assets/figma/home-dashboard.svg"
               fill
-              unoptimized
-              sizes="(max-width: 800px) 100vw, 50vw"
-              alt="Carecogni dashboard met uitlegbare zorginzichten"
+              priority
+              sizes="(max-width: 800px) 100vw, 52vw"
+              alt="Carecogni dashboard met betrouwbare zorginzichten"
             />
           </div>
+          <div className="figma-copy">
+            <h2>Over Carecogni</h2>
+            <p>
+              Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor de
+              langdurige zorg. Via een agentic AI platform, gebouwd op een
+              logisch zorgdatamodel als Digital Twin, ondersteunen wij
+              zorgprofessionals met betrouwbare, uitlegbare en
+              gepersonaliseerde AI-inzichten.
+            </p>
+            <p>
+              Van risicosignalering tot slimme chatbots: AI die echt werkt in
+              de praktijk.
+            </p>
+            <Link className="button button-dark button-small" href="/over-ons">
+              Meer weten?
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="section" id="oplossingen">
+      <section className="figma-solutions" id="oplossingen">
         <div className="container">
-          <div className="section-heading center-heading">
-            <p className="eyebrow">Onze oplossingen</p>
-            <h2>Datagedreven ondersteuning die past bij de zorgpraktijk</h2>
+          <div className="figma-section-heading">
+            <h2>Onze oplossingen</h2>
+            <p>
+              Eén veilig en schaalbaar fundament voor slimme ondersteuning in
+              de langdurige zorg.
+            </p>
           </div>
-          <div className="solution-list">
-            {solutions.slice(0, 3).map((solution, index) => (
+          <div className="figma-solution-grid">
+            {solutions.map((solution, index) => (
               <Link
-                className={`solution-row solution-tone-${index + 1}`}
+                className="figma-solution-card"
                 href={`/oplossingen/${solution.slug}`}
                 key={solution.slug}
               >
-                <span className="solution-index">
+                <span className="solution-card-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span>
-                  <strong>{solution.name}</strong>
-                  <small>{solution.shortDescription}</small>
-                </span>
-                <span className="solution-arrow" aria-hidden="true">
+                <h3>{solutionLabels[index]}</h3>
+                <p>{solution.shortDescription}</p>
+                <span className="round-arrow" aria-hidden="true">
                   ↗
                 </span>
               </Link>
             ))}
           </div>
-          <div className="section-action">
-            <Link className="button button-dark" href="/oplossingen/agentic-ai-platform">
-              Bekijk alle oplossingen
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section className="section dark-section product-story">
-        <div className="container split-layout">
-          <div className="product-visual">
-            <Image
-              src="/assets/assistant.png"
-              fill
-              unoptimized
-              sizes="(max-width: 800px) 100vw, 50vw"
-              alt="Carecogni AI-assistent in een vertrouwde zorgomgeving"
-            />
-          </div>
-          <div className="copy-block light-copy">
-            <p className="eyebrow">Een voorbeeld in de praktijk</p>
-            <h2>Bevraag al je applicaties met één AI-assistent</h2>
-            <p>
-              De assistent gebruikt gespecialiseerde agents die je EPD/ECD,
-              kwaliteitssystemen, HR-documenten, SharePoint en andere
-              applicaties bevragen. Je krijgt direct een betrouwbaar antwoord
-              en, waar gewenst, een vervolgactie.
-            </p>
-            <Link className="text-link light-link" href="/oplossingen/ai-care-assistant">
-              Ontdek de AI Care Assistant <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section principles-section">
+      <section className="figma-practice">
         <div className="container">
-          <div className="section-heading">
-            <p className="eyebrow">Van idee naar dagelijks gebruik</p>
-            <h2>Gebouwd om blijvend waarde te leveren</h2>
+          <div className="figma-section-heading centered">
+            <h2>Voorbeelden uit de praktijk</h2>
           </div>
-          <div className="principle-grid">
-            {principles.map((principle) => (
-              <article className="principle-card" key={principle.number}>
-                <span>{principle.number}</span>
-                <h3>{principle.title}</h3>
-                <p>{principle.text}</p>
+          <div className="practice-list">
+            {cases.map((item, index) => (
+              <article className="practice-row" key={item.slug}>
+                <div className="practice-copy">
+                  <p className="practice-org">{item.organization}</p>
+                  <h3>
+                    {index === 0
+                      ? "Kwalitatieve en snelle terugkoppeling door AI"
+                      : item.title}
+                  </h3>
+                  <p>{item.description}</p>
+                  <Link className="button button-dark button-small" href={`/cases/${item.slug}`}>
+                    Meer over deze case
+                  </Link>
+                </div>
+                <div className={`practice-visual practice-visual-${index + 1}`}>
+                  {index === 0 ? (
+                    <Image
+                      src="/assets/figma/home-case-photo.png"
+                      fill
+                      sizes="(max-width: 800px) 100vw, 50vw"
+                      alt="Samenwerking rond veilige AI voor medicatie-incidenten"
+                    />
+                  ) : index === 1 ? (
+                    <Image
+                      src="/assets/figma/home-circles.png"
+                      fill
+                      sizes="(max-width: 800px) 100vw, 50vw"
+                      alt=""
+                    />
+                  ) : (
+                    <div className="case-placeholder" aria-hidden="true">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <i />
+                    </div>
+                  )}
+                  {index === 0 ? (
+                    <Image
+                      className="practice-badge"
+                      src="/assets/figma/home-case-badge.png"
+                      width={170}
+                      height={170}
+                      alt=""
+                    />
+                  ) : null}
+                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section cases-home">
+      <section className="logo-strip" aria-label="Organisaties waar wij mee samenwerken">
         <div className="container">
-          <div className="heading-with-action">
-            <div className="section-heading">
-              <p className="eyebrow">In de praktijk</p>
-              <h2>Slimme AI-oplossingen die al verschil maken</h2>
-            </div>
-            <Link className="text-link" href="/cases">
-              Bekijk alle cases <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-          <div className="featured-cases">
-            {cases.slice(0, 2).map((item, index) => (
-              <Link
-                className={`featured-case case-color-${index + 1}`}
-                href={`/cases/${item.slug}`}
-                key={item.organization}
-              >
-                <span className="case-label">{item.sector}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <span className="case-read">Lees de case →</span>
-              </Link>
-            ))}
-          </div>
+          <Image
+            src="/assets/figma/home-logos.png"
+            width={1420}
+            height={260}
+            sizes="100vw"
+            alt="Logo's van organisaties waarmee Carecogni samenwerkt"
+          />
         </div>
       </section>
 

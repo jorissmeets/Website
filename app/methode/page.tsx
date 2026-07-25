@@ -9,42 +9,54 @@ export const metadata: Metadata = {
     "De COGNI-methode van Carecogni: van een scherp zorgprobleem naar een veilig geïmplementeerde AI-oplossing.",
 };
 
-const highlights = [
-  "Succesvolle implementatie in de dagelijkse praktijk.",
-  "Gebruiksvriendelijke interface en training.",
-  "Continue ondersteuning en verbeteringen.",
-];
-
 const cogniSteps = [
   {
     letter: "C",
-    title: "Creëer begrip van het probleem",
-    text: "Samen met zorgprofessionals brengen we de uitdaging, gewenste uitkomst, beschikbare data en randvoorwaarden scherp in beeld.",
+    title: "Contextanalyse",
+    text: "Samen brengen we de uitdaging, gewenste uitkomst, beschikbare data en randvoorwaarden scherp in beeld.",
     image: "/assets/method-c.svg",
   },
   {
     letter: "O",
-    title: "Omlijn de oplossing",
-    text: "We ontwerpen een passende aanpak, kiezen de juiste AI-technieken en maken een concreet plan voor ontwikkeling en validatie.",
+    title: "Outline the Solution",
+    text: "We ontwerpen een passende aanpak en maken een concreet plan voor ontwikkeling, integratie en validatie.",
     image: "/assets/method-o.svg",
   },
   {
     letter: "G",
-    title: "Genereer en valideer de AI-toepassing",
-    text: "We bouwen, trainen en toetsen iteratief met zorgprofessionals op nauwkeurigheid, relevantie en uitlegbaarheid.",
+    title: "Generate and Validate the AI Application",
+    text: "We bouwen en toetsen iteratief met zorgprofessionals op nauwkeurigheid, relevantie en uitlegbaarheid.",
     image: "/assets/method-g.svg",
   },
   {
     letter: "N",
-    title: "Naar de praktijk",
-    text: "De oplossing wordt veilig geïntegreerd in de bestaande workflow, met aandacht voor gebruiksgemak, training en adoptie.",
+    title: "Navigate Implementation in Practice",
+    text: "De oplossing wordt veilig geïntegreerd in de bestaande workflow, met aandacht voor training en adoptie.",
     image: "/assets/method-n.svg",
   },
   {
     letter: "I",
-    title: "Itereer en verbeter continu",
-    text: "We monitoren prestaties en gebruik, verwerken feedback en laten de toepassing meegroeien met nieuwe data en behoeften.",
+    title: "Improve Continuously",
+    text: "We monitoren prestaties, verwerken feedback en laten de toepassing meegroeien met nieuwe behoeften.",
     image: "/assets/method-i.svg",
+  },
+];
+
+const ownership = [
+  {
+    title: "We build it",
+    text: "We ontwikkelen een oplossing rondom jouw data, processen en bestaande zorgsystemen.",
+    image: "/assets/figma/method-build.svg",
+  },
+  {
+    title: "You use it",
+    text: "Begrijpelijk, veilig en direct beschikbaar in de dagelijkse workflow van professionals.",
+    image: "/assets/figma/home-circles.png",
+  },
+  {
+    title: "You own it",
+    text: "Grip op data, modellen en doorontwikkeling, zonder onnodige leveranciersafhankelijkheid.",
+    image: "/assets/figma/method-own.svg",
   },
 ];
 
@@ -53,49 +65,63 @@ export default function MethodPage() {
     <main>
       <InnerHero />
 
-      <section className="page-intro method-intro">
-        <div className="container method-intro-grid">
-          <div className="highlight-stack">
-            {highlights.map((highlight) => (
-              <div className="highlight-pill" key={highlight}>
-                <span aria-hidden="true">→</span>
-                <strong>{highlight}</strong>
-              </div>
-            ))}
+      <section className="method-lead">
+        <div className="container method-lead-grid">
+          <div className="method-lead-visual" aria-hidden="true">
+            <span>COGNI</span>
+            <i />
           </div>
           <div>
-            <p className="eyebrow">Onze aanpak</p>
-            <h1>Van veelbelovend model naar dagelijks gebruik</h1>
-            <p className="large-copy">
+            <h1>Onze aanpak.</h1>
+            <p>
               Bij AI in de zorg wordt de stap van concept naar betrouwbare
               praktijktoepassing vaak onderschat. Daarom richten wij ons op
               data, procesintegratie, beveiliging, uitlegbaarheid én adoptie.
+            </p>
+            <p>
+              Met de COGNI-methode werken we in vijf overzichtelijke stappen
+              toe naar blijvende waarde in de dagelijkse zorgpraktijk.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section dark-section cogni-section">
+      <section className="method-steps">
         <div className="container">
-          <div className="section-heading light-copy">
-            <p className="eyebrow">Hoe gaan wij te werk?</p>
-            <h2>De COGNI-methode</h2>
-            <p>
-              Vijf samenhangende stappen om een AI-toepassing vertrouwd te
-              implementeren, operationaliseren en blijvend te verbeteren.
-            </p>
-          </div>
-          <div className="cogni-list">
+          <h2>Hoe gaan wij te werk</h2>
+          <div className="method-step-list">
             {cogniSteps.map((step) => (
-              <article className="cogni-step" key={step.letter}>
-                <span className="cogni-letter">{step.letter}</span>
-                <div className="cogni-icon">
-                  <Image src={step.image} fill unoptimized sizes="110px" alt="" />
+              <article className="method-step" key={step.letter}>
+                <span className="method-letter">{step.letter}</span>
+                <div className="method-icon">
+                  <Image src={step.image} fill sizes="150px" alt="" />
                 </div>
                 <div>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="ownership-section">
+        <div className="container">
+          <h2>We build it, you use it, you own it.</h2>
+          <div className="ownership-grid">
+            {ownership.map((item, index) => (
+              <article key={item.title}>
+                <div className={`ownership-image ownership-image-${index + 1}`}>
+                  <Image
+                    src={item.image}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 33vw"
+                    alt=""
+                  />
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>

@@ -42,9 +42,9 @@ test("server-renders the Carecogni homepage", async () => {
 
 test("server-renders the designer-led content pages", async () => {
   const paths = [
-    ["/cases", /Slimme AI-oplossingen in de praktijk/],
-    ["/over-ons", /Menselijke zorg, versterkt door begrijpelijke technologie/],
-    ["/methode", /De COGNI-methode/],
+    ["/cases", /Slimme AI oplossingen in de praktijk/],
+    ["/over-ons", /Over Carecogni/],
+    ["/methode", /Hoe gaan wij te werk/],
     ["/contact", /Benieuwd wat wij voor jou kunnen betekenen/],
     ["/oplossingen/ai-care-assistant", /AI Care Assistant/],
   ];

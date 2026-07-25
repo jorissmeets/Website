@@ -14,53 +14,59 @@ export default function ContactPage() {
     <main>
       <InnerHero />
 
-      <section className="page-intro contact-intro">
-        <div className="container contact-lead">
-          <div>
-            <p className="eyebrow">Contact</p>
-            <h1>Benieuwd wat wij voor jou kunnen betekenen?</h1>
+      <section className="contact-lead-section">
+        <div className="container contact-lead-grid">
+          <div className="contact-lead-image">
+            <Image
+              src="/assets/figma/contact-photo.png"
+              fill
+              priority
+              sizes="(max-width: 800px) 100vw, 50vw"
+              alt="Carecogni in gesprek"
+            />
           </div>
-          <p className="large-copy">
-            Wij denken graag met je mee. Heb je een idee om de dagelijkse
-            zorgpraktijk te verbeteren, of een veelbelovend model dat naar de
-            praktijk moet? Laat het ons weten.
-          </p>
+          <div>
+            <h1>Benieuwd wat wij voor jou kunnen betekenen?</h1>
+            <p>
+              Ben je nieuwsgierig naar wat wij voor jou kunnen betekenen? Wil
+              je een keer brainstormen over mogelijke AI-toepassingen of heb je
+              een beslismodel dat je naar de praktijk wilt brengen?
+            </p>
+            <p>
+              Wij denken graag met je mee. Stuur ons een bericht, dan nemen wij
+              contact op.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section contact-section">
-        <div className="container contact-grid">
-          <div className="contact-side">
-            <div className="contact-photo">
-              <Image
-                src="/assets/contact.jpg"
-                fill
-                unoptimized
-                sizes="(max-width: 800px) 100vw, 50vw"
-                alt="Carecogni in Utrecht"
-              />
-            </div>
-            <div className="contact-details">
-              <div>
-                <span>E-mail</span>
-                <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
-              </div>
-              <div>
-                <span>Waar kun je ons vinden?</span>
-                <p>Europalaan 400<br />3526 KS Utrecht</p>
-              </div>
-              <div>
-                <span>LinkedIn</span>
-                <a
-                  href="https://www.linkedin.com/company/carecogni"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Volg Carecogni
-                </a>
-              </div>
-            </div>
+      <section className="contact-map-section">
+        <div className="container contact-map-grid">
+          <div className="contact-map-copy">
+            <h2>Waar kun je ons vinden?</h2>
+            <p>
+              Domus Medica
+              <br />
+              Mercatorlaan 1200
+              <br />
+              3528 BL Utrecht
+            </p>
+            <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
           </div>
+          <div className="contact-map">
+            <Image
+              src="/assets/figma/contact-map.png"
+              fill
+              sizes="(max-width: 800px) 100vw, 50vw"
+              alt="Kaart van de Carecogni-locatie in Utrecht"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-form-section">
+        <div className="container">
+          <h2>Neem contact met ons op</h2>
           <ContactForm />
         </div>
       </section>

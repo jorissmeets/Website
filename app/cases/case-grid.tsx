@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type { CaseStudy } from "../site-data";
 
@@ -35,19 +36,24 @@ export function CaseGrid({ items }: { items: CaseStudy[] }) {
       </div>
 
       <div className="cases-full-grid" aria-live="polite">
-        {visible.map((item) => (
-          <article className="case-full-card" key={item.organization}>
-            <div className="case-full-header">
-              <strong>{item.organization}</strong>
-              <span className="case-sector">{item.sector}</span>
+        {visible.map((item, index) => (
+          <Link
+            className={`case-full-card case-card-tone-${(index % 3) + 1}`}
+            href={`/cases/${item.slug}`}
+            key={item.organization}
+          >
+            <div className="case-art" aria-hidden="true">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span className="case-art-ring" />
             </div>
             <div className="case-full-body">
+              <span className="case-sector">{item.sector}</span>
+              <p className="case-org">{item.organization}</p>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-              <div className="case-result">✓ {item.result}</div>
-              <blockquote>“{item.quote}”</blockquote>
+              <span className="case-read">Bekijk de case →</span>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </>

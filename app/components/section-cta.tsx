@@ -8,16 +8,16 @@ export function SectionCta({
   text?: string;
 }) {
   return (
-    <section className="section section-dark">
+    <section className="section section-cta">
       <div className="container cta-inner">
-        <span className="tag tag-white">Klaar om te starten?</span>
+        <p className="eyebrow">Samen verder</p>
         <h2>{title}</h2>
-        <p className="lead lead-white">{text}</p>
+        <p className="large-copy">{text}</p>
         <div className="cta-buttons">
-          <Link className="btn btn-primary" href="/contact">
-            Plan een gesprek
+          <Link className="button button-dark" href="/contact">
+            Contact
           </Link>
-          <a className="btn btn-outline" href="mailto:hello@carecogni.com">
+          <a className="text-link" href="mailto:hello@carecogni.com">
             hello@carecogni.com
           </a>
         </div>

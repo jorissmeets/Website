@@ -30,26 +30,31 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={submit}>
-      <h2>Stuur een bericht</h2>
-      <div className="form-group">
-        <label htmlFor="name">Naam</label>
-        <input id="name" name="name" placeholder="Uw naam" required />
+      <div className="form-heading">
+        <p className="eyebrow">Stuur ons een bericht</p>
+        <h2>Contact</h2>
+      </div>
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="name">Naam*</label>
+          <input id="name" name="name" placeholder="Voor- en achternaam" required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="organization">Organisatie*</label>
+          <input
+            id="organization"
+            name="organization"
+            placeholder="Naam van je organisatie"
+            required
+          />
+        </div>
       </div>
       <div className="form-group">
-        <label htmlFor="organization">Organisatie</label>
-        <input
-          id="organization"
-          name="organization"
-          placeholder="Naam van uw zorginstelling"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">E-mail</label>
+        <label htmlFor="email">E-mail*</label>
         <input
           id="email"
           name="email"
-          placeholder="uw@email.nl"
+          placeholder="naam@organisatie.nl"
           required
           type="email"
         />
@@ -57,7 +62,7 @@ export function ContactForm() {
       <div className="form-group">
         <label htmlFor="subject">Onderwerp</label>
         <select id="subject" name="subject">
-          <option>Vrijblijvend kennismakingsgesprek</option>
+          <option>Vrijblijvend kennismaken</option>
           <option>Vraag over een oplossing</option>
           <option>Informatie over samenwerking</option>
           <option>Anders</option>
@@ -68,12 +73,12 @@ export function ContactForm() {
         <textarea
           id="message"
           name="message"
-          placeholder="Vertel kort over uw instelling en uitdaging…"
+          placeholder="Waar kunnen we je mee helpen?"
           required
         />
       </div>
-      <button className="form-submit" type="submit">
-        Verstuur bericht →
+      <button className="button button-dark form-submit" type="submit">
+        Bericht versturen
       </button>
       {notice ? (
         <p className="form-notice" role="status">

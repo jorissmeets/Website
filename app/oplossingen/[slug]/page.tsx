@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { InnerHero } from "../../components/inner-hero";
 import { SectionCta } from "../../components/section-cta";
 import { getSolution, solutions } from "../../site-data";
 
@@ -44,43 +45,38 @@ export default async function SolutionPage({
 
   return (
     <main>
-      <section className="solution-hero">
+      <InnerHero />
+      <section className="page-intro solution-intro">
         <div className="container">
           <Link className="back-link" href="/#oplossingen">
-            ← Terug naar oplossingen
+            ← Alle oplossingen
           </Link>
-          <div className="solution-hero-grid">
-            <div>
-              <span className="tag tag-white">{solution.sector}</span>
-              <h1>{solution.name}</h1>
-              <p className="lead lead-white">{solution.tagline}</p>
-              <Link className="btn btn-primary" href="/contact">
-                Plan een gesprek →
-              </Link>
-            </div>
-            <div className="solution-hero-icon">
-              <span aria-hidden="true">{solution.icon}</span>
-              <strong>{solution.sector}</strong>
-            </div>
+          <p className="eyebrow">{solution.sector}</p>
+          <h1>{solution.name}</h1>
+          <p className="large-copy">{solution.tagline}</p>
+          <div className="solution-intro-actions">
+            <Link className="button button-dark" href="/contact">
+              Plan een gesprek
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section mint-section">
         <div className="container solution-content-grid">
-          <div>
-            <span className="tag">Wat het doet</span>
-            <h2>Beschrijving</h2>
-            <p className="lead">{solution.description}</p>
+          <div className="copy-block">
+            <p className="eyebrow">Wat het doet</p>
+            <h2>Gebouwd rondom jouw zorgpraktijk</h2>
+            <p className="large-copy">{solution.description}</p>
             <ul className="feature-list">
               {solution.features.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
           </div>
-          <div>
-            <span className="tag">Specificaties</span>
-            <h2>Technische details</h2>
+          <div className="spec-panel">
+            <p className="eyebrow">In één oogopslag</p>
+            <h2>Eigenschappen</h2>
             <div className="spec-grid">
               {solution.specs.map((spec) => (
                 <article className="spec-card" key={spec.title}>
@@ -89,38 +85,27 @@ export default async function SolutionPage({
                 </article>
               ))}
             </div>
-            <div className="mini-cta">
-              <h3>Klaar om te starten?</h3>
-              <p>
-                Neem contact op voor een vrijblijvend kennismakingsgesprek.
-              </p>
-              <Link className="btn btn-primary" href="/contact">
-                Plan een gesprek →
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section dark-section">
         <div className="container">
-          <div className="section-header">
-            <span className="tag">Verder ontdekken</span>
+          <div className="section-heading light-copy">
+            <p className="eyebrow">Verder ontdekken</p>
             <h2>Meer oplossingen</h2>
           </div>
-          <div className="solution-grid three-columns">
-            {moreSolutions.map((item) => (
+          <div className="more-solutions">
+            {moreSolutions.map((item, index) => (
               <Link
-                className="solution-card"
+                className={`more-solution solution-tone-${index + 1}`}
                 href={`/oplossingen/${item.slug}`}
                 key={item.slug}
               >
-                <span className="solution-icon" aria-hidden="true">
-                  {item.icon}
-                </span>
+                <span>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{item.name}</h3>
                 <p>{item.shortDescription}</p>
-                <span className="card-link">Meer informatie →</span>
+                <strong>Meer informatie →</strong>
               </Link>
             ))}
           </div>

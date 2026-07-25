@@ -237,6 +237,7 @@ export const solutions: Solution[] = [
 ];
 
 export type CaseStudy = {
+  slug: string;
   organization: string;
   sector: string;
   category: "GGZ" | "WLZ / VVT" | "Farmacovigilantie" | "IT & Servicedesk";
@@ -248,6 +249,7 @@ export type CaseStudy = {
 
 export const cases: CaseStudy[] = [
   {
+    slug: "ivm-incidentmeldingen",
     organization: "Instituut Verantwoord Medicijngebruik (IVM)",
     sector: "Farmacovigilantie",
     category: "Farmacovigilantie",
@@ -260,6 +262,7 @@ export const cases: CaseStudy[] = [
       "De AI herkent patronen die handmatig makkelijk gemist worden en geeft ruimte voor de echte analyse.",
   },
   {
+    slug: "ai-care-assistant-ggz",
     organization: "Grote GGZ-instelling",
     sector: "Langdurige zorg / GGZ",
     category: "GGZ",
@@ -272,6 +275,7 @@ export const cases: CaseStudy[] = [
       "Cliënten krijgen direct antwoord, ook buiten kantooruren. Dat geeft rust voor hen én voor het team.",
   },
   {
+    slug: "meerzorg-signalering",
     organization: "Middelgrote WLZ-zorginstelling",
     sector: "Langdurige zorg / WLZ",
     category: "WLZ / VVT",
@@ -284,6 +288,7 @@ export const cases: CaseStudy[] = [
       "We lopen niet meer achter de feiten aan. De signalen worden nu op tijd zichtbaar.",
   },
   {
+    slug: "slimme-ticketverwerking",
     organization: "IT-dienstverlener in de zorg",
     sector: "IT & Servicedesk",
     category: "IT & Servicedesk",
@@ -299,4 +304,8 @@ export const cases: CaseStudy[] = [
 
 export function getSolution(slug: string) {
   return solutions.find((solution) => solution.slug === slug);
+}
+
+export function getCase(slug: string) {
+  return cases.find((item) => item.slug === slug);
 }

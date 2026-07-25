@@ -35,8 +35,9 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Meer zorg, minder last/);
   assert.match(html, /Agentic AI voor de langdurige zorg/);
   assert.match(html, /carecogni-mark-light\.svg/);
+  assert.match(html, /v3-hero-caregiver-devices\.png/);
   assert.match(html, /Onze oplossingen/);
-  assert.match(html, /In de praktijk/);
+  assert.match(html, /Cases/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 

@@ -15,7 +15,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="site-header">
+    <header className={`site-header${pathname === "/" ? " home-header" : ""}`}>
       <div className="container nav-inner">
         <Link className="nav-logo" href="/" onClick={closeMenu} aria-label="Carecogni home">
           <Image

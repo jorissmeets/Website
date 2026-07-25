@@ -14,158 +14,129 @@ const solutionLabels = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="v3-home">
       <section className="home-hero">
+        <Image
+          className="v3-hero-art"
+          src="/assets/figma/v3-hero-caregiver-devices.png"
+          fill
+          priority
+          sizes="100vw"
+          alt=""
+          style={{ objectFit: "contain", objectPosition: "center bottom" }}
+        />
         <div className="container home-hero-inner">
           <Image
             className="hero-brand"
             src="/assets/carecogni-mark-light.svg"
-            width={269}
-            height={138}
+            width={288}
+            height={147}
             priority
             alt="Carecogni"
           />
           <h1>Meer zorg, minder last</h1>
           <p>Agentic AI voor de langdurige zorg</p>
-          <div className="hero-actions">
-            <Link className="button button-teal" href="#oplossingen">
-              Onze oplossingen
-            </Link>
-            <Link className="button button-purple" href="/cases">
-              In de praktijk
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section className="figma-intro">
-        <div className="container figma-intro-copy">
+      <section className="v3-intro">
+        <div className="container v3-intro-copy">
           <p>
             Steeds meer taken, steeds minder tijd. Wij geloven dat AI in de
             zorg geen losstaande oplossing is, maar een geïntegreerde strategie
             die medewerkers versterkt zodat de aandacht gaat naar waar het
-            hoort: de patiënt.
+            hoort.
           </p>
         </div>
       </section>
 
-      <section className="figma-about">
-        <div className="container figma-split">
-          <div className="figma-dashboard">
-            <Image
-              src="/assets/figma/home-dashboard.svg"
-              fill
-              priority
-              sizes="(max-width: 800px) 100vw, 52vw"
-              alt="Carecogni dashboard met betrouwbare zorginzichten"
-            />
+      <section className="v3-feature v3-feature-white">
+        <div className="container v3-feature-inner">
+          <div className="v3-media-placeholder v3-media-placeholder-one" aria-hidden="true">
+            <span />
           </div>
-          <div className="figma-copy">
-            <h2>Over Carecogni</h2>
+          <div className="v3-feature-copy">
+            <h2>AI die werkt in de dagelijkse zorgpraktijk</h2>
             <p>
               Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor de
-              langdurige zorg. Via een agentic AI platform, gebouwd op een
+              langdurige zorg. Via een agentic AI-platform, gebouwd op een
               logisch zorgdatamodel als Digital Twin, ondersteunen wij
               zorgprofessionals met betrouwbare, uitlegbare en
               gepersonaliseerde AI-inzichten.
             </p>
-            <p>
-              Van risicosignalering tot slimme chatbots: AI die echt werkt in
-              de praktijk.
-            </p>
-            <Link className="button button-dark button-small" href="/over-ons">
-              Meer weten?
-            </Link>
           </div>
         </div>
       </section>
 
-      <section className="figma-solutions" id="oplossingen">
-        <div className="container">
-          <div className="figma-section-heading">
-            <h2>Onze oplossingen</h2>
+      <section className="v3-feature v3-feature-grey">
+        <div className="container v3-feature-inner v3-feature-reverse">
+          <div className="v3-feature-copy">
+            <h2>Geen losse oplossing, maar een slimme strategie</h2>
             <p>
-              Eén veilig en schaalbaar fundament voor slimme ondersteuning in
-              de langdurige zorg.
+              Van risicosignalering tot slimme chatbots: onze toepassingen
+              sluiten aan op bestaande data, systemen en werkprocessen. De
+              zorgprofessional houdt de regie en krijgt precies op het juiste
+              moment bruikbare ondersteuning.
             </p>
+            <Link className="button button-teal button-small" href="/methode">
+              Bekijk onze aanpak
+            </Link>
           </div>
-          <div className="figma-solution-grid">
+          <div className="v3-media-placeholder v3-media-placeholder-two" aria-hidden="true">
+            <span />
+          </div>
+        </div>
+      </section>
+
+      <section className="v3-solutions" id="oplossingen">
+        <div className="container">
+          <h2>Onze oplossingen</h2>
+          <div className="v3-solution-grid">
             {solutions.map((solution, index) => (
               <Link
-                className="figma-solution-card"
+                className="v3-solution-card"
                 href={`/oplossingen/${solution.slug}`}
                 key={solution.slug}
               >
-                <span className="solution-card-number">
-                  {String(index + 1).padStart(2, "0")}
+                <span className="v3-solution-icon" aria-hidden="true">
+                  <i>{String(index + 1).padStart(2, "0")}</i>
                 </span>
                 <h3>{solutionLabels[index]}</h3>
-                <p>{solution.shortDescription}</p>
-                <span className="round-arrow" aria-hidden="true">
-                  ↗
-                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="figma-practice">
+      <section className="v3-cases">
         <div className="container">
-          <div className="figma-section-heading centered">
-            <h2>Voorbeelden uit de praktijk</h2>
-          </div>
-          <div className="practice-list">
-            {cases.map((item, index) => (
-              <article className="practice-row" key={item.slug}>
-                <div className="practice-copy">
-                  <p className="practice-org">{item.organization}</p>
+          <h2>Cases</h2>
+          <div className="v3-case-list">
+            {cases.slice(0, 3).map((item, index) => (
+              <Link className="v3-case-row" href={`/cases/${item.slug}`} key={item.slug}>
+                <div className="v3-case-copy">
+                  <p>{item.organization}</p>
                   <h3>
                     {index === 0
                       ? "Kwalitatieve en snelle terugkoppeling door AI"
                       : item.title}
                   </h3>
-                  <p>{item.description}</p>
-                  <Link className="button button-dark button-small" href={`/cases/${item.slug}`}>
-                    Meer over deze case
-                  </Link>
+                  <span>{item.description}</span>
                 </div>
-                <div className={`practice-visual practice-visual-${index + 1}`}>
-                  {index === 0 ? (
-                    <Image
-                      src="/assets/figma/home-case-photo.png"
-                      fill
-                      sizes="(max-width: 800px) 100vw, 50vw"
-                      alt="Samenwerking rond veilige AI voor medicatie-incidenten"
-                    />
-                  ) : index === 1 ? (
-                    <Image
-                      src="/assets/figma/home-circles.png"
-                      fill
-                      sizes="(max-width: 800px) 100vw, 50vw"
-                      alt=""
-                    />
-                  ) : (
-                    <div className="case-placeholder" aria-hidden="true">
-                      <span>{String(index + 1).padStart(2, "0")}</span>
-                      <i />
-                    </div>
-                  )}
-                  {index === 0 ? (
-                    <Image
-                      className="practice-badge"
-                      src="/assets/figma/home-case-badge.png"
-                      width={170}
-                      height={170}
-                      alt=""
-                    />
-                  ) : null}
+                <div className={`v3-case-visual v3-case-visual-${index + 1}`} aria-hidden="true">
+                  <i>{String(index + 1).padStart(2, "0")}</i>
+                  <b>↗</b>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
+          <Link className="button button-teal" href="/cases">
+            Bekijk alle cases
+          </Link>
         </div>
       </section>
+
+      <SectionCta />
 
       <section className="logo-strip" aria-label="Organisaties waar wij mee samenwerken">
         <div className="container">
@@ -178,8 +149,6 @@ export default function Home() {
           />
         </div>
       </section>
-
-      <SectionCta />
     </main>
   );
 }

@@ -2218,6 +2218,10 @@ textarea:focus-visible {
   line-height: 1.5;
 }
 
+.v3-feature-copy p + p {
+  margin-top: -10px;
+}
+
 .v3-feature-copy .button {
   min-height: 52px;
   border-radius: 9px;
@@ -2232,12 +2236,21 @@ textarea:focus-visible {
 
 .v3-solutions h2,
 .v3-cases h2 {
-  margin-bottom: 56px;
+  margin-bottom: 20px;
   font-family: "Rubik", Arial, sans-serif;
   font-size: 45px;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: 0;
+}
+
+.v3-solutions-lead,
+.v3-cases-lead {
+  max-width: 880px;
+  margin: 0 auto 46px;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .v3-solution-grid {
@@ -2269,7 +2282,7 @@ textarea:focus-visible {
   display: grid;
   width: 100px;
   height: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   place-items: center;
   border-radius: 50%;
   background: var(--mint);
@@ -2285,10 +2298,19 @@ textarea:focus-visible {
 
 .v3-solution-card h3 {
   max-width: 310px;
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.25;
+}
+
+.v3-solution-card > p {
+  max-width: 320px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .v3-cases {
@@ -2299,7 +2321,7 @@ textarea:focus-visible {
 }
 
 .v3-case-list {
-  margin-bottom: 58px;
+  margin: 0 0 58px;
 }
 
 .v3-case-row {
@@ -2543,8 +2565,14 @@ textarea:focus-visible {
 
   .v3-solutions h2,
   .v3-cases h2 {
-    margin-bottom: 40px;
+    margin-bottom: 18px;
     font-size: 40px;
+  }
+
+  .v3-solutions-lead,
+  .v3-cases-lead {
+    margin-bottom: 38px;
+    font-size: 17px;
   }
 
   .v3-solution-grid {

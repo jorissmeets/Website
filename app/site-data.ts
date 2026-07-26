@@ -126,25 +126,25 @@ export const solutions: Solution[] = [
   {
     slug: "voorspelmodellen",
     icon: "📈",
-    name: "Voorspelmodellen",
-    shortName: "Voorspelmodellen",
-    sector: "Planning & capaciteit",
-    tagline: "Betrouwbare voorspellingen op basis van uw eigen zorgdata",
+    name: "Beslisondersteunende modellen",
+    shortName: "Beslisondersteunende modellen",
+    sector: "Besluitvorming & capaciteit",
+    tagline: "Uitlegbare ondersteuning op basis van uw eigen zorgdata",
     shortDescription:
-      "Bewezen modellen ondersteunen beslissingen over nazorg, capaciteit en meerzorgaanvragen.",
+      "Ondersteunt teams bij keuzes over nazorg, capaciteit en meerzorg met herleidbare inzichten.",
     description:
-      "AI-modellen die op basis van bestaande zorgdata voorspellingen doen over planning, nazorg en zorgcapaciteit. Van ontslagdatum tot meerzorgaanvraag — betrouwbaar, uitlegbaar en direct inzetbaar.",
+      "Modellen die bestaande zorgdata structureren en waarschijnlijke ontwikkelingen zichtbaar maken als beslisondersteuning. De professional weegt de uitkomst altijd in de context van de cliënt, het team en de organisatie.",
     features: [
-      "Nazorgvoorspelling voor orthopedie",
-      "Voorspelling van benodigde zorgcapaciteit",
-      "Detectie van meerzorgaanvraagsignalen",
-      "Cliënttoewijzing aan het meest geschikte team",
-      "Uitlegbare en herleidbare uitkomsten per model",
+      "Ondersteuning bij keuzes over nazorg en capaciteit",
+      "Tijdige herkenning van meerzorgsignalen",
+      "Inzicht in relevante factoren per uitkomst",
+      "Aansluiting op bestaande zorg- en BI-data",
+      "Uitlegbare en herleidbare ondersteuning per toepassing",
     ],
     specs: [
       {
-        title: "Nauwkeurigheid",
-        description: "Tot circa 90% bij ontslagdatumvoorspelling",
+        title: "Modelkwaliteit",
+        description: "Per toepassing gevalideerd met professionals",
       },
       {
         title: "Uitlegbaarheid",

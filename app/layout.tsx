@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Carecogni",
   },
   description:
-    "Carecogni haalt vroege signalen uit meldingen en dossiers, zodat zorgteams sneller kunnen handelen zonder extra registratiedruk.",
+    "Carecogni maakt vroege signalen uit incidentmeldingen, cliëntdossiers en operationele systemen zichtbaar voor zorgteams — zonder extra registratiedruk.",
 };
 
 export default function RootLayout({

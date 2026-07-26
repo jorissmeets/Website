@@ -1,16 +1,56 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
-import { cases, solutions } from "./site-data";
+import { cases } from "./site-data";
 
-const solutionLabels = [
-  "Logische data & AI agents",
-  "AI Care Assistant",
-  "Betekenis halen & NER Agents",
-  "Voorspelmodellen",
-  "Real-time Monitoring",
-  "IoT & Domotica Agents",
+const homeSolutions = [
+  {
+    slug: "risicosignalering",
+    title: "Risicosignalering & NER",
+    description:
+      "Maak relevante signalen in meldingen, rapportages en vrije tekst zichtbaar.",
+  },
+  {
+    slug: "monitoring-analytics",
+    title: "Real-time monitoring",
+    description:
+      "Volg ontwikkelingen en stuurinformatie in één actueel en begrijpelijk beeld.",
+  },
+  {
+    slug: "voorspelmodellen",
+    title: "Beslisondersteunende modellen",
+    description:
+      "Onderbouw keuzes over zorg, capaciteit en vervolgacties met uitlegbare modellen.",
+  },
+  {
+    slug: "agentic-ai-platform",
+    title: "Datafundament & AI-agents",
+    description:
+      "Verbind gegevens uit bestaande zorg- en bedrijfssystemen tot één bruikbare basis.",
+  },
+  {
+    slug: "iot-domotica",
+    title: "IoT & domoticasignalering",
+    description:
+      "Vertaal sensor- en aanwezigheidssignalen naar tijdige aandacht voor het team.",
+  },
+  {
+    slug: "ai-care-assistant",
+    title: "AI Care Assistant",
+    description:
+      "Maak kennis, protocollen en zorginformatie direct toegankelijk in gewone taal.",
+  },
 ];
+
+const homeCaseSlugs = [
+  "ivm-incidentmeldingen",
+  "meerzorg-signalering",
+  "ai-care-assistant-ggz",
+];
+
+const homeCases = homeCaseSlugs
+  .map((slug) => cases.find((item) => item.slug === slug))
+  .filter((item): item is (typeof cases)[number] => Boolean(item));
 
 export default function Home() {
   return (
@@ -35,11 +75,11 @@ export default function Home() {
             alt="Carecogni"
           />
           <span className="v3-hero-eyebrow">Meer zorg, minder last</span>
-          <h1>Krijg eerder zicht op risico&apos;s in complexe zorg</h1>
+          <h1>Eerder zicht op risico&apos;s in complexe zorg</h1>
           <p>
-            Carecogni haalt vroege signalen uit meldingen en dossiers, zodat
-            zorgteams sneller en gerichter kunnen handelen — zonder extra
-            registratiedruk.
+            Carecogni maakt vroege signalen uit incidentmeldingen,
+            cliëntdossiers en operationele systemen zichtbaar en uitlegbaar
+            voor zorgteams — zonder extra registratiedruk.
           </p>
           <Link className="button button-dark v3-hero-cta" href="/contact">
             Plan een gesprek
@@ -49,18 +89,19 @@ export default function Home() {
 
       <section className="v3-intro">
         <div className="container v3-intro-copy">
-          <h2>Waardevolle signalen zijn vaak al aanwezig</h2>
+          <h2>De signalen zijn er. Het overzicht ontbreekt.</h2>
           <p>
-            Ze staan alleen verspreid over MIC- en MIM-meldingen,
-            cliëntdossiers en andere systemen. Daardoor blijven patronen soms
-            te lang onzichtbaar en komt belangrijke informatie pas laat boven
-            tafel.
+            Een incidentmelding hier, een observatie in het cliëntdossier
+            daar. Waardevolle informatie raakt verspreid over systemen, vrije
+            tekst en verschillende momenten. Daardoor blijven terugkerende
+            patronen en oplopende risico&apos;s soms langer onzichtbaar dan
+            nodig.
           </p>
           <p>
-            Carecogni brengt deze informatie samen, herkent terugkerende
-            patronen en vertaalt ze naar concrete aandachtspunten. De
-            zorgprofessional houdt altijd de regie. Zo worden risico&apos;s
-            eerder zichtbaar en ontstaat er meer ruimte voor passende zorg.
+            Carecogni brengt bestaande gegevens samen, structureert wat ertoe
+            doet en maakt verbanden zichtbaar. Niet om het oordeel van de
+            professional over te nemen, maar om de aandacht te richten op wat
+            op dat moment het belangrijkst is.
           </p>
         </div>
       </section>
@@ -71,13 +112,17 @@ export default function Home() {
             <span />
           </div>
           <div className="v3-feature-copy">
-            <h2>AI die werkt in de dagelijkse zorgpraktijk</h2>
+            <h2>Van registratie naar gerichte actie</h2>
             <p>
-              Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor de
-              langdurige zorg. Via een agentic AI-platform, gebouwd op een
-              logisch zorgdatamodel als Digital Twin, ondersteunen wij
-              zorgprofessionals met betrouwbare, uitlegbare en
-              gepersonaliseerde AI-inzichten.
+              Carecogni analyseert informatie die al wordt vastgelegd: MIC- en
+              MIM-meldingen, rapportages, cliëntdossiers en operationele
+              systemen. Onze technologie ordent de informatie, legt verbanden
+              over tijd en maakt zichtbaar wat aandacht vraagt.
+            </p>
+            <p>
+              Het resultaat is geen ondoorzichtige risicoscore, maar
+              herleidbare beslisondersteuning die teams helpt prioriteren en
+              gericht vervolgstappen te bepalen.
             </p>
           </div>
         </div>
@@ -86,15 +131,21 @@ export default function Home() {
       <section className="v3-feature v3-feature-grey">
         <div className="container v3-feature-inner v3-feature-reverse">
           <div className="v3-feature-copy">
-            <h2>Geen losse oplossing, maar een slimme strategie</h2>
+            <h2>Uitlegbaar, meetbaar en onder regie van de professional</h2>
             <p>
-              Van risicosignalering tot slimme chatbots: onze toepassingen
-              sluiten aan op bestaande data, systemen en werkprocessen. De
-              zorgprofessional houdt de regie en krijgt precies op het juiste
-              moment bruikbare ondersteuning.
+              Ieder signaal kan worden herleid naar de bron. Professionals
+              bepalen de context, betekenis en eventuele actie. We beginnen
+              met één concreet vraagstuk, toetsen de kwaliteit samen met het
+              team en schalen pas op wanneer de toepassing aantoonbaar waarde
+              toevoegt.
+            </p>
+            <p>
+              Zo wordt AI geen losstaand experiment of extra dashboard, maar
+              een betrouwbare ondersteuning binnen bestaande systemen en
+              werkprocessen.
             </p>
             <Link className="button button-teal button-small" href="/methode">
-              Bekijk onze aanpak
+              Zo werken wij
             </Link>
           </div>
           <div className="v3-media-placeholder v3-media-placeholder-two" aria-hidden="true">
@@ -105,9 +156,14 @@ export default function Home() {
 
       <section className="v3-solutions" id="oplossingen">
         <div className="container">
-          <h2>Onze oplossingen</h2>
+          <h2>Eén fundament, zes gerichte toepassingen</h2>
+          <p className="v3-solutions-lead">
+            Risicosignalering vormt de kern. Op hetzelfde privacybewuste
+            datafundament bouwen we toepassingen die informatie vindbaar
+            maken, ontwikkelingen volgen en beslissingen ondersteunen.
+          </p>
           <div className="v3-solution-grid">
-            {solutions.map((solution, index) => (
+            {homeSolutions.map((solution, index) => (
               <Link
                 className="v3-solution-card"
                 href={`/oplossingen/${solution.slug}`}
@@ -116,7 +172,8 @@ export default function Home() {
                 <span className="v3-solution-icon" aria-hidden="true">
                   <i>{String(index + 1).padStart(2, "0")}</i>
                 </span>
-                <h3>{solutionLabels[index]}</h3>
+                <h3>{solution.title}</h3>
+                <p>{solution.description}</p>
               </Link>
             ))}
           </div>
@@ -125,17 +182,18 @@ export default function Home() {
 
       <section className="v3-cases">
         <div className="container">
-          <h2>Cases</h2>
+          <h2>Bewezen in de praktijk</h2>
+          <p className="v3-cases-lead">
+            Van incidentmeldingen tot cliëntdossiers: deze toepassingen laten
+            zien hoe bestaande informatie bruikbaar wordt voor de dagelijkse
+            praktijk.
+          </p>
           <div className="v3-case-list">
-            {cases.slice(0, 3).map((item, index) => (
+            {homeCases.map((item, index) => (
               <Link className="v3-case-row" href={`/cases/${item.slug}`} key={item.slug}>
                 <div className="v3-case-copy">
                   <p>{item.organization}</p>
-                  <h3>
-                    {index === 0
-                      ? "Kwalitatieve en snelle terugkoppeling door AI"
-                      : item.title}
-                  </h3>
+                  <h3>{item.title}</h3>
                   <span>{item.description}</span>
                 </div>
                 <div className={`v3-case-visual v3-case-visual-${index + 1}`} aria-hidden="true">
@@ -151,7 +209,11 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionCta />
+      <SectionCta
+        title="Waar blijven belangrijke signalen nu nog liggen?"
+        text="Vertel ons waar informatie versnipperd raakt of risico’s pas laat zichtbaar worden. In een verkennend gesprek kijken we welke bestaande data beschikbaar is en of een kleine, meetbare eerste toepassing zinvol is."
+        buttonLabel="Plan een gesprek"
+      />
 
       <section className="logo-strip" aria-label="Organisaties waar wij mee samenwerken">
         <div className="container">

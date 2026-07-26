@@ -6,6 +6,19 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { solutions } from "../site-data";
 
+const solutionMenuOrder = [
+  "risicosignalering",
+  "monitoring-analytics",
+  "voorspelmodellen",
+  "agentic-ai-platform",
+  "iot-domotica",
+  "ai-care-assistant",
+];
+
+const menuSolutions = solutionMenuOrder
+  .map((slug) => solutions.find((solution) => solution.slug === slug))
+  .filter((solution): solution is (typeof solutions)[number] => Boolean(solution));
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -57,7 +70,7 @@ export function SiteHeader() {
               Oplossingen
             </Link>
             <div className="dropdown">
-              {solutions.map((solution) => (
+              {menuSolutions.map((solution) => (
                 <Link
                   className="dropdown-item"
                   href={`/oplossingen/${solution.slug}`}

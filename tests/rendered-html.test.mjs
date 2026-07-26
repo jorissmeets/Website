@@ -36,11 +36,14 @@ test("server-renders the Carecogni homepage", async () => {
     /<title>Carecogni — Eerder zicht op risico(?:&#x27;|')s in complexe zorg<\/title>/i,
   );
   assert.match(html, /Meer zorg, minder last/);
-  assert.match(html, /Krijg eerder zicht op risico/);
+  assert.match(html, /Eerder zicht op risico/);
   assert.match(html, /zonder extra registratiedruk/);
+  assert.match(html, /De signalen zijn er\. Het overzicht ontbreekt\./);
+  assert.match(html, /Van registratie naar gerichte actie/);
+  assert.match(html, /Bewezen in de praktijk/);
   assert.match(html, /carecogni-mark-light\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
-  assert.match(html, /Onze oplossingen/);
+  assert.match(html, /Eén fundament, zes gerichte toepassingen/);
   assert.match(html, /Cases/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });

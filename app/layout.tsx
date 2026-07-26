@@ -5,11 +5,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Carecogni — Meer zorg, minder last",
+    default: "Carecogni — Eerder zicht op risico's in complexe zorg",
     template: "%s | Carecogni",
   },
   description:
-    "Agentic AI voor de langdurige zorg. Betrouwbaar, uitlegbaar en direct inzetbaar.",
+    "Carecogni haalt vroege signalen uit meldingen en dossiers, zodat zorgteams sneller kunnen handelen zonder extra registratiedruk.",
 };
 
 export default function RootLayout({

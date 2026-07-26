@@ -31,9 +31,13 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Carecogni — Meer zorg, minder last<\/title>/i);
+  assert.match(
+    html,
+    /<title>Carecogni — Eerder zicht op risico(?:&#x27;|')s in complexe zorg<\/title>/i,
+  );
   assert.match(html, /Meer zorg, minder last/);
-  assert.match(html, /Agentic AI voor de langdurige zorg/);
+  assert.match(html, /Krijg eerder zicht op risico/);
+  assert.match(html, /zonder extra registratiedruk/);
   assert.match(html, /carecogni-mark-light\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
   assert.match(html, /Onze oplossingen/);

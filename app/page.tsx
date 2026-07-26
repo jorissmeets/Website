@@ -34,18 +34,33 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <h1>Meer zorg, minder last</h1>
-          <p>Agentic AI voor de langdurige zorg</p>
+          <span className="v3-hero-eyebrow">Meer zorg, minder last</span>
+          <h1>Krijg eerder zicht op risico&apos;s in complexe zorg</h1>
+          <p>
+            Carecogni haalt vroege signalen uit meldingen en dossiers, zodat
+            zorgteams sneller en gerichter kunnen handelen — zonder extra
+            registratiedruk.
+          </p>
+          <Link className="button button-dark v3-hero-cta" href="/contact">
+            Plan een gesprek
+          </Link>
         </div>
       </section>
 
       <section className="v3-intro">
         <div className="container v3-intro-copy">
+          <h2>Waardevolle signalen zijn vaak al aanwezig</h2>
           <p>
-            Steeds meer taken, steeds minder tijd. Wij geloven dat AI in de
-            zorg geen losstaande oplossing is, maar een geïntegreerde strategie
-            die medewerkers versterkt zodat de aandacht gaat naar waar het
-            hoort.
+            Ze staan alleen verspreid over MIC- en MIM-meldingen,
+            cliëntdossiers en andere systemen. Daardoor blijven patronen soms
+            te lang onzichtbaar en komt belangrijke informatie pas laat boven
+            tafel.
+          </p>
+          <p>
+            Carecogni brengt deze informatie samen, herkent terugkerende
+            patronen en vertaalt ze naar concrete aandachtspunten. De
+            zorgprofessional houdt altijd de regie. Zo worden risico&apos;s
+            eerder zichtbaar en ontstaat er meer ruimte voor passende zorg.
           </p>
         </div>
       </section>

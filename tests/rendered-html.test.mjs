@@ -33,15 +33,16 @@ test("server-renders the Carecogni homepage", async () => {
   const html = await response.text();
   assert.match(
     html,
-    /<title>Carecogni — Meer zorg, minder last<\/title>/i,
+    /<title>Carecogni — Eerder zien wat aandacht nodig heeft<\/title>/i,
   );
   assert.match(html, /Meer zorg, minder last/);
-  assert.match(html, /Agentic AI voor de langdurige zorg/);
-  assert.match(html, /AI die de zorgprofessional versterkt/);
-  assert.match(html, /Van versnipperde data naar gerichte ondersteuning/);
+  assert.match(html, /Eerder zien wat aandacht nodig heeft/);
+  assert.match(html, /De signalen zijn vaak al aanwezig/);
+  assert.match(html, /Van losse informatie naar begrijpelijke signalen/);
+  assert.match(html, /Eén gedeeld beeld voor tijdige signalering/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
-  assert.match(html, /Onze oplossingen/);
+  assert.match(html, /Ontdek onze oplossingen/);
   assert.match(html, /Cases/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });

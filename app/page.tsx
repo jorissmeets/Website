@@ -55,11 +55,16 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <h1>Meer zorg, minder last</h1>
-          <p>Agentic AI voor de langdurige zorg</p>
+          <p className="figma-hero-eyebrow">Meer zorg, minder last</p>
+          <h1>Eerder zien wat aandacht nodig heeft</h1>
+          <p className="figma-hero-lead">
+            Carecogni herkent signalen in bestaande zorginformatie en maakt
+            duidelijk waar aandacht nodig is. Uitlegbaar, zonder extra
+            registratielast en altijd onder regie van de professional.
+          </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="#oplossingen">
-              Onze oplossingen
+              Ontdek onze oplossingen
             </Link>
             <Link className="button button-dark" href="/cases">
               Cases uit de praktijk
@@ -70,11 +75,12 @@ export default function Home() {
 
       <section className="figma-intro">
         <div className="container figma-intro-copy">
+          <h2>De signalen zijn vaak al aanwezig</h2>
           <p>
-            Steeds meer taken, steeds minder tijd. Wij geloven dat AI in de
-            zorg geen losstaande oplossing is, maar een geïntegreerde
-            strategie die medewerkers versterkt — zodat de aandacht gaat naar
-            waar die hoort: de patiënt.
+            Een verandering in een rapportage, terugkerende incidenten of
+            opvallende sensordata. Waardevolle informatie staat verspreid over
+            verschillende systemen en momenten. Daardoor blijven ontwikkelingen
+            en verbanden soms langer onzichtbaar dan nodig.
           </p>
         </div>
       </section>
@@ -90,19 +96,18 @@ export default function Home() {
             />
           </div>
           <div className="figma-copy">
-            <p className="eyebrow">Onze visie</p>
-            <h2>AI die de zorgprofessional versterkt</h2>
+            <p className="eyebrow">Van informatie naar signalering</p>
+            <h2>Van losse informatie naar begrijpelijke signalen</h2>
             <p>
-              Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor
-              de langdurige zorg. Via een agentic-AI-platform, gebouwd op een
-              logisch zorgdatamodel als Digital Twin, ondersteunen we
-              professionals met betrouwbare, uitlegbare en gepersonaliseerde
-              inzichten.
+              Onze AI-agents analyseren informatie die al wordt vastgelegd in
+              cliëntdossiers, rapportages, incidentmeldingen en operationele
+              systemen. Ze herkennen veranderingen en patronen, brengen
+              relevante informatie bij elkaar en laten zien waarop een
+              signalering is gebaseerd.
             </p>
             <p>
-              Van risicosignalering tot slimme assistenten: technologie die
-              aansluit op bestaande systemen, de regie bij de professional
-              laat en aantoonbaar werkt in de dagelijkse praktijk.
+              De technologie doet een voorzet. De zorgprofessional beoordeelt
+              de context en bepaalt wat er moet gebeuren.
             </p>
           </div>
         </div>
@@ -112,17 +117,17 @@ export default function Home() {
         <div className="container figma-split">
           <div className="figma-copy">
             <p className="eyebrow">Het fundament</p>
-            <h2>Van versnipperde data naar gerichte ondersteuning</h2>
+            <h2>Eén gedeeld beeld voor tijdige signalering</h2>
             <p>
-              We brengen informatie uit ECD, incidentmeldingen, HR, BI en
-              zorgtechnologie samen in één logisch datamodel. Gespecialiseerde
-              AI-agents gebruiken die context om informatie te vinden,
-              betekenis uit vrije tekst te halen, risico&apos;s te signaleren
-              en keuzes te ondersteunen.
+              We brengen gegevens uit bestaande systemen samen in een logisch
+              zorgdatamodel: een Digital Twin van de zorgorganisatie.
+              Gespecialiseerde AI-agents gebruiken deze gedeelde context om
+              informatie te vinden, betekenis uit vrije tekst te halen,
+              ontwikkelingen te volgen en vroegtijdig te signaleren.
             </p>
             <p>
-              Zo ontstaat geen los experiment, maar een veilige en schaalbare
-              basis waarop meerdere toepassingen kunnen voortbouwen.
+              Zo ontstaat één veilige en schaalbare basis waarop steeds nieuwe
+              toepassingen kunnen worden aangesloten.
             </p>
             <Link className="button button-teal button-small" href="/oplossingen/agentic-ai-platform">
               Bekijk het platform
@@ -142,10 +147,10 @@ export default function Home() {
       <section className="figma-solutions" id="oplossingen">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>Onze oplossingen</h2>
+            <h2>Signalering en ondersteuning in de praktijk</h2>
             <p>
-              Eén betrouwbaar datafundament, vertaald naar gerichte
-              toepassingen voor zorgprofessionals, teams en organisaties.
+              Van betekenis halen uit vrije tekst tot het volgen van
+              ontwikkelingen, beslisondersteuning en signalen uit sensoren.
             </p>
           </div>
           <div className="figma-solution-grid">
@@ -172,10 +177,11 @@ export default function Home() {
       <section className="figma-practice">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>Cases</h2>
+            <h2>Bewezen in de praktijk</h2>
             <p>
-              Bekijk hoe Carecogni samen met zorgorganisaties AI van idee naar
-              betrouwbare praktijktoepassing brengt.
+              Iedere toepassing begint bij een concreet vraagstuk. We toetsen
+              de werking samen met professionals en schalen pas op wanneer de
+              oplossing aantoonbaar waarde toevoegt.
             </p>
           </div>
           <div className="practice-list">
@@ -223,7 +229,11 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionCta />
+      <SectionCta
+        title="Waar blijven belangrijke signalen nu nog liggen?"
+        text="Vertel ons waar informatie versnipperd raakt of veranderingen pas laat zichtbaar worden. Samen onderzoeken we welke bestaande data beschikbaar is en of een kleine, meetbare eerste toepassing zinvol is."
+        buttonLabel="Plan een gesprek"
+      />
     </main>
   );
 }

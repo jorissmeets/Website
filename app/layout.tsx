@@ -6,15 +6,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://carecogni-concept.jepsmeets.chatgpt.site"),
   title: {
-    default: "Carecogni — Meer zorg, minder last",
+    default: "Carecogni — Eerder zien wat aandacht nodig heeft",
     template: "%s | Carecogni",
   },
   description:
-    "Carecogni ontwikkelt betrouwbare, uitlegbare en schaalbare AI-oplossingen voor de langdurige zorg.",
+    "Carecogni herkent signalen in bestaande zorginformatie en maakt uitlegbaar waar aandacht nodig is.",
   openGraph: {
-    title: "Carecogni — Meer zorg, minder last",
+    title: "Carecogni — Eerder zien wat aandacht nodig heeft",
     description:
-      "Betrouwbare, uitlegbare en schaalbare AI-oplossingen voor de langdurige zorg.",
+      "Tijdige signalering uit bestaande zorginformatie, met de professional in regie.",
     type: "website",
     locale: "nl_NL",
     images: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carecogni — Meer zorg, minder last",
+    title: "Carecogni — Eerder zien wat aandacht nodig heeft",
     description:
-      "Betrouwbare, uitlegbare en schaalbare AI-oplossingen voor de langdurige zorg.",
+      "Tijdige signalering uit bestaande zorginformatie, met de professional in regie.",
     images: ["/og.png"],
   },
 };

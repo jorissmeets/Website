@@ -1,219 +1,215 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
-import { cases } from "./site-data";
+import { cases, solutions } from "./site-data";
 
-const homeSolutions = [
-  {
-    slug: "risicosignalering",
-    title: "Risicosignalering & NER",
-    description:
-      "Maak relevante signalen in meldingen, rapportages en vrije tekst zichtbaar.",
-  },
-  {
-    slug: "monitoring-analytics",
-    title: "Real-time monitoring",
-    description:
-      "Volg ontwikkelingen en stuurinformatie in één actueel en begrijpelijk beeld.",
-  },
-  {
-    slug: "voorspelmodellen",
-    title: "Beslisondersteunende modellen",
-    description:
-      "Onderbouw keuzes over zorg, capaciteit en vervolgacties met uitlegbare modellen.",
-  },
-  {
-    slug: "agentic-ai-platform",
-    title: "Datafundament & AI-agents",
-    description:
-      "Verbind gegevens uit bestaande zorg- en bedrijfssystemen tot één bruikbare basis.",
-  },
-  {
-    slug: "iot-domotica",
-    title: "IoT & domoticasignalering",
-    description:
-      "Vertaal sensor- en aanwezigheidssignalen naar tijdige aandacht voor het team.",
-  },
-  {
-    slug: "ai-care-assistant",
-    title: "AI Care Assistant",
-    description:
-      "Maak kennis, protocollen en zorginformatie direct toegankelijk in gewone taal.",
-  },
+const homeSolutionOrder = [
+  "agentic-ai-platform",
+  "ai-care-assistant",
+  "risicosignalering",
+  "voorspelmodellen",
+  "monitoring-analytics",
+  "iot-domotica",
 ];
 
+const homeSolutions = homeSolutionOrder
+  .map((slug) => solutions.find((solution) => solution.slug === slug))
+  .filter(
+    (solution): solution is (typeof solutions)[number] => Boolean(solution)
+  );
+
 const homeCaseSlugs = [
+  "ai-care-assistant-ggz",
   "ivm-incidentmeldingen",
   "meerzorg-signalering",
-  "ai-care-assistant-ggz",
 ];
 
 const homeCases = homeCaseSlugs
   .map((slug) => cases.find((item) => item.slug === slug))
   .filter((item): item is (typeof cases)[number] => Boolean(item));
 
+const caseImages = [
+  "/assets/figma-import/claire-case.png",
+  "/assets/figma-import/ivm-screening.png",
+  "/assets/figma-import/ai-platform-chip-small.png",
+];
+
 export default function Home() {
   return (
-    <main className="v3-home">
+    <main className="figma-home">
       <section className="home-hero">
         <Image
-          className="v3-hero-art"
+          className="figma-hero-art"
           src="/assets/figma/v3-hero-caregiver-devices.png"
           fill
           priority
           sizes="100vw"
           alt=""
-          style={{ objectFit: "contain", objectPosition: "center bottom" }}
         />
         <div className="container home-hero-inner">
           <Image
             className="hero-brand"
-            src="/assets/carecogni-mark-light.svg"
-            width={288}
-            height={147}
+            src="/assets/carecogni-logo-dark.svg"
+            width={499}
+            height={109}
             priority
             alt="Carecogni"
           />
-          <span className="v3-hero-eyebrow">Meer zorg, minder last</span>
-          <h1>Eerder zicht op risico&apos;s in complexe zorg</h1>
-          <p>
-            Carecogni maakt vroege signalen uit incidentmeldingen,
-            cliëntdossiers en operationele systemen zichtbaar en uitlegbaar
-            voor zorgteams — zonder extra registratiedruk.
-          </p>
-          <Link className="button button-dark v3-hero-cta" href="/contact">
-            Plan een gesprek
-          </Link>
-        </div>
-      </section>
-
-      <section className="v3-intro">
-        <div className="container v3-intro-copy">
-          <h2>De signalen zijn er. Het overzicht ontbreekt.</h2>
-          <p>
-            Een incidentmelding hier, een observatie in het cliëntdossier
-            daar. Waardevolle informatie raakt verspreid over systemen, vrije
-            tekst en verschillende momenten. Daardoor blijven terugkerende
-            patronen en oplopende risico&apos;s soms langer onzichtbaar dan
-            nodig.
-          </p>
-          <p>
-            Carecogni brengt bestaande gegevens samen, structureert wat ertoe
-            doet en maakt verbanden zichtbaar. Niet om het oordeel van de
-            professional over te nemen, maar om de aandacht te richten op wat
-            op dat moment het belangrijkst is.
-          </p>
-        </div>
-      </section>
-
-      <section className="v3-feature v3-feature-white">
-        <div className="container v3-feature-inner">
-          <div className="v3-media-placeholder v3-media-placeholder-one" aria-hidden="true">
-            <span />
-          </div>
-          <div className="v3-feature-copy">
-            <h2>Van registratie naar gerichte actie</h2>
-            <p>
-              Carecogni analyseert informatie die al wordt vastgelegd: MIC- en
-              MIM-meldingen, rapportages, cliëntdossiers en operationele
-              systemen. Onze technologie ordent de informatie, legt verbanden
-              over tijd en maakt zichtbaar wat aandacht vraagt.
-            </p>
-            <p>
-              Het resultaat is geen ondoorzichtige risicoscore, maar
-              herleidbare beslisondersteuning die teams helpt prioriteren en
-              gericht vervolgstappen te bepalen.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="v3-feature v3-feature-grey">
-        <div className="container v3-feature-inner v3-feature-reverse">
-          <div className="v3-feature-copy">
-            <h2>Uitlegbaar, meetbaar en onder regie van de professional</h2>
-            <p>
-              Ieder signaal kan worden herleid naar de bron. Professionals
-              bepalen de context, betekenis en eventuele actie. We beginnen
-              met één concreet vraagstuk, toetsen de kwaliteit samen met het
-              team en schalen pas op wanneer de toepassing aantoonbaar waarde
-              toevoegt.
-            </p>
-            <p>
-              Zo wordt AI geen losstaand experiment of extra dashboard, maar
-              een betrouwbare ondersteuning binnen bestaande systemen en
-              werkprocessen.
-            </p>
-            <Link className="button button-teal button-small" href="/methode">
-              Zo werken wij
+          <h1>Meer zorg, minder last</h1>
+          <p>Agentic AI voor de langdurige zorg</p>
+          <div className="hero-actions">
+            <Link className="button button-dark" href="#oplossingen">
+              Onze oplossingen
+            </Link>
+            <Link className="button button-dark" href="/cases">
+              Cases uit de praktijk
             </Link>
           </div>
-          <div className="v3-media-placeholder v3-media-placeholder-two" aria-hidden="true">
-            <span />
+        </div>
+      </section>
+
+      <section className="figma-intro">
+        <div className="container figma-intro-copy">
+          <p>
+            Steeds meer taken, steeds minder tijd. Wij geloven dat AI in de
+            zorg geen losstaande oplossing is, maar een geïntegreerde
+            strategie die medewerkers versterkt — zodat de aandacht gaat naar
+            waar die hoort: de patiënt.
+          </p>
+        </div>
+      </section>
+
+      <section className="figma-about">
+        <div className="container figma-split">
+          <div className="figma-dashboard figma-dashboard-assistant">
+            <Image
+              src="/assets/figma-import/claire-assistant-values.png"
+              fill
+              sizes="(max-width: 820px) 100vw, 50vw"
+              alt="Claire, de digitale Carecogni-assistent"
+            />
+          </div>
+          <div className="figma-copy">
+            <p className="eyebrow">Onze visie</p>
+            <h2>AI die de zorgprofessional versterkt</h2>
+            <p>
+              Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor
+              de langdurige zorg. Via een agentic-AI-platform, gebouwd op een
+              logisch zorgdatamodel als Digital Twin, ondersteunen we
+              professionals met betrouwbare, uitlegbare en gepersonaliseerde
+              inzichten.
+            </p>
+            <p>
+              Van risicosignalering tot slimme assistenten: technologie die
+              aansluit op bestaande systemen, de regie bij de professional
+              laat en aantoonbaar werkt in de dagelijkse praktijk.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="v3-solutions" id="oplossingen">
+      <section className="figma-foundation">
+        <div className="container figma-split">
+          <div className="figma-copy">
+            <p className="eyebrow">Het fundament</p>
+            <h2>Van versnipperde data naar gerichte ondersteuning</h2>
+            <p>
+              We brengen informatie uit ECD, incidentmeldingen, HR, BI en
+              zorgtechnologie samen in één logisch datamodel. Gespecialiseerde
+              AI-agents gebruiken die context om informatie te vinden,
+              betekenis uit vrije tekst te halen, risico&apos;s te signaleren
+              en keuzes te ondersteunen.
+            </p>
+            <p>
+              Zo ontstaat geen los experiment, maar een veilige en schaalbare
+              basis waarop meerdere toepassingen kunnen voortbouwen.
+            </p>
+            <Link className="button button-teal button-small" href="/oplossingen/agentic-ai-platform">
+              Bekijk het platform
+            </Link>
+          </div>
+          <div className="figma-dashboard figma-dashboard-architecture">
+            <Image
+              src="/assets/figma-import/data-ai-architecture.png"
+              fill
+              sizes="(max-width: 820px) 100vw, 50vw"
+              alt="Architectuur van het Carecogni AI-platform"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="figma-solutions" id="oplossingen">
         <div className="container">
-          <h2>Eén fundament, zes gerichte toepassingen</h2>
-          <p className="v3-solutions-lead">
-            Risicosignalering vormt de kern. Op hetzelfde privacybewuste
-            datafundament bouwen we toepassingen die informatie vindbaar
-            maken, ontwikkelingen volgen en beslissingen ondersteunen.
-          </p>
-          <div className="v3-solution-grid">
+          <div className="figma-section-heading centered">
+            <h2>Onze oplossingen</h2>
+            <p>
+              Eén betrouwbaar datafundament, vertaald naar gerichte
+              toepassingen voor zorgprofessionals, teams en organisaties.
+            </p>
+          </div>
+          <div className="figma-solution-grid">
             {homeSolutions.map((solution, index) => (
               <Link
-                className="v3-solution-card"
+                className="figma-solution-card"
                 href={`/oplossingen/${solution.slug}`}
                 key={solution.slug}
               >
-                <span className="v3-solution-icon" aria-hidden="true">
-                  <i>{String(index + 1).padStart(2, "0")}</i>
+                <span className="solution-card-number" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3>{solution.title}</h3>
-                <p>{solution.description}</p>
+                <h3>{solution.shortName}</h3>
+                <p>{solution.shortDescription}</p>
+                <span className="round-arrow" aria-hidden="true">
+                  ↗
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="v3-cases">
+      <section className="figma-practice">
         <div className="container">
-          <h2>Bewezen in de praktijk</h2>
-          <p className="v3-cases-lead">
-            Van incidentmeldingen tot cliëntdossiers: deze toepassingen laten
-            zien hoe bestaande informatie bruikbaar wordt voor de dagelijkse
-            praktijk.
-          </p>
-          <div className="v3-case-list">
+          <div className="figma-section-heading centered">
+            <h2>Cases</h2>
+            <p>
+              Bekijk hoe Carecogni samen met zorgorganisaties AI van idee naar
+              betrouwbare praktijktoepassing brengt.
+            </p>
+          </div>
+          <div className="practice-list">
             {homeCases.map((item, index) => (
-              <Link className="v3-case-row" href={`/cases/${item.slug}`} key={item.slug}>
-                <div className="v3-case-copy">
-                  <p>{item.organization}</p>
+              <article className="practice-row" key={item.slug}>
+                <div className="practice-copy">
+                  <p className="practice-org">{item.organization}</p>
                   <h3>{item.title}</h3>
-                  <span>{item.description}</span>
+                  <p>{item.shortDescription ?? item.description}</p>
+                  <Link
+                    className="button button-teal button-small"
+                    href={`/cases/${item.slug}`}
+                  >
+                    Meer over deze case
+                  </Link>
                 </div>
-                <div className={`v3-case-visual v3-case-visual-${index + 1}`} aria-hidden="true">
-                  <i>{String(index + 1).padStart(2, "0")}</i>
-                  <b>↗</b>
+                <div className={`practice-visual practice-visual-${index + 1}`}>
+                  <Image
+                    src={caseImages[index]}
+                    fill
+                    sizes="(max-width: 820px) 100vw, 50vw"
+                    alt=""
+                  />
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
-          <Link className="button button-teal" href="/cases">
-            Bekijk alle cases
-          </Link>
+          <div className="figma-practice-action">
+            <Link className="button button-teal" href="/cases">
+              Meer usecases
+            </Link>
+          </div>
         </div>
       </section>
-
-      <SectionCta
-        title="Waar blijven belangrijke signalen nu nog liggen?"
-        text="Vertel ons waar informatie versnipperd raakt of risico’s pas laat zichtbaar worden. In een verkennend gesprek kijken we welke bestaande data beschikbaar is en of een kleine, meetbare eerste toepassing zinvol is."
-        buttonLabel="Plan een gesprek"
-      />
 
       <section className="logo-strip" aria-label="Organisaties waar wij mee samenwerken">
         <div className="container">
@@ -226,6 +222,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <SectionCta />
     </main>
   );
 }

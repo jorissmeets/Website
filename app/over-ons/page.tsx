@@ -35,7 +35,7 @@ const team = [
 export default function AboutPage() {
   return (
     <main>
-      <InnerHero />
+      <InnerHero title="Wie zijn wij" />
 
       <section className="about-company">
         <div className="container about-company-grid">
@@ -48,16 +48,20 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <h1>Over Carecogni</h1>
+            <p className="eyebrow">Carecogni</p>
+            <h2>Intelligente samenwerking tussen mens en technologie</h2>
             <p>
-              Carecogni ontwikkelt en beheert schaalbare AI-oplossingen voor de
-              langdurige zorg. Technologie is voor ons nooit het einddoel. Het
-              gaat om zorgprofessionals ondersteunen met betrouwbare,
-              uitlegbare en gepersonaliseerde inzichten.
+              De naam Carecogni staat voor onze visie op cognitieve
+              intelligentie in de zorg: een slimme samenwerking tussen
+              zorgprofessionals en technologie. Persoonlijke aandacht,
+              efficiënte processen, zorg op maat, preventie en thuismonitoring
+              vragen om software die professionals werkelijk ondersteunt.
             </p>
             <p>
-              Zo ontstaat er minder administratieve last, meer overzicht en
-              vooral meer tijd voor menselijke zorg.
+              Daarom bouwen we veilige en begrijpelijke AI-toepassingen die
+              beslissingen ondersteunen, afgestemd op de individuele cliënt.
+              De professional houdt de regie; de technologie helpt om sneller
+              te zien wat ertoe doet.
             </p>
           </div>
         </div>
@@ -75,17 +79,19 @@ export default function AboutPage() {
             />
           </div>
           <div>
-            <h2>Wie zijn wij?</h2>
+            <p className="eyebrow">Ons team</p>
+            <h2>Vier oprichters, één gedeelde ambitie</h2>
             <p>
-              Wij zijn ondernemers en specialisten met achtergronden in
-              digitale innovatie, AI, data science en gezondheidszorg. Die
-              combinatie is nodig om veilige, robuuste en begrijpelijke
-              AI-toepassingen echt in de praktijk te brengen.
+              Aan de basis van Carecogni staan Peter Broekroelofs, Joris
+              Smeets, Piet Hein Zwaal en Hans Mekenkamp. Samen brengen zij
+              ervaring in digitale innovatie, AI, data science en
+              gezondheidszorg bijeen.
             </p>
             <p>
-              We werken nauw samen met zorgprofessionals en bouwen vanuit hun
-              dagelijkse context. Van de eerste contextanalyse tot ingebruikname
-              en continue verbetering.
+              Vanuit een gedeelde morele ambitie bouwen zij met het Carecogni
+              team aan veilige, robuuste en begrijpelijke toepassingen voor de
+              zorgpraktijk. Dat doen we samen met professionals, van de eerste
+              contextanalyse tot ingebruikname en continue verbetering.
             </p>
           </div>
         </div>

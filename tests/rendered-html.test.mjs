@@ -33,17 +33,15 @@ test("server-renders the Carecogni homepage", async () => {
   const html = await response.text();
   assert.match(
     html,
-    /<title>Carecogni — Eerder zicht op risico(?:&#x27;|')s in complexe zorg<\/title>/i,
+    /<title>Carecogni — Meer zorg, minder last<\/title>/i,
   );
   assert.match(html, /Meer zorg, minder last/);
-  assert.match(html, /Eerder zicht op risico/);
-  assert.match(html, /zonder extra registratiedruk/);
-  assert.match(html, /De signalen zijn er\. Het overzicht ontbreekt\./);
-  assert.match(html, /Van registratie naar gerichte actie/);
-  assert.match(html, /Bewezen in de praktijk/);
-  assert.match(html, /carecogni-mark-light\.svg/);
+  assert.match(html, /Agentic AI voor de langdurige zorg/);
+  assert.match(html, /AI die de zorgprofessional versterkt/);
+  assert.match(html, /Van versnipperde data naar gerichte ondersteuning/);
+  assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
-  assert.match(html, /Eén fundament, zes gerichte toepassingen/);
+  assert.match(html, /Onze oplossingen/);
   assert.match(html, /Cases/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
@@ -51,7 +49,7 @@ test("server-renders the Carecogni homepage", async () => {
 test("server-renders the designer-led content pages", async () => {
   const paths = [
     ["/cases", /Slimme AI oplossingen in de praktijk/],
-    ["/over-ons", /Over Carecogni/],
+    ["/over-ons", /Intelligente samenwerking tussen mens en technologie/],
     ["/methode", /Hoe gaan wij te werk/],
     ["/contact", /Benieuwd wat wij voor jou kunnen betekenen/],
     ["/oplossingen/ai-care-assistant", /AI Care Assistant/],

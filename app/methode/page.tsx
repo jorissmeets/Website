@@ -63,16 +63,18 @@ const ownership = [
 export default function MethodPage() {
   return (
     <main>
-      <InnerHero />
+      <InnerHero title="Onze aanpak" />
 
       <section className="method-lead">
         <div className="container method-lead-grid">
-          <div className="method-lead-visual" aria-hidden="true">
-            <span>COGNI</span>
-            <i />
+          <div className="method-lead-visual">
+            <span>Succesvolle implementatie in de dagelijkse praktijk.</span>
+            <span>Gebruiksvriendelijke interface en training.</span>
+            <span>Continue ondersteuning en verbetering.</span>
           </div>
           <div>
-            <h1>Onze aanpak.</h1>
+            <p className="eyebrow">Van model naar dagelijkse praktijk</p>
+            <h2>Succesvolle implementatie vraagt meer dan een goed algoritme</h2>
             <p>
               Bij AI in de zorg wordt de stap van concept naar betrouwbare
               praktijktoepassing vaak onderschat. Daarom richten wij ons op
@@ -88,7 +90,11 @@ export default function MethodPage() {
 
       <section className="method-steps">
         <div className="container">
-          <h2>Hoe gaan wij te werk</h2>
+          <h2>Hoe gaan wij te werk?</h2>
+          <p className="method-steps-intro">
+            Met de COGNI-methode brengen we een toepassing in vijf heldere
+            stappen van zorgvraag naar veilig en blijvend gebruik.
+          </p>
           <div className="method-step-list">
             {cogniSteps.map((step) => (
               <article className="method-step" key={step.letter}>

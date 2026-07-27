@@ -35,6 +35,24 @@ export default async function SolutionPage({
   }
 
   const caseStudy = cases[0];
+  const featureColumns = [
+    {
+      title: "Waarde in de praktijk",
+      items: solution.features.slice(0, 3),
+    },
+    {
+      title: "Techniek & integratie",
+      items: solution.specs.slice(0, 3).map((spec) => `${spec.title}: ${spec.description}`),
+    },
+    {
+      title: "Veilig gebruik",
+      items: [
+        "Uitlegbare en herleidbare uitkomsten",
+        "De professional houdt altijd de regie",
+        "Iteratieve validatie in de zorgpraktijk",
+      ],
+    },
+  ];
 
   return (
     <main>
@@ -63,45 +81,55 @@ export default async function SolutionPage({
       </section>
 
       <section className="agents-section">
-        <div className="container">
-          <h2>AI agents in de praktijk</h2>
-        </div>
         <div className="agent-feature agent-feature-mint">
           <div className="container agent-feature-inner">
             <div className="agent-feature-image">
               <Image
-                src="/assets/figma/product-screenshot.png"
+                src="/assets/figma-import/ai-platform-chip.png"
                 fill
                 sizes="(max-width: 800px) 100vw, 50vw"
-                alt="Carecogni AI-toepassing"
+                alt="Zorgspecifieke AI-agents op een gedeeld datafundament"
               />
             </div>
             <div>
-              <h3>{solution.tagline}</h3>
-              <p>{solution.shortDescription}</p>
-              <ul>
-                {solution.specs.slice(0, 3).map((spec) => (
-                  <li key={spec.title}>
-                    <strong>{spec.title}</strong>
-                    <span>{spec.description}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="eyebrow">Onze oplossing</p>
+              <h3>Welke problemen lossen we met deze AI-agents op?</h3>
+              <p>
+                {solution.shortDescription} We beginnen bij een concreet
+                zorgvraagstuk en verbinden alleen de informatie die daarvoor
+                nodig is. Zo ontstaat gerichte ondersteuning in plaats van een
+                generieke AI-laag.
+              </p>
+              <p>
+                Uitkomsten zijn begrijpelijk en herleidbaar. De professional
+                bepaalt de context en de vervolgstap.
+              </p>
             </div>
           </div>
         </div>
         <div className="agent-feature agent-feature-dark">
           <div className="container agent-feature-inner reverse">
-            <div className="agent-abstract" aria-hidden="true">
-              <span>AI</span>
-              <i />
+            <div className="agent-feature-image">
+              <Image
+                src="/assets/figma-import/data-ai-architecture.png"
+                fill
+                sizes="(max-width: 800px) 100vw, 50vw"
+                alt="Data- en agentarchitectuur van Carecogni"
+              />
             </div>
             <div>
-              <h3>Betrouwbaar geïntegreerd in jouw zorgpraktijk</h3>
+              <p className="eyebrow">Hoe het werkt</p>
+              <h3>Gespecialiseerde agents op één logisch datamodel</h3>
               <p>
-                De oplossing sluit aan op bestaande systemen en processen.
-                Uitkomsten zijn begrijpelijk en herleidbaar, terwijl de
-                zorgprofessional altijd de regie houdt.
+                Data uit bestaande bronsystemen komt samen in een logisch
+                zorgdatamodel. Daarboven werken gespecialiseerde agents voor
+                interactie, betekenis uit tekst, monitoring en
+                beslisondersteuning.
+              </p>
+              <p>
+                Iedere agent heeft een afgebakende taak. Dat maakt de werking
+                beter controleerbaar, makkelijker te valideren en veilig op te
+                schalen naar nieuwe toepassingen.
               </p>
               <Link className="button button-teal button-small" href="/methode">
                 Bekijk onze aanpak
@@ -128,6 +156,24 @@ export default async function SolutionPage({
             <Link className="button button-dark button-small" href={`/cases/${caseStudy.slug}`}>
               Meer over deze case
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="product-features">
+        <div className="container">
+          <h2>Kenmerken</h2>
+          <div className="product-feature-grid">
+            {featureColumns.map((column) => (
+              <article key={column.title}>
+                <h3>{column.title}</h3>
+                <ul>
+                  {column.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>

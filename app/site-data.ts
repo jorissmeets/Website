@@ -15,8 +15,8 @@ export const solutions: Solution[] = [
   {
     slug: "agentic-ai-platform",
     icon: "🧠",
-    name: "Agentic AI Platform & Digital Twin",
-    shortName: "Agentic AI Platform",
+    name: "Logische data & AI-agents",
+    shortName: "Logische data & AI-agents",
     sector: "Platformtechnologie",
     tagline: "Het fundament voor schaalbare AI in uw zorginstelling",
     shortDescription:
@@ -89,8 +89,8 @@ export const solutions: Solution[] = [
   {
     slug: "risicosignalering",
     icon: "🔍",
-    name: "Risicosignalering & NER Agents",
-    shortName: "Risicosignalering",
+    name: "Betekenis uit zorgtekst & NER-agents",
+    shortName: "Betekenis & NER-agents",
     sector: "Kwaliteit & veiligheid",
     tagline: "Automatische signalering uit ongestructureerde rapportages",
     shortDescription:
@@ -242,9 +242,12 @@ export type CaseStudy = {
   sector: string;
   category: "GGZ" | "WLZ / VVT" | "Farmacovigilantie" | "IT & Servicedesk";
   title: string;
+  shortDescription?: string;
   description: string;
   result: string;
   quote: string;
+  quoteAuthor?: string;
+  quoteRole?: string;
 };
 
 export const cases: CaseStudy[] = [
@@ -253,22 +256,29 @@ export const cases: CaseStudy[] = [
     organization: "Instituut Verantwoord Medicijngebruik (IVM)",
     sector: "Farmacovigilantie",
     category: "Farmacovigilantie",
-    title: "AI-screening van 20.000 medicatie-incidenten per jaar",
+    title: "Kwalitatieve en snelle terugkoppeling door AI",
+    shortDescription:
+      "Een AI-screeningsassistent classificeert circa 20.000 jaarlijkse incidentmeldingen automatisch en uniform.",
     description:
       "Het IVM verwerkt jaarlijks tienduizenden incidentmeldingen. Carecogni ontwikkelde een screeningsassistent op basis van Named Entity Recognition en een taalmodel die meldingen automatisch categoriseert en prioriteert.",
     result:
       "Significant minder tijd per melding · Hogere uniformiteit · Fundament voor opschaling",
     quote:
-      "De AI herkent patronen die handmatig makkelijk gemist worden en geeft ruimte voor de echte analyse.",
+      "Ik was vooraf wat sceptisch. Maar de PoC liet zien dat AI ook de complexe codeerinstructies goed kan uitvoeren op onze meldingen.",
+    quoteAuthor: "Anneke Lambooij",
+    quoteRole:
+      "Apotheker en projectleider, Landelijk Meldpunt Medicatie-incidenten VMI",
   },
   {
     slug: "ai-care-assistant-ggz",
-    organization: "Grote GGZ-instelling",
+    organization: "Arkin",
     sector: "Langdurige zorg / GGZ",
     category: "GGZ",
-    title: "AI Care Assistant voor cliënten en medewerkers",
+    title: "AI Care Assistant om zorgmedewerkers te ontlasten",
+    shortDescription:
+      "Een betrouwbare chatbot ondersteunt cliënten met praktische vragen tijdens de wachttijd, behandeling en nazorg.",
     description:
-      "Een AI Care Assistant, getraind op de eigen FAQ’s, protocollen en zorgpaden, is 24/7 beschikbaar als widget in de bestaande digitale omgeving.",
+      "Carecogni helpt Arkin bij de ontwikkeling van een AI-chatbot die cliënten ondersteunt met praktische vragen tijdens de wachttijd voor zorg, tijdens de behandeling en in de nazorg.",
     result:
       "Minder routinevragen · Hogere cliënttevredenheid · Schaalbaar naar meerdere specialismen",
     quote:
@@ -276,10 +286,12 @@ export const cases: CaseStudy[] = [
   },
   {
     slug: "meerzorg-signalering",
-    organization: "Middelgrote WLZ-zorginstelling",
+    organization: "Samenwerkende VVT-instellingen",
     sector: "Langdurige zorg / WLZ",
     category: "WLZ / VVT",
-    title: "Automatische signalering van meerzorgkandidaten",
+    title: "AI detecteert en voorspelt meerzorgbehoefte",
+    shortDescription:
+      "Ongestructureerde zorgdossiers worden omgezet in signalen voor passende bekostiging en tijdige meerzorgaanvragen.",
     description:
       "Een NER-pipeline analyseert ongestructureerde zorgdossiers en signaleert tijdig potentiële meerzorgkandidaten, vóór het verlopen van de aanvraagdeadline.",
     result:

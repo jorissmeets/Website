@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { InnerHero } from "../../components/inner-hero";
-import { SectionCta } from "../../components/section-cta";
 import { cases, getCase } from "../../site-data";
 
 export function generateStaticParams() {
@@ -62,7 +61,7 @@ export default async function CaseDetailPage({
           <div className="case-lead-copy">
             <p>
               {isIvm
-                ? "Voor het Instituut Verantwoord Medicijngebruik ontwikkelden wij een AI-screeningsassistent voor automatische classificatie van circa 20.000 jaarlijkse incidentmeldingen."
+                ? "Voor IVM ontwikkelden wij een AI-screeningsassistent voor de automatische classificatie van circa 20.000 incidentmeldingen per jaar."
                 : item.description}
             </p>
           </div>
@@ -87,13 +86,37 @@ export default async function CaseDetailPage({
             )}
           </div>
           <div>
-            <h2>De vraag</h2>
-            <p>{item.description}</p>
-            <p>
-              De uitdaging was om grote aantallen vrije tekst betrouwbaar,
-              uniform en snel te verwerken, zonder de menselijke beoordeling
-              uit het proces te halen.
-            </p>
+            <p className="eyebrow">De vraag</p>
+            <h2>
+              {isIvm
+                ? "Hoe verwerk je duizenden vrije-tekstmeldingen snel én zorgvuldig?"
+                : "Van complexe informatie naar een werkbare zorgtoepassing"}
+            </h2>
+            {isIvm ? (
+              <>
+                <p>
+                  Het Landelijk Meldpunt Medicatie-incidenten ontvangt jaarlijks
+                  circa 20.000 meldingen. Screeners lezen iedere melding,
+                  herkennen geneesmiddelen en procesfasen en beoordelen de
+                  mogelijke patiëntschade.
+                </p>
+                <p>
+                  Dat vraagt veel specialistische tijd. Tegelijkertijd moeten
+                  classificaties consequent en controleerbaar blijven. IVM
+                  zocht ondersteuning die het werk versnelt zonder de
+                  deskundige beoordeling over te nemen.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>{item.description}</p>
+                <p>
+                  De oplossing moest betrouwbaar aansluiten op de dagelijkse
+                  praktijk en de professional ondersteunen zonder extra
+                  registratielast.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -109,17 +132,37 @@ export default async function CaseDetailPage({
             />
           </div>
           <div>
-            <h2>Onze oplossing</h2>
-            <p>
-              We bouwden een veilige AI-workflow die meldingen analyseert,
-              relevante begrippen herkent en de inhoud automatisch
-              classificeert en prioriteert.
-            </p>
-            <p>
-              De uitkomst blijft herleidbaar en ondersteunt de specialist,
-              zodat er meer tijd overblijft voor kwalitatieve analyse en
-              terugkoppeling.
-            </p>
+            <p className="eyebrow">Onze oplossing</p>
+            <h2>AI automatiseert en structureert zorginformatie</h2>
+            {isIvm ? (
+              <>
+                <p>
+                  Carecogni ontwikkelde een screeningsassistent op basis van
+                  Named Entity Recognition en taalmodellen. De assistent
+                  analyseert meldingen en doet een voorstel voor
+                  gestructureerde classificaties, waaronder geneesmiddelnamen,
+                  procesfasen en patiëntschade.
+                </p>
+                <p>
+                  De screener ziet de bron en blijft verantwoordelijk voor de
+                  definitieve beoordeling. Zo ontstaat een snellere,
+                  uniformere werkwijze met meer ruimte voor inhoudelijke
+                  analyse en terugkoppeling.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  We bouwden een veilige AI-workflow die relevante informatie
+                  herkent, structureert en op het juiste moment beschikbaar
+                  maakt.
+                </p>
+                <p>
+                  Uitkomsten blijven herleidbaar en ondersteunen de
+                  professional bij een zorgvuldige vervolgstap.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -152,13 +195,18 @@ export default async function CaseDetailPage({
                   alt=""
                 />
               ) : null}
-              <span>{item.organization}</span>
+              {item.quoteAuthor ? (
+                <span>
+                  <strong>{item.quoteAuthor}</strong>
+                  {item.quoteRole ? <small>{item.quoteRole}</small> : null}
+                </span>
+              ) : (
+                <span>{item.organization}</span>
+              )}
             </footer>
           </blockquote>
         </div>
       </section>
-
-      <SectionCta />
     </main>
   );
 }

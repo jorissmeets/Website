@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
-      <InnerHero />
+      <InnerHero title="Contact" />
 
       <section className="contact-lead-section">
         <div className="container contact-lead-grid">
@@ -26,15 +26,17 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <h1>Benieuwd wat wij voor jou kunnen betekenen?</h1>
+            <h2>Benieuwd wat wij voor jou kunnen betekenen?</h2>
             <p>
-              Ben je nieuwsgierig naar wat wij voor jou kunnen betekenen? Wil
-              je een keer brainstormen over mogelijke AI-toepassingen of heb je
-              een beslismodel dat je naar de praktijk wilt brengen?
+              Heb je ideeën om de dagelijkse zorgpraktijk te verbeteren, de
+              administratieve druk te verlagen of zorg persoonlijker te maken?
+              Samen onderzoeken we of een data- en AI-gedreven oplossing kan
+              helpen en wat daarvoor nodig is.
             </p>
             <p>
-              Wij denken graag met je mee. Stuur ons een bericht, dan nemen wij
-              contact op.
+              Ook denken we graag mee over veelbelovende modellen uit
+              onderzoek die nog niet hun weg naar de praktijk hebben gevonden.
+              Stuur ons een bericht; we nemen graag contact met je op.
             </p>
           </div>
         </div>

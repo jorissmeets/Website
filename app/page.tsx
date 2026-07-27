@@ -58,8 +58,8 @@ export default function Home() {
           <p className="figma-hero-eyebrow">Meer zorg, minder last</p>
           <h1>Eerder zien wat aandacht nodig heeft</h1>
           <p className="figma-hero-lead">
-            Carecogni herkent signalen in bestaande zorginformatie en maakt
-            duidelijk waar aandacht nodig is. Uitlegbaar, zonder extra
+            Carecogni brengt relevante ontwikkelingen in bestaande
+            zorginformatie tijdig in beeld. Uitlegbaar, zonder extra
             registratielast en altijd onder regie van de professional.
           </p>
           <div className="hero-actions">
@@ -75,7 +75,7 @@ export default function Home() {
 
       <section className="figma-intro">
         <div className="container figma-intro-copy">
-          <h2>De signalen zijn vaak al aanwezig</h2>
+          <h2>Zorginformatie vertelt vaak meer</h2>
           <p>
             Een verandering in een rapportage, terugkerende incidenten of
             opvallende sensordata. Waardevolle informatie staat verspreid over
@@ -96,14 +96,14 @@ export default function Home() {
             />
           </div>
           <div className="figma-copy">
-            <p className="eyebrow">Van informatie naar signalering</p>
-            <h2>Van losse informatie naar begrijpelijke signalen</h2>
+            <p className="eyebrow">Van informatie naar inzicht</p>
+            <h2>Samenhang zien, eerder handelen</h2>
             <p>
               Onze AI-agents analyseren informatie die al wordt vastgelegd in
               cliëntdossiers, rapportages, incidentmeldingen en operationele
               systemen. Ze herkennen veranderingen en patronen, brengen
-              relevante informatie bij elkaar en laten zien waarop een
-              signalering is gebaseerd.
+              relevante informatie bij elkaar en maken inzichtelijk waarop hun
+              bevindingen zijn gebaseerd.
             </p>
             <p>
               De technologie doet een voorzet. De zorgprofessional beoordeelt
@@ -117,13 +117,14 @@ export default function Home() {
         <div className="container figma-split">
           <div className="figma-copy">
             <p className="eyebrow">Het fundament</p>
-            <h2>Eén gedeeld beeld voor tijdige signalering</h2>
+            <h2>Eén gedeeld beeld voor beter onderbouwde keuzes</h2>
             <p>
               We brengen gegevens uit bestaande systemen samen in een logisch
               zorgdatamodel: een Digital Twin van de zorgorganisatie.
               Gespecialiseerde AI-agents gebruiken deze gedeelde context om
               informatie te vinden, betekenis uit vrije tekst te halen,
-              ontwikkelingen te volgen en vroegtijdig te signaleren.
+              ontwikkelingen te volgen en opvallende veranderingen tijdig
+              zichtbaar te maken.
             </p>
             <p>
               Zo ontstaat één veilige en schaalbare basis waarop steeds nieuwe
@@ -147,10 +148,10 @@ export default function Home() {
       <section className="figma-solutions" id="oplossingen">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>Signalering en ondersteuning in de praktijk</h2>
+            <h2>AI die meedenkt in de dagelijkse praktijk</h2>
             <p>
-              Van betekenis halen uit vrije tekst tot het volgen van
-              ontwikkelingen, beslisondersteuning en signalen uit sensoren.
+              Van betekenis halen uit vrije tekst en ontwikkelingen volgen tot
+              beslisondersteuning en het interpreteren van sensordata.
             </p>
           </div>
           <div className="figma-solution-grid">
@@ -230,7 +231,7 @@ export default function Home() {
       </section>
 
       <SectionCta
-        title="Waar blijven belangrijke signalen nu nog liggen?"
+        title="Waar raakt relevante informatie nu nog uit beeld?"
         text="Vertel ons waar informatie versnipperd raakt of veranderingen pas laat zichtbaar worden. Samen onderzoeken we welke bestaande data beschikbaar is en of een kleine, meetbare eerste toepassing zinvol is."
         buttonLabel="Plan een gesprek"
       />

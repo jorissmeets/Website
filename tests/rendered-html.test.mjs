@@ -37,9 +37,9 @@ test("server-renders the Carecogni homepage", async () => {
   );
   assert.match(html, /Meer zorg, minder last/);
   assert.match(html, /Eerder zien wat aandacht nodig heeft/);
-  assert.match(html, /De signalen zijn vaak al aanwezig/);
-  assert.match(html, /Van losse informatie naar begrijpelijke signalen/);
-  assert.match(html, /Eén gedeeld beeld voor tijdige signalering/);
+  assert.match(html, /Zorginformatie vertelt vaak meer/);
+  assert.match(html, /Samenhang zien, eerder handelen/);
+  assert.match(html, /Eén gedeeld beeld voor beter onderbouwde keuzes/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
   assert.match(html, /Ontdek onze oplossingen/);

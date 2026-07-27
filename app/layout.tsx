@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     template: "%s | Carecogni",
   },
   description:
-    "Carecogni herkent signalen in bestaande zorginformatie en maakt uitlegbaar waar aandacht nodig is.",
+    "Carecogni brengt relevante ontwikkelingen in bestaande zorginformatie tijdig en uitlegbaar in beeld.",
   openGraph: {
     title: "Carecogni — Eerder zien wat aandacht nodig heeft",
     description:
-      "Tijdige signalering uit bestaande zorginformatie, met de professional in regie.",
+      "Eerder zien wat aandacht nodig heeft, met de professional in regie.",
     type: "website",
     locale: "nl_NL",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Carecogni — Eerder zien wat aandacht nodig heeft",
     description:
-      "Tijdige signalering uit bestaande zorginformatie, met de professional in regie.",
+      "Eerder zien wat aandacht nodig heeft, met de professional in regie.",
     images: ["/og.png"],
   },
 };

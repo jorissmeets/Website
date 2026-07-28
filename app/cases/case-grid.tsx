@@ -6,7 +6,6 @@ const caseImages: Record<string, string> = {
   "ai-care-assistant-ggz": "/assets/figma-import/claire-assistant-wide.png",
   "ivm-incidentmeldingen": "/assets/figma-import/ivm-screening.png",
   "meerzorg-signalering": "/assets/figma-import/ai-platform-chip.png",
-  "slimme-ticketverwerking": "/assets/figma/product-screenshot.png",
 };
 
 export function CaseGrid({ items }: { items: CaseStudy[] }) {
@@ -29,9 +28,11 @@ export function CaseGrid({ items }: { items: CaseStudy[] }) {
                 <p className="practice-org">{item.organization}</p>
                 <h2>{item.title}</h2>
                 <p>{item.shortDescription ?? item.description}</p>
-                <Link className="button button-dark button-small" href={`/cases/${item.slug}`}>
-                  Meer over deze case
-                </Link>
+                {item.detailComplete ? (
+                  <Link className="button button-dark button-small" href={`/cases/${item.slug}`}>
+                    Meer over deze case
+                  </Link>
+                ) : null}
               </div>
             </div>
           </article>

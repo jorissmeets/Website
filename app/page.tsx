@@ -9,7 +9,6 @@ const homeSolutionOrder = [
   "risicosignalering",
   "voorspelmodellen",
   "monitoring-analytics",
-  "iot-domotica",
 ];
 
 const homeSolutions = homeSolutionOrder
@@ -78,9 +77,9 @@ export default function Home() {
           <h2>Zorginformatie vertelt vaak meer</h2>
           <p>
             Een verandering in een rapportage, terugkerende incidenten of
-            opvallende sensordata. Waardevolle informatie staat verspreid over
-            verschillende systemen en momenten. Daardoor blijven ontwikkelingen
-            en verbanden soms langer onzichtbaar dan nodig.
+            opvallende cijfers in een dashboard. Waardevolle informatie staat
+            verspreid over verschillende systemen en momenten. Daardoor blijven
+            ontwikkelingen en verbanden soms langer onzichtbaar dan nodig.
           </p>
         </div>
       </section>
@@ -151,7 +150,7 @@ export default function Home() {
             <h2>AI die meedenkt in de dagelijkse praktijk</h2>
             <p>
               Van betekenis halen uit vrije tekst en ontwikkelingen volgen tot
-              beslisondersteuning en het interpreteren van sensordata.
+              beslisondersteuning en eenduidige stuurinformatie.
             </p>
           </div>
           <div className="figma-solution-grid">
@@ -178,7 +177,7 @@ export default function Home() {
       <section className="figma-practice">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>Bewezen in de praktijk</h2>
+            <h2>AI in de praktijk</h2>
             <p>
               Iedere toepassing begint bij een concreet vraagstuk. We toetsen
               de werking samen met professionals en schalen pas op wanneer de
@@ -192,12 +191,14 @@ export default function Home() {
                   <p className="practice-org">{item.organization}</p>
                   <h3>{item.title}</h3>
                   <p>{item.shortDescription ?? item.description}</p>
-                  <Link
-                    className="button button-teal button-small"
-                    href={`/cases/${item.slug}`}
-                  >
-                    Meer over deze case
-                  </Link>
+                  {item.detailComplete ? (
+                    <Link
+                      className="button button-teal button-small"
+                      href={`/cases/${item.slug}`}
+                    >
+                      Meer over deze case
+                    </Link>
+                  ) : null}
                 </div>
                 <div className={`practice-visual practice-visual-${index + 1}`}>
                   <Image

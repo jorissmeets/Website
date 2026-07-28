@@ -13,7 +13,6 @@ const caseOrder = [
   "ai-care-assistant-ggz",
   "ivm-incidentmeldingen",
   "meerzorg-signalering",
-  "slimme-ticketverwerking",
 ];
 
 export default function CasesPage() {

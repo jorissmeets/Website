@@ -43,25 +43,15 @@ export default function ContactPage() {
       </section>
 
       <section className="contact-map-section">
-        <div className="container contact-map-grid">
+        <div className="container contact-map-grid contact-map-grid-simple">
           <div className="contact-map-copy">
             <h2>Waar kun je ons vinden?</h2>
             <p>
-              Domus Medica
+              Europalaan 400
               <br />
-              Mercatorlaan 1200
-              <br />
-              3528 BL Utrecht
+              3526 KS Utrecht
             </p>
             <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
-          </div>
-          <div className="contact-map">
-            <Image
-              src="/assets/figma/contact-map.png"
-              fill
-              sizes="(max-width: 800px) 100vw, 50vw"
-              alt="Kaart van de Carecogni-locatie in Utrecht"
-            />
           </div>
         </div>
       </section>

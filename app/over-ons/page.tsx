@@ -21,14 +21,29 @@ const team = [
     image: "/assets/figma/about-joris.png",
   },
   {
-    name: "Hans Mekenkamp",
-    role: "Co-Founder",
-    image: "/assets/figma/about-hans.png",
+    name: "Tijs Teulings",
+    role: "AI Engineer",
+    image: "/assets/tijs.jpg",
+  },
+  {
+    name: "Joran Timmerman",
+    role: "Data Engineer",
+    image: "/assets/joran.jpg",
+  },
+  {
+    name: "Pascal Venema",
+    role: "Data Engineer",
+    image: "/assets/pascal.jpeg",
   },
   {
     name: "Piet Hein Zwaal",
     role: "Co-Founder",
     image: "/assets/figma/about-piet.png",
+  },
+  {
+    name: "Hans Mekenkamp",
+    role: "Co-Founder",
+    image: "/assets/figma/about-hans.png",
   },
 ];
 
@@ -80,7 +95,7 @@ export default function AboutPage() {
           </div>
           <div>
             <p className="eyebrow">Ons team</p>
-            <h2>Vier oprichters, één gedeelde ambitie</h2>
+            <h2>Complementaire ervaring, één gedeelde ambitie</h2>
             <p>
               Aan de basis van Carecogni staan Peter Broekroelofs, Joris
               Smeets, Piet Hein Zwaal en Hans Mekenkamp. Samen brengen zij
@@ -88,10 +103,9 @@ export default function AboutPage() {
               gezondheidszorg bijeen.
             </p>
             <p>
-              Vanuit een gedeelde morele ambitie bouwen zij met het Carecogni
-              team aan veilige, robuuste en begrijpelijke toepassingen voor de
-              zorgpraktijk. Dat doen we samen met professionals, van de eerste
-              contextanalyse tot ingebruikname en continue verbetering.
+              Vanuit een gedeelde morele ambitie bouwen de oprichters samen met
+              het Carecogni-team aan veilige, robuuste en begrijpelijke
+              toepassingen voor de zorgpraktijk.
             </p>
           </div>
         </div>

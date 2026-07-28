@@ -34,25 +34,10 @@ export default async function SolutionPage({
     notFound();
   }
 
-  const caseStudy = cases[0];
-  const featureColumns = [
-    {
-      title: "Waarde in de praktijk",
-      items: solution.features.slice(0, 3),
-    },
-    {
-      title: "Techniek & integratie",
-      items: solution.specs.slice(0, 3).map((spec) => `${spec.title}: ${spec.description}`),
-    },
-    {
-      title: "Veilig gebruik",
-      items: [
-        "Uitlegbare en herleidbare uitkomsten",
-        "De professional houdt altijd de regie",
-        "Iteratieve validatie in de zorgpraktijk",
-      ],
-    },
-  ];
+  const caseStudy =
+    solution.slug === "risicosignalering"
+      ? cases.find((item) => item.slug === "ivm-incidentmeldingen")
+      : undefined;
 
   return (
     <main>
@@ -139,44 +124,28 @@ export default async function SolutionPage({
         </div>
       </section>
 
-      <section className="featured-product-case">
-        <div className="container agent-feature-inner">
-          <div className="featured-product-image">
-            <Image
-              src="/assets/figma/home-case-photo.png"
-              fill
-              sizes="(max-width: 800px) 100vw, 50vw"
-              alt="AI in de praktijk"
-            />
+      {caseStudy ? (
+        <section className="featured-product-case">
+          <div className="container agent-feature-inner">
+            <div className="featured-product-image">
+              <Image
+                src="/assets/figma/home-case-photo.png"
+                fill
+                sizes="(max-width: 800px) 100vw, 50vw"
+                alt="AI in de praktijk"
+              />
+            </div>
+            <div>
+              <p className="practice-org">{caseStudy.organization}</p>
+              <h2>{caseStudy.title}</h2>
+              <p>{caseStudy.description}</p>
+              <Link className="button button-dark button-small" href={`/cases/${caseStudy.slug}`}>
+                Meer over deze case
+              </Link>
+            </div>
           </div>
-          <div>
-            <p className="practice-org">{caseStudy.organization}</p>
-            <h2>Kwalitatieve en snelle terugkoppeling door AI</h2>
-            <p>{caseStudy.description}</p>
-            <Link className="button button-dark button-small" href={`/cases/${caseStudy.slug}`}>
-              Meer over deze case
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="product-features">
-        <div className="container">
-          <h2>Kenmerken</h2>
-          <div className="product-feature-grid">
-            {featureColumns.map((column) => (
-              <article key={column.title}>
-                <h3>{column.title}</h3>
-                <ul>
-                  {column.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       <SectionCta />
     </main>

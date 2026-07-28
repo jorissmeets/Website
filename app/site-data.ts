@@ -8,7 +8,6 @@ export type Solution = {
   shortDescription: string;
   description: string;
   features: string[];
-  specs: { title: string; description: string }[];
 };
 
 export const solutions: Solution[] = [
@@ -18,35 +17,17 @@ export const solutions: Solution[] = [
     name: "Logische data & AI-agents",
     shortName: "Logische data & AI-agents",
     sector: "Platformtechnologie",
-    tagline: "Het fundament voor schaalbare AI in uw zorginstelling",
+    tagline: "Gedeelde context voor gespecialiseerde AI-agents",
     shortDescription:
-      "Structureert data uit ECD, HR en IoT in een logisch zorgdatamodel voor gerichte AI-agents.",
+      "Brengt informatie uit bestaande systemen samen, zodat gespecialiseerde AI-agents met de juiste context kunnen werken.",
     description:
-      "Een schaalbaar platform gebouwd op een logisch zorgdatamodel. De Digital Twin structureert data uit ECD, HR, IoT en andere bronsystemen als kennisbasis voor gespecialiseerde AI-agents — direct inzetbaar voor elke zorginstelling.",
+      "We brengen informatie uit bestaande bronsystemen samen in een logisch zorgdatamodel: een Digital Twin van de zorgorganisatie. Gespecialiseerde AI-agents gebruiken deze gedeelde context voor afgebakende taken en toepassingen.",
     features: [
       "Digital Twin Builder op basis van bestaande bronsystemen",
-      "Agent-orchestratie en intelligente routing",
-      "Koppelingen met ECD, HR, Zenya, AFAS en SharePoint",
-      "Soevereine cloudoptie via Azure of private cloud",
-      "Maatwerk-agents per instelling",
-    ],
-    specs: [
-      {
-        title: "Integraties",
-        description: "ECD, HR-systemen, IoT, SharePoint, AFAS en Zenya",
-      },
-      {
-        title: "Architectuur",
-        description: "Multi-agent, schaalbaar en privacybewust",
-      },
-      {
-        title: "Hosting",
-        description: "Azure of soevereine private cloud",
-      },
-      {
-        title: "Implementatietijd",
-        description: "Typisch 4–8 weken voor de eerste agents",
-      },
+      "Koppelingen met bestaande applicaties en databronnen",
+      "Gespecialiseerde agents met ieder een afgebakende taak",
+      "Eén gedeelde interface voor verschillende toepassingen",
+      "Stapsgewijs uitbreidbaar naar nieuwe vraagstukken",
     ],
   },
   {
@@ -55,35 +36,17 @@ export const solutions: Solution[] = [
     name: "AI Care Assistant",
     shortName: "AI Care Assistant",
     sector: "Communicatie & kennismanagement",
-    tagline: "Eén chatinterface voor al uw zorgsystemen",
+    tagline: "Eén chatinterface voor relevante zorginformatie",
     shortDescription:
-      "Zorgprofessionals stellen vragen in gewone taal en krijgen direct betrouwbaar antwoord.",
+      "Geeft professionals via één chatinterface toegang tot relevante informatie uit bestaande applicaties.",
     description:
-      "Een gepersonaliseerde AI-assistent die via één chatinterface meerdere SaaS-applicaties ontsluit. Zorgprofessionals stellen vragen in gewone taal en krijgen direct betrouwbaar antwoord, zonder te schakelen tussen systemen.",
+      "De AI Care Assistant bevraagt via API-koppelingen bestaande applicaties en informatiebronnen. Professionals stellen hun vraag in gewone taal en ontvangen het antwoord in één chatinterface, zonder steeds tussen systemen te wisselen.",
     features: [
-      "RAG-chatbot voor zorgprofessionals op mobiel en desktop",
-      "Domeinspecifieke agents voor HR, protocollen en cliëntdossiers",
-      "Multi-source RAG met privacybewuste architectuur",
-      "Integratie als widget in een bestaand portaal",
-      "Sneller en voordeliger te implementeren dan Copilot Studio",
-    ],
-    specs: [
-      {
-        title: "Beschikbaarheid",
-        description: "24/7, mobiel en desktop",
-      },
-      {
-        title: "Integratie",
-        description: "Widget in bestaand portaal of standalone",
-      },
-      {
-        title: "Trainingstijd",
-        description: "2–4 weken op eigen documentatie",
-      },
-      {
-        title: "Databronnen",
-        description: "FAQ’s, protocollen, zorgpaden en kennisbanken",
-      },
+      "Vragen stellen in gewone taal",
+      "Informatie ophalen uit meerdere bestaande applicaties",
+      "Antwoorden teruggeven in één chatinterface",
+      "Aansluiten op onder meer EPD/ECD, kwaliteitssystemen en HR-informatie",
+      "Ondersteuning direct in de bestaande workflow",
     ],
   },
   {
@@ -92,35 +55,17 @@ export const solutions: Solution[] = [
     name: "Betekenis uit zorgtekst & NER-agents",
     shortName: "Betekenis & NER-agents",
     sector: "Kwaliteit & veiligheid",
-    tagline: "Automatische signalering uit ongestructureerde rapportages",
+    tagline: "Betekenis halen uit ongestructureerde zorgtekst",
     shortDescription:
-      "Herkent 30+ risicotypen in overdrachtsrapportages, van valrisico tot medicatietrouw.",
+      "Zet relevante informatie uit vrije zorgtekst om in gestructureerde en controleerbare gegevens.",
     description:
-      "AI-agents die automatisch relevante signalen extraheren uit overdrachtsrapportages en verslagen. Van risico-indicatoren tot meerzorgsignalen: kritieke informatie wordt gestructureerd en zichtbaar voor de zorgprofessional.",
+      "Named Entity Recognition en taalmodellen helpen om relevante informatie uit rapportages, incidentmeldingen en dossiers te herkennen en te structureren. De professional ziet de bron en blijft verantwoordelijk voor de beoordeling.",
     features: [
-      "Named Entity Recognition op overdrachtsrapportages",
-      "Herkenning van 30+ signaaltypen",
-      "Meerzorgindicatie-detectie en automatische notificaties",
-      "Ondersteuning bij het schrijven van zorgplannen",
-      "Dashboard per cliënt en per afdeling",
-    ],
-    specs: [
-      {
-        title: "Signaaltypen",
-        description: "30+ typen, waaronder valrisico en medicatietrouw",
-      },
-      {
-        title: "Input",
-        description: "Rapportages, verslagen en vrije notities",
-      },
-      {
-        title: "Output",
-        description: "Gestructureerde data, dashboards en notificaties",
-      },
-      {
-        title: "Modelkwaliteit",
-        description: "Continu meetbaar en uitlegbaar per signaal",
-      },
+      "Vrije tekst uit rapportages en meldingen analyseren",
+      "Relevante termen en categorieën herkennen",
+      "Ongestructureerde informatie omzetten in gestructureerde data",
+      "Screening en inhoudelijke beoordeling ondersteunen",
+      "De gebruikte broninformatie herleidbaar houden",
     ],
   },
   {
@@ -135,29 +80,11 @@ export const solutions: Solution[] = [
     description:
       "Modellen die bestaande zorgdata structureren en waarschijnlijke ontwikkelingen zichtbaar maken als beslisondersteuning. De professional weegt de uitkomst altijd in de context van de cliënt, het team en de organisatie.",
     features: [
-      "Ondersteuning bij keuzes over nazorg en capaciteit",
-      "Tijdige herkenning van meerzorgsignalen",
+      "Ondersteuning bij keuzes over ligduur, nazorg en capaciteit",
+      "Meerzorgbehoefte eerder in beeld brengen",
       "Inzicht in relevante factoren per uitkomst",
       "Aansluiting op bestaande zorg- en BI-data",
       "Uitlegbare en herleidbare ondersteuning per toepassing",
-    ],
-    specs: [
-      {
-        title: "Modelkwaliteit",
-        description: "Per toepassing gevalideerd met professionals",
-      },
-      {
-        title: "Uitlegbaarheid",
-        description: "Volledige herleidbaarheid per voorspelling",
-      },
-      {
-        title: "Databron",
-        description: "Historische zorgdata uit ECD of BI",
-      },
-      {
-        title: "Implementatietijd",
-        description: "Typisch 6–10 weken",
-      },
     ],
   },
   {
@@ -166,72 +93,17 @@ export const solutions: Solution[] = [
     name: "Real-time Monitoring & Agentic Analytics",
     shortName: "Monitoring & Analytics",
     sector: "Stuurinformatie & BI",
-    tagline: "Live inzicht voor professionals, managers en bestuurders",
+    tagline: "Eenduidige stuurinformatie uit meerdere bronnen",
     shortDescription:
-      "Interactieve dashboards combineren real-time stuurinformatie met een geïntegreerde AI-chat.",
+      "Bundelt informatie uit verschillende bronnen in eenduidige rapportages en dashboards.",
     description:
-      "Interactieve dashboards en datapipelines die zorgdata uit meerdere bronnen real-time verwerken en analyseren. Stuurinformatie is direct beschikbaar — inclusief geïntegreerde AI-chat.",
+      "Monitoring en analytics brengen informatie uit verschillende systemen samen. Zo worden voortgang, mijlpalen, risico’s en andere stuurinformatie eenduidig en herhaalbaar inzichtelijk.",
     features: [
-      "Datakoppelingen en ETL-pipelines",
-      "Hybride modellering van gestructureerde en vrije data",
-      "Interactieve real-time dashboards",
-      "Agentic dashboards met geïntegreerde AI-chat",
-      "Implementatie in het bestaande BI-landschap",
-    ],
-    specs: [
-      {
-        title: "Doelgroepen",
-        description: "Professionals, managers, bestuurders en verzekeraars",
-      },
-      {
-        title: "BI-integratie",
-        description: "Power BI, eigen dashboards of standalone",
-      },
-      {
-        title: "Verversing",
-        description: "Van real-time tot dagelijks",
-      },
-      {
-        title: "AI-chat",
-        description: "Geïntegreerde assistent voor datanavigatie",
-      },
-    ],
-  },
-  {
-    slug: "iot-domotica",
-    icon: "📡",
-    name: "IoT & Domotica Agents",
-    shortName: "IoT & Domotica",
-    sector: "Slimme zorgomgeving",
-    tagline: "Proactieve zorg op basis van sensoren en aanwezigheidsdata",
-    shortDescription:
-      "Verwerkt sensor- en domoticasignalen real-time en vertaalt deze naar proactieve zorginformatie.",
-    description:
-      "AI-agents die signalen van sensoren, domotica en aanwezigheidsdetectie real-time verwerken en vertalen naar proactieve zorginformatie. Zorgprofessionals worden automatisch geïnformeerd wanneer aandacht nodig is.",
-    features: [
-      "Integratie met domoticasystemen",
-      "Real-time aanwezigheids- en bewegingsdetectie",
-      "Proactieve alerts op basis van sensordata",
-      "Koppeling met persoonsalarmering en noodoproepen",
-      "Roadmap voor ambient listening en locatiebriefing",
-    ],
-    specs: [
-      {
-        title: "Sensorintegratie",
-        description: "Domotica, beweging en aanwezigheidsdetectie",
-      },
-      {
-        title: "Partnerkoppeling",
-        description: "Integratie met bestaande zorgtechnologie",
-      },
-      {
-        title: "Alerting",
-        description: "Real-time en configureerbaar per afdeling",
-      },
-      {
-        title: "Roadmap",
-        description: "Ambient listening en locatiegebaseerde briefing",
-      },
+      "Informatie uit meerdere systemen bundelen",
+      "Voortgang, mijlpalen en risico’s zichtbaar maken",
+      "Eenduidige en herhaalbare rapportages opstellen",
+      "Dashboards verversen zodra nieuwe informatie beschikbaar is",
+      "Ondersteunen bij consistente sturing en bijsturing",
     ],
   },
 ];
@@ -244,8 +116,9 @@ export type CaseStudy = {
   title: string;
   shortDescription?: string;
   description: string;
-  result: string;
-  quote: string;
+  detailComplete: boolean;
+  result?: string;
+  quote?: string;
   quoteAuthor?: string;
   quoteRole?: string;
 };
@@ -260,9 +133,9 @@ export const cases: CaseStudy[] = [
     shortDescription:
       "Een AI-screeningsassistent classificeert circa 20.000 jaarlijkse incidentmeldingen automatisch en uniform.",
     description:
-      "Het IVM verwerkt jaarlijks tienduizenden incidentmeldingen. Carecogni ontwikkelde een screeningsassistent op basis van Named Entity Recognition en een taalmodel die meldingen automatisch categoriseert en prioriteert.",
-    result:
-      "Significant minder tijd per melding · Hogere uniformiteit · Fundament voor opschaling",
+      "Het IVM verwerkt jaarlijks tienduizenden incidentmeldingen. Carecogni ontwikkelde een screeningsassistent op basis van Named Entity Recognition en een taalmodel die meldingen automatisch classificeert.",
+    detailComplete: true,
+    result: "Aanzienlijke tijdsbesparing per melding door AI-ondersteuning",
     quote:
       "Ik was vooraf wat sceptisch. Maar de PoC liet zien dat AI ook de complexe codeerinstructies goed kan uitvoeren op onze meldingen.",
     quoteAuthor: "Anneke Lambooij",
@@ -276,13 +149,10 @@ export const cases: CaseStudy[] = [
     category: "GGZ",
     title: "AI Care Assistant om zorgmedewerkers te ontlasten",
     shortDescription:
-      "Een betrouwbare chatbot ondersteunt cliënten met praktische vragen tijdens de wachttijd, behandeling en nazorg.",
+      "Een chatbot ondersteunt cliënten met praktische vragen tijdens de wachttijd, behandeling en nazorg.",
     description:
       "Carecogni helpt Arkin bij de ontwikkeling van een AI-chatbot die cliënten ondersteunt met praktische vragen tijdens de wachttijd voor zorg, tijdens de behandeling en in de nazorg.",
-    result:
-      "Minder routinevragen · Hogere cliënttevredenheid · Schaalbaar naar meerdere specialismen",
-    quote:
-      "Cliënten krijgen direct antwoord, ook buiten kantooruren. Dat geeft rust voor hen én voor het team.",
+    detailComplete: false,
   },
   {
     slug: "meerzorg-signalering",
@@ -293,24 +163,8 @@ export const cases: CaseStudy[] = [
     shortDescription:
       "Ongestructureerde zorgdossiers worden omgezet in signalen voor passende bekostiging en tijdige meerzorgaanvragen.",
     description:
-      "Een NER-pipeline analyseert ongestructureerde zorgdossiers en signaleert tijdig potentiële meerzorgkandidaten, vóór het verlopen van de aanvraagdeadline.",
-    result:
-      "Tijdige signalering · Minder gemiste bekostiging · Lagere administratieve last",
-    quote:
-      "We lopen niet meer achter de feiten aan. De signalen worden nu op tijd zichtbaar.",
-  },
-  {
-    slug: "slimme-ticketverwerking",
-    organization: "IT-dienstverlener in de zorg",
-    sector: "IT & Servicedesk",
-    category: "IT & Servicedesk",
-    title: "NER-agent voor slimme ticketverwerking",
-    description:
-      "Een NER-agent classificeert, verrijkt en routeert servicedesktickets automatisch — als fundament voor BI-dashboards en een proactieve incidentagent.",
-    result:
-      "Snellere ticketanalyse · Minder handwerk · Fundament voor een schaalbare AI-roadmap",
-    quote:
-      "In korte tijd stond er een werkende pipeline waarop we nu gecontroleerd verder bouwen.",
+      "Een NER-pipeline analyseert ongestructureerde zorgdossiers en zet relevante informatie om in gestructureerde data voor het herkennen van meerzorgbehoefte.",
+    detailComplete: false,
   },
 ];
 

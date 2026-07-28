@@ -5,7 +5,9 @@ import { InnerHero } from "../../components/inner-hero";
 import { cases, getCase } from "../../site-data";
 
 export function generateStaticParams() {
-  return cases.map((item) => ({ slug: item.slug }));
+  return cases
+    .filter((item) => item.detailComplete)
+    .map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({
@@ -26,7 +28,7 @@ export default async function CaseDetailPage({
   const { slug } = await params;
   const item = getCase(slug);
 
-  if (!item) {
+  if (!item || !item.detailComplete) {
     notFound();
   }
 
@@ -167,46 +169,50 @@ export default async function CaseDetailPage({
         </div>
       </section>
 
-      <section className="case-impact">
-        <div className="container">
-          <h2>Impact</h2>
-          <div className="impact-grid">
-            {item.result.split(" · ").map((result, index) => (
-              <article key={result}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{result}</h3>
-              </article>
-            ))}
+      {item.result ? (
+        <section className="case-impact">
+          <div className="container">
+            <h2>Impact</h2>
+            <div className="impact-grid">
+              {item.result.split(" · ").map((result, index) => (
+                <article key={result}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{result}</h3>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
-      <section className="testimonial-section">
-        <div className="container">
-          <h2>De klant aan het woord</h2>
-          <blockquote>
-            <p>“{item.quote}”</p>
-            <footer>
-              {isIvm ? (
-                <Image
-                  src="/assets/figma/case-portrait.png"
-                  width={72}
-                  height={78}
-                  alt=""
-                />
-              ) : null}
-              {item.quoteAuthor ? (
-                <span>
-                  <strong>{item.quoteAuthor}</strong>
-                  {item.quoteRole ? <small>{item.quoteRole}</small> : null}
-                </span>
-              ) : (
-                <span>{item.organization}</span>
-              )}
-            </footer>
-          </blockquote>
-        </div>
-      </section>
+      {item.quote ? (
+        <section className="testimonial-section">
+          <div className="container">
+            <h2>De klant aan het woord</h2>
+            <blockquote>
+              <p>“{item.quote}”</p>
+              <footer>
+                {isIvm ? (
+                  <Image
+                    src="/assets/figma/case-portrait.png"
+                    width={72}
+                    height={78}
+                    alt=""
+                  />
+                ) : null}
+                {item.quoteAuthor ? (
+                  <span>
+                    <strong>{item.quoteAuthor}</strong>
+                    {item.quoteRole ? <small>{item.quoteRole}</small> : null}
+                  </span>
+                ) : (
+                  <span>{item.organization}</span>
+                )}
+              </footer>
+            </blockquote>
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }

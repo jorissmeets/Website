@@ -11,7 +11,6 @@ const solutionMenuOrder = [
   "monitoring-analytics",
   "voorspelmodellen",
   "agentic-ai-platform",
-  "iot-domotica",
   "ai-care-assistant",
 ];
 

@@ -44,6 +44,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /v3-hero-caregiver-devices\.png/);
   assert.match(html, /Ontdek onze oplossingen/);
   assert.match(html, /Cases/);
+  assert.doesNotMatch(html, /IoT & Domotica|30\+|4–8 weken|6–10 weken|2–4 weken/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 

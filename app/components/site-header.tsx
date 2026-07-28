@@ -4,19 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { solutions } from "../site-data";
-
-const solutionMenuOrder = [
-  "risicosignalering",
-  "monitoring-analytics",
-  "voorspelmodellen",
-  "agentic-ai-platform",
-  "ai-care-assistant",
-];
-
-const menuSolutions = solutionMenuOrder
-  .map((slug) => solutions.find((solution) => solution.slug === slug))
-  .filter((solution): solution is (typeof solutions)[number] => Boolean(solution));
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -60,37 +47,12 @@ export function SiteHeader() {
             Home
           </Link>
 
-          <div className="nav-item solutions-menu">
-            <Link
-              className={pathname.startsWith("/oplossingen") ? "nav-link active" : "nav-link"}
-              href="/#oplossingen"
-              onClick={closeMenu}
-            >
-              Oplossingen
-            </Link>
-            <div className="dropdown">
-              {menuSolutions.map((solution) => (
-                <Link
-                  className="dropdown-item"
-                  href={`/oplossingen/${solution.slug}`}
-                  key={solution.slug}
-                  onClick={closeMenu}
-                >
-                  <span className="dropdown-text">
-                    <strong>{solution.shortName}</strong>
-                    <span>{solution.tagline}</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
           <Link
-            className={pathname.startsWith("/cases") ? "nav-link active" : "nav-link"}
-            href="/cases"
+            className="nav-link"
+            href="/#oplossingen"
             onClick={closeMenu}
           >
-            Cases
+            Oplossingen
           </Link>
           <div className="nav-item about-menu">
             <Link

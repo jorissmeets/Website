@@ -3496,6 +3496,95 @@ textarea:focus-visible {
   max-width: 760px;
 }
 
+.client-section {
+  padding: 120px 0;
+  background: var(--cream-light);
+}
+
+.client-section .figma-section-heading {
+  margin-bottom: 54px;
+}
+
+.client-section .eyebrow {
+  margin-bottom: 12px;
+  color: var(--teal);
+}
+
+.client-name-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border: 1px solid rgba(4, 61, 72, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.client-logo-card {
+  display: grid;
+  min-height: 132px;
+  place-items: center;
+  padding: 28px 24px;
+  border-right: 1px solid rgba(4, 61, 72, 0.14);
+}
+
+.client-logo-card img {
+  width: auto;
+  max-width: 170px;
+  height: auto;
+  max-height: 72px;
+  object-fit: contain;
+}
+
+.client-logo-ivm img {
+  max-width: 126px;
+  max-height: 84px;
+  filter: brightness(0) saturate(100%);
+}
+
+.client-logo-card:last-child {
+  border-right: 0;
+}
+
+@media (max-width: 900px) {
+  .client-name-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .client-logo-card {
+    border-right: 0;
+    border-bottom: 1px solid rgba(4, 61, 72, 0.14);
+  }
+
+  .client-logo-card:nth-child(odd) {
+    border-right: 1px solid rgba(4, 61, 72, 0.14);
+  }
+
+  .client-logo-card:last-child {
+    grid-column: 1 / -1;
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .client-section {
+    padding: 82px 0;
+  }
+
+  .client-name-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-logo-card,
+  .client-logo-card:nth-child(odd) {
+    min-height: 92px;
+    border-right: 0;
+  }
+
+  .client-logo-card:last-child {
+    grid-column: auto;
+  }
+}
+
 .figma-home .hero-brand {
   margin-bottom: 18px;
 }

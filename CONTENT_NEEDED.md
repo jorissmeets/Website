@@ -108,9 +108,18 @@ Optioneel aan te leveren:
 
 ## 8. Klanten- en partnerlogo’s
 
-Graag bevestigen:
+De eerste liveversie noemt deze bevestigde klanten:
 
-- Welke logo’s als klant mogen worden getoond.
+- Arkin
+- IVM
+- Fivoor
+- GGZ NHN
+- Saffier
+
+Graag nog aanleveren of bevestigen:
+
+- De officiële logo-bestanden in SVG- of PNG-formaat.
+- Welke logo’s als klant mogen worden getoond in plaats van alleen de naam.
 - Welke logo’s partnerrelaties vertegenwoordigen.
 - Of per logo toestemming voor publicatie is vastgelegd.
 

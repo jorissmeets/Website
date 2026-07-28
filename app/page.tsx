@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
-import { cases, solutions } from "./site-data";
+import { solutions } from "./site-data";
 
 const homeSolutionOrder = [
   "agentic-ai-platform",
@@ -17,20 +17,38 @@ const homeSolutions = homeSolutionOrder
     (solution): solution is (typeof solutions)[number] => Boolean(solution)
   );
 
-const homeCaseSlugs = [
-  "ai-care-assistant-ggz",
-  "ivm-incidentmeldingen",
-  "meerzorg-signalering",
-];
-
-const homeCases = homeCaseSlugs
-  .map((slug) => cases.find((item) => item.slug === slug))
-  .filter((item): item is (typeof cases)[number] => Boolean(item));
-
-const caseImages = [
-  "/assets/figma-import/claire-case.png",
-  "/assets/figma-import/ivm-screening.png",
-  "/assets/figma-import/ai-platform-chip-small.png",
+const customers = [
+  {
+    name: "Arkin",
+    logo: "/assets/clients/arkin.svg",
+    width: 76,
+    height: 50,
+  },
+  {
+    name: "IVM",
+    logo: "/assets/clients/ivm.png",
+    width: 438,
+    height: 408,
+    className: "client-logo-ivm",
+  },
+  {
+    name: "Fivoor",
+    logo: "/assets/clients/fivoor.svg",
+    width: 322,
+    height: 100,
+  },
+  {
+    name: "GGZ Noord-Holland-Noord",
+    logo: "/assets/clients/ggz-nhn.gif",
+    width: 322,
+    height: 133,
+  },
+  {
+    name: "Saffier",
+    logo: "/assets/clients/saffier.png",
+    width: 340,
+    height: 140,
+  },
 ];
 
 export default function Home() {
@@ -65,8 +83,8 @@ export default function Home() {
             <Link className="button button-dark" href="#oplossingen">
               Ontdek onze oplossingen
             </Link>
-            <Link className="button button-dark" href="/cases">
-              Cases uit de praktijk
+            <Link className="button button-dark" href="/contact">
+              Neem contact op
             </Link>
           </div>
         </div>
@@ -129,8 +147,8 @@ export default function Home() {
               Zo ontstaat één veilige en schaalbare basis waarop steeds nieuwe
               toepassingen kunnen worden aangesloten.
             </p>
-            <Link className="button button-teal button-small" href="/oplossingen/agentic-ai-platform">
-              Bekijk het platform
+            <Link className="button button-teal button-small" href="/contact">
+              Bespreek de mogelijkheden
             </Link>
           </div>
           <div className="figma-dashboard figma-dashboard-architecture">
@@ -155,9 +173,8 @@ export default function Home() {
           </div>
           <div className="figma-solution-grid">
             {homeSolutions.map((solution, index) => (
-              <Link
+              <article
                 className="figma-solution-card"
-                href={`/oplossingen/${solution.slug}`}
                 key={solution.slug}
               >
                 <span className="solution-card-number" aria-hidden="true">
@@ -165,69 +182,34 @@ export default function Home() {
                 </span>
                 <h3>{solution.shortName}</h3>
                 <p>{solution.shortDescription}</p>
-                <span className="round-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="figma-practice">
-        <div className="container">
-          <div className="figma-section-heading centered">
-            <h2>AI in de praktijk</h2>
-            <p>
-              Iedere toepassing begint bij een concreet vraagstuk. We toetsen
-              de werking samen met professionals en schalen pas op wanneer de
-              oplossing aantoonbaar waarde toevoegt.
-            </p>
-          </div>
-          <div className="practice-list">
-            {homeCases.map((item, index) => (
-              <article className="practice-row" key={item.slug}>
-                <div className="practice-copy">
-                  <p className="practice-org">{item.organization}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.shortDescription ?? item.description}</p>
-                  {item.detailComplete ? (
-                    <Link
-                      className="button button-teal button-small"
-                      href={`/cases/${item.slug}`}
-                    >
-                      Meer over deze case
-                    </Link>
-                  ) : null}
-                </div>
-                <div className={`practice-visual practice-visual-${index + 1}`}>
-                  <Image
-                    src={caseImages[index]}
-                    fill
-                    sizes="(max-width: 820px) 100vw, 50vw"
-                    alt=""
-                  />
-                </div>
               </article>
             ))}
           </div>
-          <div className="figma-practice-action">
-            <Link className="button button-teal" href="/cases">
-              Meer usecases
-            </Link>
-          </div>
         </div>
       </section>
 
-      <section className="logo-strip" aria-label="Organisaties waar wij mee samenwerken">
+      <section className="client-section" aria-labelledby="client-title">
         <div className="container">
-          <Image
-            src="/assets/figma/home-logos.png"
-            width={1420}
-            height={260}
-            sizes="100vw"
-            alt="Logo's van organisaties waarmee Carecogni samenwerkt"
-          />
+          <div className="figma-section-heading centered">
+            <p className="eyebrow">Onze klanten</p>
+            <h2 id="client-title">Samen werken aan AI die waarde toevoegt</h2>
+          </div>
+          <div className="client-name-grid">
+            {customers.map((customer) => (
+              <div
+                className={`client-logo-card${customer.className ? ` ${customer.className}` : ""}`}
+                key={customer.name}
+              >
+                <Image
+                  src={customer.logo}
+                  width={customer.width}
+                  height={customer.height}
+                  unoptimized
+                  alt={customer.name}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

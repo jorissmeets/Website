@@ -49,10 +49,10 @@ export function SiteHeader() {
 
           <Link
             className="nav-link"
-            href="/#oplossingen"
+            href="/#oplossing"
             onClick={closeMenu}
           >
-            Oplossingen
+            Oplossing
           </Link>
           <div className="nav-item about-menu">
             <Link

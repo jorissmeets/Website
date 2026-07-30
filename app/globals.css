@@ -3482,7 +3482,7 @@ textarea:focus-visible {
   }
 }
 
-/* Homepage signalering story */
+/* Homepage incident intelligence story */
 
 .figma-home .home-hero-inner {
   padding-top: 155px;
@@ -3545,6 +3545,35 @@ textarea:focus-visible {
   border-right: 0;
 }
 
+.incident-step-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.incident-step-grid .figma-solution-card {
+  min-height: 320px;
+}
+
+.incident-proof {
+  background: #f2f2f2;
+}
+
+.incident-proof-visual {
+  min-height: 430px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(184, 224, 224, 0.88), rgba(14, 158, 151, 0.18));
+}
+
+.incident-proof-visual img {
+  object-fit: contain !important;
+  padding: 34px;
+}
+
+@media (max-width: 1080px) {
+  .incident-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .client-name-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3571,6 +3600,10 @@ textarea:focus-visible {
   }
 
   .client-name-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .incident-step-grid {
     grid-template-columns: 1fr;
   }
 

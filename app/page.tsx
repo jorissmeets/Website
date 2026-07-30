@@ -1,21 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
-import { solutions } from "./site-data";
 
-const homeSolutionOrder = [
-  "agentic-ai-platform",
-  "ai-care-assistant",
-  "risicosignalering",
-  "voorspelmodellen",
-  "monitoring-analytics",
+const incidentSteps = [
+  {
+    title: "Screenen",
+    description:
+      "AI leest vrije-tekstmeldingen en haalt de informatie naar voren die nodig is voor verdere beoordeling.",
+  },
+  {
+    title: "Classificeren",
+    description:
+      "De assistent doet een consistente voorzet op basis van afgesproken categorieën en codeerinstructies.",
+  },
+  {
+    title: "Beoordelen",
+    description:
+      "De professional controleert de bron, weegt de context en bepaalt de definitieve classificatie.",
+  },
+  {
+    title: "Leren en verbeteren",
+    description:
+      "Gestructureerde meldingen maken gerichte analyse, terugkoppeling en kwaliteitsverbetering mogelijk.",
+  },
 ];
-
-const homeSolutions = homeSolutionOrder
-  .map((slug) => solutions.find((solution) => solution.slug === slug))
-  .filter(
-    (solution): solution is (typeof solutions)[number] => Boolean(solution)
-  );
 
 const customers = [
   {
@@ -72,19 +80,20 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <p className="figma-hero-eyebrow">Meer zorg, minder last</p>
-          <h1>Eerder zien wat aandacht nodig heeft</h1>
+          <p className="figma-hero-eyebrow">Meer leren van ieder incident</p>
+          <h1>Van incidentmelding naar verbetering</h1>
           <p className="figma-hero-lead">
-            Carecogni brengt relevante ontwikkelingen in bestaande
-            zorginformatie tijdig in beeld. Uitlegbaar, zonder extra
-            registratielast en altijd onder regie van de professional.
+            Carecogni zet grote aantallen incidentmeldingen om in consistente,
+            bruikbare verbeterinformatie. Onze AI ondersteunt screening,
+            classificatie, analyse en terugkoppeling, met de professional in
+            regie.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" href="#oplossingen">
-              Ontdek onze oplossingen
+            <Link className="button button-dark" href="#werkwijze">
+              Bekijk hoe het werkt
             </Link>
             <Link className="button button-dark" href="/contact">
-              Neem contact op
+              Bespreek uw meldproces
             </Link>
           </div>
         </div>
@@ -92,17 +101,17 @@ export default function Home() {
 
       <section className="figma-intro">
         <div className="container figma-intro-copy">
-          <h2>Zorginformatie vertelt vaak meer</h2>
+          <h2>Registreren is pas het begin</h2>
           <p>
-            Een verandering in een rapportage, terugkerende incidenten of
-            opvallende cijfers in een dashboard. Waardevolle informatie staat
-            verspreid over verschillende systemen en momenten. Daardoor blijven
-            ontwikkelingen en verbanden soms langer onzichtbaar dan nodig.
+            Zorgorganisaties ontvangen dagelijks meldingen in vrije tekst.
+            Zorgvuldig lezen, coderen en terugkoppelen kost specialistische
+            tijd. Terwijl de echte waarde juist ontstaat wanneer meldingen
+            samen leiden tot gerichte verbeteringen in de praktijk.
           </p>
         </div>
       </section>
 
-      <section className="figma-about">
+      <section className="figma-about" id="werkwijze">
         <div className="container figma-split">
           <div className="figma-dashboard figma-dashboard-assistant">
             <Image
@@ -113,18 +122,18 @@ export default function Home() {
             />
           </div>
           <div className="figma-copy">
-            <p className="eyebrow">Van informatie naar inzicht</p>
-            <h2>Samenhang zien, eerder handelen</h2>
+            <p className="eyebrow">Incident Intelligence</p>
+            <h2>Minder tijd aan verwerking. Meer ruimte om te leren.</h2>
             <p>
-              Onze AI-agents analyseren informatie die al wordt vastgelegd in
-              cliëntdossiers, rapportages, incidentmeldingen en operationele
-              systemen. Ze herkennen veranderingen en patronen, brengen
-              relevante informatie bij elkaar en maken inzichtelijk waarop hun
-              bevindingen zijn gebaseerd.
+              Onze AI-assistent leest incidentmeldingen, herkent relevante
+              informatie en doet een voorstel voor de juiste classificatie.
+              Daarmee ondersteunen we kwaliteitsprofessionals bij het
+              tijdrovende werk vóór de inhoudelijke analyse en terugkoppeling.
             </p>
             <p>
-              De technologie doet een voorzet. De zorgprofessional beoordeelt
-              de context en bepaalt wat er moet gebeuren.
+              De gebruikte bron blijft zichtbaar. De professional controleert
+              de context en blijft verantwoordelijk voor de definitieve
+              beoordeling.
             </p>
           </div>
         </div>
@@ -133,22 +142,24 @@ export default function Home() {
       <section className="figma-foundation">
         <div className="container figma-split">
           <div className="figma-copy">
-            <p className="eyebrow">Het fundament</p>
-            <h2>Eén gedeeld beeld voor beter onderbouwde keuzes</h2>
+            <p className="eyebrow">Aansluiten op de praktijk</p>
+            <h2>Een slimme laag boven op het bestaande meldproces</h2>
             <p>
-              We brengen gegevens uit bestaande systemen samen in een logisch
-              zorgdatamodel: een Digital Twin van de zorgorganisatie.
-              Gespecialiseerde AI-agents gebruiken deze gedeelde context om
-              informatie te vinden, betekenis uit vrije tekst te halen,
-              ontwikkelingen te volgen en opvallende veranderingen tijdig
-              zichtbaar te maken.
+              Carecogni sluit aan op bestaande meldgegevens, codeboeken en
+              werkwijzen. Gespecialiseerde AI-agents zetten vrije tekst om in
+              gestructureerde, herleidbare informatie die opnieuw gebruikt kan
+              worden voor analyse en terugkoppeling.
             </p>
             <p>
-              Zo ontstaat één veilige en schaalbare basis waarop steeds nieuwe
-              toepassingen kunnen worden aangesloten.
+              Zo hoeft een organisatie niet opnieuw te beginnen. We verbeteren
+              eerst één concrete workflow en bouwen van daaruit gecontroleerd
+              verder.
             </p>
-            <Link className="button button-teal button-small" href="/contact">
-              Bespreek de mogelijkheden
+            <Link
+              className="button button-teal button-small"
+              href="/cases/ivm-incidentmeldingen"
+            >
+              Bekijk de IVM-case
             </Link>
           </div>
           <div className="figma-dashboard figma-dashboard-architecture">
@@ -162,28 +173,62 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="figma-solutions" id="oplossingen">
+      <section className="figma-solutions" id="oplossing">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>AI die meedenkt in de dagelijkse praktijk</h2>
+            <h2>Van melding naar bruikbare verbeterinformatie</h2>
             <p>
-              Van betekenis halen uit vrije tekst en ontwikkelingen volgen tot
-              beslisondersteuning en eenduidige stuurinformatie.
+              De AI ondersteunt iedere stap, zonder de professionele
+              beoordeling over te nemen.
             </p>
           </div>
-          <div className="figma-solution-grid">
-            {homeSolutions.map((solution, index) => (
+          <div className="figma-solution-grid incident-step-grid">
+            {incidentSteps.map((step, index) => (
               <article
                 className="figma-solution-card"
-                key={solution.slug}
+                key={step.title}
               >
                 <span className="solution-card-number" aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3>{solution.shortName}</h3>
-                <p>{solution.shortDescription}</p>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="figma-about incident-proof">
+        <div className="container figma-split">
+          <div className="figma-dashboard incident-proof-visual">
+            <Image
+              src="/assets/figma-import/ivm-screening.png"
+              fill
+              sizes="(max-width: 820px) 100vw, 50vw"
+              alt="AI-screeningsassistent voor incidentmeldingen"
+            />
+          </div>
+          <div className="figma-copy">
+            <p className="eyebrow">In de praktijk · IVM</p>
+            <h2>Circa 20.000 meldingen per jaar zorgvuldig verwerken</h2>
+            <p>
+              Voor het Instituut Verantwoord Medicijngebruik ontwikkelde
+              Carecogni een AI-screeningsassistent die incidentmeldingen
+              analyseert en een voorstel doet voor gestructureerde
+              classificaties.
+            </p>
+            <p>
+              De screener ziet de bron en blijft verantwoordelijk voor de
+              definitieve beoordeling. Zo ontstaat een snellere, uniformere
+              werkwijze met meer ruimte voor inhoudelijke terugkoppeling.
+            </p>
+            <Link
+              className="button button-teal button-small"
+              href="/cases/ivm-incidentmeldingen"
+            >
+              Lees de volledige case
+            </Link>
           </div>
         </div>
       </section>
@@ -214,8 +259,8 @@ export default function Home() {
       </section>
 
       <SectionCta
-        title="Waar raakt relevante informatie nu nog uit beeld?"
-        text="Vertel ons waar informatie versnipperd raakt of veranderingen pas laat zichtbaar worden. Samen onderzoeken we welke bestaande data beschikbaar is en of een kleine, meetbare eerste toepassing zinvol is."
+        title="Wat gebeurt er nadat een incident is gemeld?"
+        text="Vertel ons waar het screenen, classificeren of terugkoppelen van meldingen veel handmatig werk vraagt. Samen onderzoeken we welke concrete stap als eerste slimmer kan."
         buttonLabel="Plan een gesprek"
       />
     </main>

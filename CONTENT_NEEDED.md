@@ -16,8 +16,19 @@ Graag aanleveren:
 
 Huidige voorlopige richting:
 
-- Meer zorg, minder last.
-- Eerder zien wat aandacht nodig heeft.
+- Meer leren van ieder incident.
+- Van incidentmelding naar verbetering.
+- Carecogni maakt van incidentmeldingen bruikbare verbeterinformatie.
+
+Nog te bevestigen voor deze positionering:
+
+- Richt Carecogni zich primair op alle zorgincidenten of eerst specifiek op
+  medicatie-incidenten?
+- Welke typen meldsystemen en exportformaten kunnen nu aantoonbaar worden
+  aangesloten?
+- Welke onderdelen zijn al beschikbaar: screening, classificatie, analyse,
+  terugkoppeling en rapportage?
+- Welke resultaten mogen algemeen worden geclaimd naast de IVM-case?
 
 ## 2. Oplossing: IoT & Domotica Agents
 

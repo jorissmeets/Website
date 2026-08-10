@@ -72,6 +72,7 @@ test("server-renders the designer-led content pages", async () => {
     if (pathname === "/over-ons") {
       assert.match(html, /Joris Smeets/);
       assert.match(html, /Tijs Teulings/);
+      assert.match(html, /AI Lead/);
       assert.match(html, /Tim Schouten/);
       assert.match(html, /Gabriel Uwaila/);
       assert.match(html, /Platform Engineer/);

@@ -22,7 +22,7 @@ const team = [
   },
   {
     name: "Tijs Teulings",
-    role: "AI Engineer",
+    role: "AI Lead",
     image: "/assets/tijs-teulings.png",
     imagePosition: "50% 69%",
   },

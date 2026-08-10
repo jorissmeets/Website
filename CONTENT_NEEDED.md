@@ -111,8 +111,13 @@ Deze detailpagina is gevuld. Nog graag bevestigen:
 
 De namen en functies zijn overgenomen van carecogni.com.
 
+De foto’s van Joris Smeets en Tijs Teulings zijn gecorrigeerd. Tim Schouten en
+Gabriel Uwaila zijn met de aangeleverde foto’s toegevoegd; hun functietitels
+worden nog niet getoond omdat deze niet zijn aangeleverd.
+
 Optioneel aan te leveren:
 
+- De exacte functietitels van Tim Schouten en Gabriel Uwaila.
 - Een korte biografie van 40–60 woorden per teamlid.
 - LinkedIn-profiel per teamlid.
 - Eén actuele teamfoto.

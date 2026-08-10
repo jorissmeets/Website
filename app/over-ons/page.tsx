@@ -18,12 +18,23 @@ const team = [
   {
     name: "Joris Smeets",
     role: "Co-Founder en Chief Innovation Officer",
-    image: "/assets/figma/about-joris.png",
+    image: "/assets/tijs.jpg",
   },
   {
     name: "Tijs Teulings",
     role: "AI Engineer",
-    image: "/assets/tijs.jpg",
+    image: "/assets/tijs-teulings.png",
+    imagePosition: "50% 69%",
+  },
+  {
+    name: "Tim Schouten",
+    role: "",
+    image: "/assets/tim-schouten.png",
+  },
+  {
+    name: "Gabriel Uwaila",
+    role: "",
+    image: "/assets/gabriel-uwaila.png",
   },
   {
     name: "Joran Timmerman",
@@ -123,11 +134,16 @@ export default function AboutPage() {
                     fill
                     sizes="(max-width: 620px) 100vw, 50vw"
                     alt={person.name}
+                    style={
+                      person.imagePosition
+                        ? { objectPosition: person.imagePosition }
+                        : undefined
+                    }
                   />
                 </div>
                 <div>
                   <h3>{person.name}</h3>
-                  <p>{person.role}</p>
+                  {person.role ? <p>{person.role}</p> : null}
                 </div>
               </article>
             ))}

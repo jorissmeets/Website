@@ -66,6 +66,17 @@ test("server-renders the designer-led content pages", async () => {
   for (const [pathname, expected] of paths) {
     const response = await render(pathname);
     assert.equal(response.status, 200, pathname);
-    assert.match(await response.text(), expected, pathname);
+    const html = await response.text();
+    assert.match(html, expected, pathname);
+
+    if (pathname === "/over-ons") {
+      assert.match(html, /Joris Smeets/);
+      assert.match(html, /Tijs Teulings/);
+      assert.match(html, /Tim Schouten/);
+      assert.match(html, /Gabriel Uwaila/);
+      assert.match(html, /tijs-teulings\.png/);
+      assert.match(html, /tim-schouten\.png/);
+      assert.match(html, /gabriel-uwaila\.png/);
+    }
   }
 });

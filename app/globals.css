@@ -3515,6 +3515,14 @@ textarea:focus-visible {
   background: var(--cream-light);
 }
 
+.client-section-top {
+  padding: 78px 0 86px;
+}
+
+.client-section-top .figma-section-heading {
+  margin-bottom: 38px;
+}
+
 .client-section .figma-section-heading {
   margin-bottom: 54px;
 }

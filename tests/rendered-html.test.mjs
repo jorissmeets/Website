@@ -49,6 +49,10 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Fivoor/);
   assert.match(html, /GGZ Noord-Holland-Noord/);
   assert.match(html, /Saffier/);
+  assert.ok(
+    html.indexOf("Onze klanten") < html.indexOf("Registreren is pas het begin"),
+    "customer section should appear directly after the hero",
+  );
   assert.match(html, /Intelligente samenwerking tussen mens en technologie/);
   assert.match(html, /Joris Smeets/);
   assert.match(html, /Tijs Teulings/);

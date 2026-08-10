@@ -145,6 +145,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="client-section client-section-top" aria-labelledby="client-title">
+        <div className="container">
+          <div className="figma-section-heading centered">
+            <p className="eyebrow">Onze klanten</p>
+            <h2 id="client-title">Samen werken aan AI die waarde toevoegt</h2>
+          </div>
+          <div className="client-name-grid">
+            {customers.map((customer) => (
+              <div
+                className={`client-logo-card${customer.className ? ` ${customer.className}` : ""}`}
+                key={customer.name}
+              >
+                <Image
+                  src={customer.logo}
+                  width={customer.width}
+                  height={customer.height}
+                  unoptimized
+                  alt={customer.name}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="figma-intro">
         <div className="container figma-intro-copy">
           <h2>Registreren is pas het begin</h2>
@@ -275,31 +300,6 @@ export default function Home() {
             >
               Bespreek een vergelijkbare vraag
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="client-section" aria-labelledby="client-title">
-        <div className="container">
-          <div className="figma-section-heading centered">
-            <p className="eyebrow">Onze klanten</p>
-            <h2 id="client-title">Samen werken aan AI die waarde toevoegt</h2>
-          </div>
-          <div className="client-name-grid">
-            {customers.map((customer) => (
-              <div
-                className={`client-logo-card${customer.className ? ` ${customer.className}` : ""}`}
-                key={customer.name}
-              >
-                <Image
-                  src={customer.logo}
-                  width={customer.width}
-                  height={customer.height}
-                  unoptimized
-                  alt={customer.name}
-                />
-              </div>
-            ))}
           </div>
         </div>
       </section>

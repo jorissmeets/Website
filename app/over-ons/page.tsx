@@ -27,16 +27,6 @@ const team = [
     imagePosition: "50% 69%",
   },
   {
-    name: "Tim Schouten",
-    role: "AI Engineer",
-    image: "/assets/tim-schouten.png",
-  },
-  {
-    name: "Gabriel Uwaila",
-    role: "Software Engineer",
-    image: "/assets/gabriel-uwaila.png",
-  },
-  {
     name: "Joran Timmerman",
     role: "Platform Engineer",
     image: "/assets/joran.jpg",
@@ -45,6 +35,16 @@ const team = [
     name: "Pascal Venema",
     role: "Project Manager",
     image: "/assets/pascal.jpeg",
+  },
+  {
+    name: "Tim Schouten",
+    role: "AI Engineer",
+    image: "/assets/tim-schouten.png",
+  },
+  {
+    name: "Gabriel Uwaila",
+    role: "Software Engineer",
+    image: "/assets/gabriel-uwaila.png",
   },
   {
     name: "Piet Hein Zwaal",

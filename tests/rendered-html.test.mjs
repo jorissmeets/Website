@@ -57,12 +57,13 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Pascal Venema/);
   assert.match(html, /Tim Schouten/);
   assert.doesNotMatch(html, /Gabriel Uwaila/);
-  assert.match(html, /Hoe gaan wij te werk/);
-  assert.match(html, /We build it, you use it, you own it/);
-  assert.match(html, /Neem contact met ons op/);
+  assert.doesNotMatch(html, /Hoe gaan wij te werk/);
+  assert.doesNotMatch(html, /We build it, you use it, you own it/);
+  assert.doesNotMatch(html, /Neem contact met ons op/);
   assert.match(html, /href="\/#over-ons"/);
-  assert.match(html, /href="\/#aanpak"/);
-  assert.match(html, /href="\/#contact"/);
+  assert.doesNotMatch(html, /href="\/#aanpak"/);
+  assert.doesNotMatch(html, /href="\/#contact"/);
+  assert.match(html, /mailto:hello@carecogni\.com/);
   assert.doesNotMatch(html, /Cases uit de praktijk|Meer usecases/);
   assert.doesNotMatch(html, /IoT & Domotica|30\+|4–8 weken|6–10 weken|2–4 weken/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
@@ -73,8 +74,8 @@ test("legacy content routes return to the one-page homepage", async () => {
     ["/cases", "#ivm-case"],
     ["/cases/ivm-incidentmeldingen", "#ivm-case"],
     ["/over-ons", "#over-ons"],
-    ["/methode", "#aanpak"],
-    ["/contact", "#contact"],
+    ["/methode", ""],
+    ["/contact", ""],
     ["/oplossingen/ai-care-assistant", "#oplossing"],
   ];
 

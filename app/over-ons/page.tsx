@@ -28,22 +28,22 @@ const team = [
   },
   {
     name: "Tim Schouten",
-    role: "",
+    role: "AI Engineer",
     image: "/assets/tim-schouten.png",
   },
   {
     name: "Gabriel Uwaila",
-    role: "",
+    role: "Software Engineer",
     image: "/assets/gabriel-uwaila.png",
   },
   {
     name: "Joran Timmerman",
-    role: "Data Engineer",
+    role: "Platform Engineer",
     image: "/assets/joran.jpg",
   },
   {
     name: "Pascal Venema",
-    role: "Data Engineer",
+    role: "Project Manager",
     image: "/assets/pascal.jpeg",
   },
   {

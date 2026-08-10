@@ -74,6 +74,9 @@ test("server-renders the designer-led content pages", async () => {
       assert.match(html, /Tijs Teulings/);
       assert.match(html, /Tim Schouten/);
       assert.match(html, /Gabriel Uwaila/);
+      assert.match(html, /Platform Engineer/);
+      assert.match(html, /Project Manager/);
+      assert.match(html, /Software Engineer/);
       assert.match(html, /tijs-teulings\.png/);
       assert.match(html, /tim-schouten\.png/);
       assert.match(html, /gabriel-uwaila\.png/);

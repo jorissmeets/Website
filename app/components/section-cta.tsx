@@ -14,7 +14,7 @@ export function SectionCta({
       <div className="container cta-inner">
         <h2>{title}</h2>
         <p>{text}</p>
-        <Link className="button button-dark button-small" href="/contact">
+        <Link className="button button-dark button-small" href="/#contact">
           {buttonLabel}
         </Link>
       </div>

@@ -114,6 +114,7 @@ De namen en functies zijn overgenomen van carecogni.com.
 De foto’s van Joris Smeets en Tijs Teulings zijn gecorrigeerd. Tim Schouten en
 Gabriel Uwaila zijn met de aangeleverde foto’s toegevoegd. De functietitels van
 Tim, Gabriel, Joran Timmerman en Pascal Venema zijn daarna bevestigd en ingevuld.
+Gabriel wordt in de huidige one-page liveversie nog niet getoond.
 
 Optioneel aan te leveren:
 

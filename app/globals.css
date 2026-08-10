@@ -3484,6 +3484,20 @@ textarea:focus-visible {
 
 /* Homepage incident intelligence story */
 
+.one-page-section {
+  scroll-margin-top: 24px;
+}
+
+.centered-eyebrow {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.figma-home .about-team > .container > h2 {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
 .figma-home .home-hero-inner {
   padding-top: 155px;
 }

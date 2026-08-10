@@ -41,7 +41,7 @@ export function SiteHeader() {
         <nav className={`nav-links${open ? " is-open" : ""}`} aria-label="Hoofdnavigatie">
           <Link
             className={pathname === "/" ? "nav-link active" : "nav-link"}
-            href="/"
+            href="/#top"
             onClick={closeMenu}
           >
             Home
@@ -54,36 +54,30 @@ export function SiteHeader() {
           >
             Oplossing
           </Link>
-          <div className="nav-item about-menu">
-            <Link
-              className={
-                pathname === "/over-ons" || pathname === "/methode"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-              href="/over-ons"
-              onClick={closeMenu}
-            >
-              Over ons
-            </Link>
-            <div className="dropdown dropdown-compact">
-              <Link className="dropdown-item" href="/over-ons" onClick={closeMenu}>
-                <span className="dropdown-text">
-                  <strong>Wie zijn wij</strong>
-                  <span>Het team achter Carecogni</span>
-                </span>
-              </Link>
-              <Link className="dropdown-item" href="/methode" onClick={closeMenu}>
-                <span className="dropdown-text">
-                  <strong>Onze aanpak</strong>
-                  <span>Van probleem naar blijvende waarde</span>
-                </span>
-              </Link>
-            </div>
-          </div>
           <Link
-            className={pathname === "/contact" ? "nav-link active" : "nav-link"}
-            href="/contact"
+            className="nav-link"
+            href="/#ivm-case"
+            onClick={closeMenu}
+          >
+            IVM-case
+          </Link>
+          <Link
+            className="nav-link"
+            href="/#over-ons"
+            onClick={closeMenu}
+          >
+            Over ons
+          </Link>
+          <Link
+            className="nav-link"
+            href="/#aanpak"
+            onClick={closeMenu}
+          >
+            Aanpak
+          </Link>
+          <Link
+            className="nav-link"
+            href="/#contact"
             onClick={closeMenu}
           >
             Contact

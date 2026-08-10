@@ -49,42 +49,38 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Fivoor/);
   assert.match(html, /GGZ Noord-Holland-Noord/);
   assert.match(html, /Saffier/);
+  assert.match(html, /Intelligente samenwerking tussen mens en technologie/);
+  assert.match(html, /Joris Smeets/);
+  assert.match(html, /Tijs Teulings/);
+  assert.match(html, /AI Lead/);
+  assert.match(html, /Joran Timmerman/);
+  assert.match(html, /Pascal Venema/);
+  assert.match(html, /Tim Schouten/);
+  assert.doesNotMatch(html, /Gabriel Uwaila/);
+  assert.match(html, /Hoe gaan wij te werk/);
+  assert.match(html, /We build it, you use it, you own it/);
+  assert.match(html, /Neem contact met ons op/);
+  assert.match(html, /href="\/#over-ons"/);
+  assert.match(html, /href="\/#aanpak"/);
+  assert.match(html, /href="\/#contact"/);
   assert.doesNotMatch(html, /Cases uit de praktijk|Meer usecases/);
   assert.doesNotMatch(html, /IoT & Domotica|30\+|4–8 weken|6–10 weken|2–4 weken/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);
 });
 
-test("server-renders the designer-led content pages", async () => {
+test("legacy content routes return to the one-page homepage", async () => {
   const paths = [
-    ["/cases", /Slimme AI oplossingen in de praktijk/],
-    ["/over-ons", /Intelligente samenwerking tussen mens en technologie/],
-    ["/methode", /Hoe gaan wij te werk/],
-    ["/contact", /Benieuwd wat wij voor jou kunnen betekenen/],
-    ["/oplossingen/ai-care-assistant", /AI Care Assistant/],
+    ["/cases", "#ivm-case"],
+    ["/cases/ivm-incidentmeldingen", "#ivm-case"],
+    ["/over-ons", "#over-ons"],
+    ["/methode", "#aanpak"],
+    ["/contact", "#contact"],
+    ["/oplossingen/ai-care-assistant", "#oplossing"],
   ];
 
-  for (const [pathname, expected] of paths) {
+  for (const [pathname, anchor] of paths) {
     const response = await render(pathname);
-    assert.equal(response.status, 200, pathname);
-    const html = await response.text();
-    assert.match(html, expected, pathname);
-
-    if (pathname === "/over-ons") {
-      assert.match(html, /Joris Smeets/);
-      assert.match(html, /Tijs Teulings/);
-      assert.match(html, /AI Lead/);
-      assert.match(html, /Tim Schouten/);
-      assert.match(html, /Gabriel Uwaila/);
-      assert.match(html, /Platform Engineer/);
-      assert.match(html, /Project Manager/);
-      assert.match(html, /Software Engineer/);
-      assert.match(
-        html,
-        /Joran Timmerman[\s\S]*Pascal Venema[\s\S]*Tim Schouten[\s\S]*Gabriel Uwaila/,
-      );
-      assert.match(html, /tijs-teulings\.png/);
-      assert.match(html, /tim-schouten\.png/);
-      assert.match(html, /gabriel-uwaila\.png/);
-    }
+    assert.ok([307, 308].includes(response.status), pathname);
+    assert.equal(new URL(response.headers.get("location")).hash, anchor, pathname);
   }
 });

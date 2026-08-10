@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
-        <Link className="footer-brand" href="/" aria-label="Carecogni home">
+        <Link className="footer-brand" href="/#top" aria-label="Carecogni home">
           <Image
             src="/assets/carecogni-mark-light.svg"
             width={269}

@@ -49,7 +49,7 @@ export function SiteHeader() {
 
           <Link
             className="nav-link"
-            href="/#oplossing"
+            href="/#werkwijze"
             onClick={closeMenu}
           >
             Oplossing

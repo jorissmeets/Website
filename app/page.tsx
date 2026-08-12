@@ -1,29 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const incidentSteps = [
-  {
-    title: "Screenen",
-    description:
-      "AI leest vrije-tekstmeldingen en haalt de informatie naar voren die nodig is voor verdere beoordeling.",
-  },
-  {
-    title: "Classificeren",
-    description:
-      "De assistent doet een consistente voorzet op basis van afgesproken categorieën en codeerinstructies.",
-  },
-  {
-    title: "Beoordelen",
-    description:
-      "De professional controleert de bron, weegt de context en bepaalt de definitieve classificatie.",
-  },
-  {
-    title: "Leren en verbeteren",
-    description:
-      "Gestructureerde informatie maakt gerichte analyse, terugkoppeling en kwaliteitsverbetering mogelijk.",
-  },
-];
-
 const customers = [
   {
     name: "Arkin",
@@ -248,33 +225,6 @@ export default function Home() {
               sizes="(max-width: 820px) 100vw, 50vw"
               alt="Architectuur van het Carecogni AI-platform"
             />
-          </div>
-        </div>
-      </section>
-
-      <section className="figma-solutions" id="oplossing">
-        <div className="container">
-          <div className="figma-section-heading centered">
-            <h2 className="content-placeholder">
-              [Sectietitel voor de werkwijze — tekst nog te schrijven]
-            </h2>
-            <p className="content-placeholder">
-              [Korte toelichting op de vier stappen hieronder]
-            </p>
-          </div>
-          <div className="figma-solution-grid incident-step-grid">
-            {incidentSteps.map((step, index) => (
-              <article
-                className="figma-solution-card"
-                key={step.title}
-              >
-                <span className="solution-card-number" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

@@ -39,7 +39,8 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Korte positioneringsregel — tekst nog te schrijven/);
   assert.match(html, /Sectietitel over de uitdaging in de zorgpraktijk/);
   assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
-  assert.match(html, /Sectietitel voor de werkwijze — tekst nog te schrijven/);
+  assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);
+  assert.doesNotMatch(html, /Screenen|Classificeren|Leren en verbeteren/);
   assert.match(html, /Circa 20.000 meldingen per jaar zorgvuldig verwerken/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
@@ -72,6 +73,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /Hoe gaan wij te werk/);
   assert.doesNotMatch(html, /We build it, you use it, you own it/);
   assert.doesNotMatch(html, /Neem contact met ons op/);
+  assert.match(html, /href="\/#werkwijze"/);
   assert.match(html, /href="\/#over-ons"/);
   assert.doesNotMatch(html, /href="\/#aanpak"/);
   assert.doesNotMatch(html, /href="\/#contact"/);
@@ -88,7 +90,7 @@ test("legacy content routes return to the one-page homepage", async () => {
     ["/over-ons", "#over-ons"],
     ["/methode", ""],
     ["/contact", ""],
-    ["/oplossingen/ai-care-assistant", "#oplossing"],
+    ["/oplossingen/ai-care-assistant", "#werkwijze"],
   ];
 
   for (const [pathname, anchor] of paths) {

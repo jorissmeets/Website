@@ -20,7 +20,7 @@ const incidentSteps = [
   {
     title: "Leren en verbeteren",
     description:
-      "Gestructureerde meldingen maken gerichte analyse, terugkoppeling en kwaliteitsverbetering mogelijk.",
+      "Gestructureerde informatie maakt gerichte analyse, terugkoppeling en kwaliteitsverbetering mogelijk.",
   },
 ];
 
@@ -123,13 +123,13 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <p className="figma-hero-eyebrow">Meer leren van ieder incident</p>
+          <p className="figma-hero-eyebrow content-placeholder content-placeholder-hero">
+            [Korte positioneringsregel — tekst nog te schrijven]
+          </p>
           <h1>Van incidentmelding naar verbetering</h1>
-          <p className="figma-hero-lead">
-            Carecogni zet grote aantallen incidentmeldingen om in consistente,
-            bruikbare verbeterinformatie. Onze AI ondersteunt screening,
-            classificatie, analyse en terugkoppeling, met de professional in
-            regie.
+          <p className="figma-hero-lead content-placeholder content-placeholder-hero">
+            [Introductie in 2–3 zinnen: wat doet Carecogni, voor wie en met welk
+            resultaat?]
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="#werkwijze">
@@ -149,7 +149,9 @@ export default function Home() {
         <div className="container">
           <div className="figma-section-heading centered">
             <p className="eyebrow">Onze klanten</p>
-            <h2 id="client-title">Samen werken aan AI die waarde toevoegt</h2>
+            <h2 id="client-title" className="content-placeholder">
+              [Korte introductie bij onze klanten — tekst nog te schrijven]
+            </h2>
           </div>
           <div className="client-name-grid">
             {customers.map((customer) => (
@@ -172,12 +174,12 @@ export default function Home() {
 
       <section className="figma-intro">
         <div className="container figma-intro-copy">
-          <h2>Registreren is pas het begin</h2>
-          <p>
-            Zorgorganisaties ontvangen dagelijks meldingen in vrije tekst.
-            Zorgvuldig lezen, coderen en terugkoppelen kost specialistische
-            tijd. Terwijl de echte waarde juist ontstaat wanneer meldingen
-            samen leiden tot gerichte verbeteringen in de praktijk.
+          <h2 className="content-placeholder">
+            [Sectietitel over de uitdaging in de zorgpraktijk]
+          </h2>
+          <p className="content-placeholder">
+            [Toelichting in 3–4 zinnen: welk probleem ervaren zorgorganisaties
+            en waarom is dit belangrijk?]
           </p>
         </div>
       </section>
@@ -193,11 +195,13 @@ export default function Home() {
             />
           </div>
           <div className="figma-copy">
-            <p className="eyebrow">Incident Intelligence</p>
-            <h2>Minder tijd aan verwerking. Meer ruimte om te leren.</h2>
+            <p className="eyebrow">Onze oplossing</p>
+            <h2 className="content-placeholder">
+              [Titel voor de AI-assistent — tekst nog te schrijven]
+            </h2>
             <p>
-              Onze AI-assistent leest incidentmeldingen, herkent relevante
-              informatie en doet een voorstel voor de juiste classificatie.
+              Onze AI-assistent leest vrije tekst, herkent relevante informatie
+              en doet een voorstel voor de juiste classificatie.
               Daarmee ondersteunen we kwaliteitsprofessionals bij het
               tijdrovende werk vóór de inhoudelijke analyse en terugkoppeling.
             </p>
@@ -213,10 +217,12 @@ export default function Home() {
       <section className="figma-foundation">
         <div className="container figma-split">
           <div className="figma-copy">
-            <p className="eyebrow">Aansluiten op de praktijk</p>
-            <h2>Een slimme laag boven op het bestaande meldproces</h2>
+            <p className="eyebrow">Techniek en integratie</p>
+            <h2 className="content-placeholder">
+              [Titel over aansluiting op bestaande systemen en processen]
+            </h2>
             <p>
-              Carecogni sluit aan op bestaande meldgegevens, codeboeken en
+              Carecogni sluit aan op bestaande gegevens, codeboeken en
               werkwijzen. Gespecialiseerde AI-agents zetten vrije tekst om in
               gestructureerde, herleidbare informatie die opnieuw gebruikt kan
               worden voor analyse en terugkoppeling.
@@ -247,10 +253,11 @@ export default function Home() {
       <section className="figma-solutions" id="oplossing">
         <div className="container">
           <div className="figma-section-heading centered">
-            <h2>Van melding naar bruikbare verbeterinformatie</h2>
-            <p>
-              De AI ondersteunt iedere stap, zonder de professionele
-              beoordeling over te nemen.
+            <h2 className="content-placeholder">
+              [Sectietitel voor de werkwijze — tekst nog te schrijven]
+            </h2>
+            <p className="content-placeholder">
+              [Korte toelichting op de vier stappen hieronder]
             </p>
           </div>
           <div className="figma-solution-grid incident-step-grid">
@@ -316,7 +323,9 @@ export default function Home() {
           </div>
           <div>
             <p className="eyebrow">Over Carecogni</p>
-            <h2>Intelligente samenwerking tussen mens en technologie</h2>
+            <h2 className="content-placeholder">
+              [Titel over Carecogni — tekst nog te schrijven]
+            </h2>
             <p>
               Carecogni bouwt veilige en begrijpelijke AI-toepassingen voor de
               zorg. We combineren ervaring in digitale innovatie, data science,
@@ -334,7 +343,9 @@ export default function Home() {
       <section className="about-team one-page-section" id="team">
         <div className="container">
           <p className="eyebrow centered-eyebrow">Ons team</p>
-          <h2>Complementaire ervaring, één gedeelde ambitie</h2>
+          <h2 className="content-placeholder">
+            [Korte introductie bij het team — tekst nog te schrijven]
+          </h2>
           <div className="figma-team-grid">
             {team.map((person) => (
               <article className="figma-team-card" key={person.name}>

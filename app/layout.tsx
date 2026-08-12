@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     template: "%s | Carecogni",
   },
   description:
-    "Carecogni zet incidentmeldingen om in consistente, bruikbare verbeterinformatie met AI en de professional in regie.",
+    "Carecogni ontwikkelt veilige, uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
   openGraph: {
     title: "Carecogni — Van incidentmelding naar verbetering",
     description:
-      "Minder tijd aan verwerking van incidentmeldingen. Meer ruimte om te leren en verbeteren.",
+      "Veilige en uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
     type: "website",
     locale: "nl_NL",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Carecogni — Van incidentmelding naar verbetering",
     description:
-      "Minder tijd aan verwerking van incidentmeldingen. Meer ruimte om te leren en verbeteren.",
+      "Veilige en uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
     images: ["/og.png"],
   },
 };

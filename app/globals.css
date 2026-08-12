@@ -3748,3 +3748,51 @@ textarea:focus-visible {
     font-size: 1rem;
   }
 }
+
+/* Editorial placeholders for copy that still needs approval */
+
+.figma-home .content-placeholder {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border: 1px dashed rgba(4, 61, 72, 0.36);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.48);
+  color: rgba(4, 61, 72, 0.64);
+  font-family: "Rubik", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.figma-home h2.content-placeholder {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.figma-home .figma-section-heading .content-placeholder,
+.figma-home .figma-intro-copy .content-placeholder,
+.figma-home .about-team .content-placeholder {
+  margin-inline: auto;
+}
+
+.figma-home .home-hero-inner > .content-placeholder-hero {
+  max-width: 700px;
+  border-color: rgba(246, 239, 226, 0.56);
+  background: rgba(4, 61, 72, 0.42);
+  color: rgba(246, 239, 226, 0.9);
+  font-family: "Rubik", Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.figma-home .home-hero-inner > .figma-hero-eyebrow.content-placeholder-hero {
+  margin-bottom: 14px;
+}
+
+.figma-home .home-hero-inner > .figma-hero-lead.content-placeholder-hero {
+  margin-bottom: 34px;
+}

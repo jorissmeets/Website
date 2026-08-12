@@ -35,12 +35,11 @@ test("server-renders the Carecogni homepage", async () => {
     html,
     /<title>Carecogni — Van incidentmelding naar verbetering<\/title>/i,
   );
-  assert.match(html, /Meer leren van ieder incident/);
   assert.match(html, /Van incidentmelding naar verbetering/);
-  assert.match(html, /Registreren is pas het begin/);
-  assert.match(html, /Minder tijd aan verwerking/);
-  assert.match(html, /Een slimme laag boven op het bestaande meldproces/);
-  assert.match(html, /Van melding naar bruikbare verbeterinformatie/);
+  assert.match(html, /Korte positioneringsregel — tekst nog te schrijven/);
+  assert.match(html, /Sectietitel over de uitdaging in de zorgpraktijk/);
+  assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
+  assert.match(html, /Sectietitel voor de werkwijze — tekst nog te schrijven/);
   assert.match(html, /Circa 20.000 meldingen per jaar zorgvuldig verwerken/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
@@ -50,10 +49,11 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /GGZ Noord-Holland-Noord/);
   assert.match(html, /Saffier/);
   assert.ok(
-    html.indexOf("Onze klanten") < html.indexOf("Registreren is pas het begin"),
+    html.indexOf("Onze klanten") <
+      html.indexOf("Sectietitel over de uitdaging in de zorgpraktijk"),
     "customer section should appear directly after the hero",
   );
-  assert.match(html, /Intelligente samenwerking tussen mens en technologie/);
+  assert.match(html, /Titel over Carecogni — tekst nog te schrijven/);
   assert.match(html, /Joris Smeets/);
   assert.match(html, /Tijs Teulings/);
   assert.match(html, /AI Lead/);

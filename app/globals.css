@@ -3537,6 +3537,15 @@ textarea:focus-visible {
   color: var(--teal);
 }
 
+.client-section .client-intro {
+  max-width: 780px;
+  margin-inline: auto;
+  font-family: "Rubik", Arial, sans-serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  font-weight: 300;
+  line-height: 1.55;
+}
+
 .client-name-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));

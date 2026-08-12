@@ -48,6 +48,11 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Fivoor/);
   assert.match(html, /GGZ Noord-Holland-Noord/);
   assert.match(html, /Saffier/);
+  assert.match(
+    html,
+    /We werken samen met organisaties in de ggz, ouderenzorg en medicatieveiligheid/,
+  );
+  assert.doesNotMatch(html, /Korte introductie bij onze klanten/);
   assert.ok(
     html.indexOf("Onze klanten") <
       html.indexOf("Sectietitel over de uitdaging in de zorgpraktijk"),

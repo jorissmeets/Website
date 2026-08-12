@@ -149,8 +149,10 @@ export default function Home() {
         <div className="container">
           <div className="figma-section-heading centered">
             <p className="eyebrow">Onze klanten</p>
-            <h2 id="client-title" className="content-placeholder">
-              [Korte introductie bij onze klanten — tekst nog te schrijven]
+            <h2 id="client-title" className="client-intro">
+              We werken samen met organisaties in de ggz, ouderenzorg en
+              medicatieveiligheid aan AI-oplossingen die aansluiten op hun
+              dagelijkse praktijk.
             </h2>
           </div>
           <div className="client-name-grid">

@@ -36,7 +36,11 @@ test("server-renders the Carecogni homepage", async () => {
     /<title>Carecogni — Van incidentmelding naar verbetering<\/title>/i,
   );
   assert.match(html, /Van incidentmelding naar verbetering/);
-  assert.match(html, /Korte positioneringsregel — tekst nog te schrijven/);
+  assert.match(
+    html,
+    /Wij bestaan om de grenzen te verleggen van wat mogelijk wordt geacht in de zorg\./,
+  );
+  assert.doesNotMatch(html, /Korte positioneringsregel/);
   assert.match(html, /Sectietitel over de uitdaging in de zorgpraktijk/);
   assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
   assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);

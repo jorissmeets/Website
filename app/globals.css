@@ -3803,6 +3803,7 @@ textarea:focus-visible {
 }
 
 .figma-home .home-hero-inner > .figma-hero-eyebrow {
+  max-width: 760px;
   margin: 0 0 10px;
   color: var(--cream-light);
   font-family: "Sirenia", Georgia, serif;

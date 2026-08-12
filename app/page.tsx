@@ -131,8 +131,9 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <p className="figma-hero-eyebrow content-placeholder content-placeholder-hero">
-            [Korte positioneringsregel — tekst nog te schrijven]
+          <p className="figma-hero-eyebrow">
+            Wij bestaan om de grenzen te verleggen van wat mogelijk wordt
+            geacht in de zorg.
           </p>
           <h1>Van incidentmelding naar verbetering</h1>
           <p className="figma-hero-lead content-placeholder content-placeholder-hero">

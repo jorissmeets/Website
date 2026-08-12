@@ -56,10 +56,10 @@ export function SiteHeader() {
           </Link>
           <Link
             className="nav-link"
-            href="/#ivm-case"
+            href="/#cases"
             onClick={closeMenu}
           >
-            IVM-case
+            Cases
           </Link>
           <Link
             className="nav-link"

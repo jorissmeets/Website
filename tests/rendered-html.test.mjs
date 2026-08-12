@@ -41,7 +41,10 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
   assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);
   assert.doesNotMatch(html, /Screenen|Classificeren|Leren en verbeteren/);
-  assert.match(html, /Circa 20.000 meldingen per jaar zorgvuldig verwerken/);
+  assert.match(html, /AI-chatbot ontlast zorgmedewerkers/);
+  assert.match(html, /AI-screeningsassistent voor medicatie-incidenten/);
+  assert.match(html, /Rapportagevalidatie van zorginhoudelijk contact/);
+  assert.match(html, /circa 20.000 meldingen per jaar/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);
   assert.match(html, /Bekijk hoe het werkt/);
@@ -76,6 +79,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /We build it, you use it, you own it/);
   assert.doesNotMatch(html, /Neem contact met ons op/);
   assert.match(html, /href="\/#werkwijze"/);
+  assert.match(html, /href="\/#cases"/);
   assert.match(html, /href="\/#over-ons"/);
   assert.doesNotMatch(html, /href="\/#aanpak"/);
   assert.doesNotMatch(html, /href="\/#contact"/);
@@ -87,8 +91,8 @@ test("server-renders the Carecogni homepage", async () => {
 
 test("legacy content routes return to the one-page homepage", async () => {
   const paths = [
-    ["/cases", "#ivm-case"],
-    ["/cases/ivm-incidentmeldingen", "#ivm-case"],
+    ["/cases", "#cases"],
+    ["/cases/ivm-incidentmeldingen", "#cases"],
     ["/over-ons", "#over-ons"],
     ["/methode", ""],
     ["/contact", ""],

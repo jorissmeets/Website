@@ -35,6 +35,36 @@ const customers = [
   },
 ];
 
+const cases = [
+  {
+    organization: "Arkin",
+    title: "AI-chatbot ontlast zorgmedewerkers",
+    description:
+      "Een digitale assistent ondersteunt cliënten vóór, tijdens en na de behandeling en beantwoordt veelgestelde vragen met informatie uit eigen zorgpaden en protocollen.",
+    image: "/assets/figma-import/claire-case.png",
+    imageAlt: "Claire, de digitale assistent voor cliënten van Arkin",
+    visualClass: "case-showcase-visual-claire",
+  },
+  {
+    organization: "Instituut Verantwoord Medicijngebruik",
+    title: "AI-screeningsassistent voor medicatie-incidenten",
+    description:
+      "De assistent helpt circa 20.000 meldingen per jaar sneller en uniformer te classificeren, met een controleerbare AI-voorzet voor screeners.",
+    image: "/assets/figma-import/ivm-screening.png",
+    imageAlt: "Scherm van de AI-screeningsassistent voor medicatie-incidenten",
+    visualClass: "case-showcase-visual-ivm",
+  },
+  {
+    organization: "GGZ Noord-Holland-Noord",
+    title: "Rapportagevalidatie van zorginhoudelijk contact",
+    description:
+      "Een zelfstandige validator toetst rapportages aan vaste regels en geeft per rapportage een herleidbaar oordeel met motivering.",
+    image: "/assets/clients/ggz-nhn.gif",
+    imageAlt: "Logo van GGZ Noord-Holland-Noord",
+    visualClass: "case-showcase-visual-logo",
+  },
+];
+
 const team = [
   {
     name: "Peter Broekroelofs",
@@ -213,9 +243,9 @@ export default function Home() {
             </p>
             <Link
               className="button button-teal button-small"
-              href="#ivm-case"
+              href="#cases"
             >
-              Bekijk de IVM-case
+              Bekijk onze cases
             </Link>
           </div>
           <div className="figma-dashboard figma-dashboard-architecture">
@@ -229,36 +259,38 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="figma-about incident-proof" id="ivm-case">
-        <div className="container figma-split">
-          <div className="figma-dashboard incident-proof-visual">
-            <Image
-              src="/assets/figma-import/ivm-screening.png"
-              fill
-              sizes="(max-width: 820px) 100vw, 50vw"
-              alt="AI-screeningsassistent voor incidentmeldingen"
-            />
+      <section className="case-showcase" id="cases">
+        <div className="container">
+          <div className="figma-section-heading centered">
+            <p className="eyebrow">In de praktijk</p>
+            <h2>Cases</h2>
           </div>
-          <div className="figma-copy">
-            <p className="eyebrow">In de praktijk · IVM</p>
-            <h2>Circa 20.000 meldingen per jaar zorgvuldig verwerken</h2>
-            <p>
-              Voor het Instituut Verantwoord Medicijngebruik ontwikkelde
-              Carecogni een AI-screeningsassistent die incidentmeldingen
-              analyseert en een voorstel doet voor gestructureerde
-              classificaties.
-            </p>
-            <p>
-              De screener ziet de bron en blijft verantwoordelijk voor de
-              definitieve beoordeling. Zo ontstaat een snellere, uniformere
-              werkwijze met meer ruimte voor inhoudelijke terugkoppeling.
-            </p>
-            <Link
-              className="button button-teal button-small"
-              href="mailto:hello@carecogni.com"
-            >
-              Bespreek een vergelijkbare vraag
-            </Link>
+          <div className="case-showcase-list">
+            {cases.map((item) => (
+              <article className="case-showcase-card" key={item.organization}>
+                <div className="case-showcase-copy">
+                  <p className="case-showcase-organization">
+                    {item.organization}
+                  </p>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <div
+                  className={`case-showcase-visual ${item.visualClass}`}
+                >
+                  <Image
+                    src={item.image}
+                    fill
+                    sizes="(max-width: 820px) 100vw, 44vw"
+                    alt={item.imageAlt}
+                    unoptimized={item.image.endsWith(".gif")}
+                  />
+                  <span className="case-showcase-arrow" aria-hidden="true">
+                    →
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

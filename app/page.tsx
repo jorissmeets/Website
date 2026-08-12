@@ -133,7 +133,7 @@ export default function Home() {
           />
           <h1>
             Wij bestaan om de grenzen te verleggen van wat mogelijk wordt
-            geacht in de zorg.
+            geacht met AI in de zorg
           </h1>
           <p className="figma-hero-lead">
             Pragmatisch versneld AI voor Care &amp; Cure in productie

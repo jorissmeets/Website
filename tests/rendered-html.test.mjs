@@ -37,7 +37,7 @@ test("server-renders the Carecogni homepage", async () => {
   );
   assert.match(
     html,
-    /Wij bestaan om de grenzen te verleggen van wat mogelijk wordt geacht in de zorg\./,
+    /Wij bestaan om de grenzen te verleggen van wat mogelijk wordt geacht met AI in de zorg/,
   );
   assert.doesNotMatch(html, /Van incidentmelding naar verbetering/);
   assert.doesNotMatch(html, /Korte positioneringsregel/);

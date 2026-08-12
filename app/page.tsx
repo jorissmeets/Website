@@ -136,9 +136,8 @@ export default function Home() {
             geacht in de zorg.
           </p>
           <h1>Van incidentmelding naar verbetering</h1>
-          <p className="figma-hero-lead content-placeholder content-placeholder-hero">
-            [Introductie in 2–3 zinnen: wat doet Carecogni, voor wie en met welk
-            resultaat?]
+          <p className="figma-hero-lead">
+            Pragmatisch versneld AI voor Care &amp; Cure in productie
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="#werkwijze">

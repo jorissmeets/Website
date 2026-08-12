@@ -41,6 +41,8 @@ test("server-renders the Carecogni homepage", async () => {
     /Wij bestaan om de grenzen te verleggen van wat mogelijk wordt geacht in de zorg\./,
   );
   assert.doesNotMatch(html, /Korte positioneringsregel/);
+  assert.match(html, /Pragmatisch versneld AI voor Care &amp; Cure in productie/);
+  assert.doesNotMatch(html, /Introductie in 2–3 zinnen/);
   assert.match(html, /Sectietitel over de uitdaging in de zorgpraktijk/);
   assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
   assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);

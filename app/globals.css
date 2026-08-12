@@ -1217,8 +1217,10 @@ textarea:focus-visible {
   height: 150px;
   margin: 20px;
   overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.94);
   border-radius: 50%;
   background: var(--placeholder);
+  box-shadow: 0 10px 26px rgba(4, 61, 72, 0.14);
 }
 
 .figma-team-photo img {
@@ -3611,6 +3613,7 @@ textarea:focus-visible {
   border: 1px solid rgba(4, 61, 72, 0.16);
   border-radius: 22px;
   background: #fff;
+  box-shadow: 0 14px 34px rgba(4, 61, 72, 0.07);
 }
 
 .case-showcase-copy {
@@ -3647,25 +3650,45 @@ textarea:focus-visible {
   position: relative;
   min-height: 230px;
   overflow: hidden;
-  background: linear-gradient(125deg, #2c7695 0%, #68c8c5 60%, #e7efb1 100%);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.42), transparent 38%),
+    linear-gradient(125deg, #267392 0%, #62c3c0 58%, #e7efb1 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 }
 
 .case-showcase-visual img {
+  z-index: 1;
   object-fit: contain;
-  padding: 24px 78px 24px 30px;
+  padding: 24px 82px 24px 30px;
+  filter: drop-shadow(0 12px 18px rgba(4, 61, 72, 0.18));
 }
 
 .case-showcase-visual-claire img {
-  padding-block: 12px;
+  padding: 16px 84px 16px 18px;
+}
+
+.case-showcase-visual-ivm::before,
+.case-showcase-visual-logo::before {
+  content: "";
+  position: absolute;
+  inset: 34px 82px 34px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 26px rgba(4, 61, 72, 0.16);
 }
 
 .case-showcase-visual-ivm img {
-  padding-block: 44px;
+  padding: 44px 92px 44px 36px;
+}
+
+.case-showcase-visual-logo::before {
+  inset: 34px 82px 34px 28px;
 }
 
 .case-showcase-visual-logo img {
-  padding: 68px 92px 68px 38px;
-  filter: brightness(0) invert(1);
+  padding: 60px 104px 60px 48px;
+  filter: none;
 }
 
 .case-showcase-arrow {
@@ -3676,12 +3699,15 @@ textarea:focus-visible {
   width: 52px;
   height: 52px;
   place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   background: var(--teal);
   color: #fff;
   font-size: 1.8rem;
   font-weight: 300;
+  box-shadow: 0 8px 18px rgba(4, 61, 72, 0.22);
   transform: translateY(-50%);
+  z-index: 2;
 }
 
 @media (max-width: 900px) {
@@ -3728,6 +3754,11 @@ textarea:focus-visible {
   .case-showcase-visual img,
   .case-showcase-visual-logo img {
     padding-inline: 24px 78px;
+  }
+
+  .case-showcase-visual-ivm::before,
+  .case-showcase-visual-logo::before {
+    inset-inline: 18px 76px;
   }
 
   .client-section {

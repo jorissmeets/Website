@@ -311,36 +311,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-company one-page-section" id="over-ons">
-        <div className="container about-company-grid">
-          <div className="about-logo-panel">
-            <Image
-              src="/assets/carecogni-mark-light.svg"
-              width={269}
-              height={138}
-              alt="Carecogni"
-            />
-          </div>
-          <div>
-            <p className="eyebrow">Over Carecogni</p>
-            <h2 className="content-placeholder">
-              [Titel over Carecogni — tekst nog te schrijven]
-            </h2>
-            <p>
-              Carecogni bouwt veilige en begrijpelijke AI-toepassingen voor de
-              zorg. We combineren ervaring in digitale innovatie, data science,
-              softwareontwikkeling en gezondheidszorg.
-            </p>
-            <p>
-              Onze technologie ondersteunt de professional bij tijdrovende
-              informatietaken. De bron blijft herleidbaar, de uitkomst
-              uitlegbaar en de professional houdt de regie.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="about-team one-page-section" id="team">
+      <section className="about-team one-page-section" id="over-ons">
         <div className="container">
           <p className="eyebrow centered-eyebrow">Ons team</p>
           <h2 className="content-placeholder">

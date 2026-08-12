@@ -53,7 +53,9 @@ test("server-renders the Carecogni homepage", async () => {
       html.indexOf("Sectietitel over de uitdaging in de zorgpraktijk"),
     "customer section should appear directly after the hero",
   );
-  assert.match(html, /Titel over Carecogni — tekst nog te schrijven/);
+  assert.doesNotMatch(html, /Over Carecogni/);
+  assert.doesNotMatch(html, /Titel over Carecogni — tekst nog te schrijven/);
+  assert.doesNotMatch(html, /Intelligente samenwerking tussen mens en technologie/);
   assert.match(html, /Joris Smeets/);
   assert.match(html, /Tijs Teulings/);
   assert.match(html, /AI Lead/);

@@ -131,11 +131,10 @@ export default function Home() {
             priority
             alt="Carecogni"
           />
-          <p className="figma-hero-eyebrow">
+          <h1>
             Wij bestaan om de grenzen te verleggen van wat mogelijk wordt
             geacht in de zorg.
-          </p>
-          <h1>Van incidentmelding naar verbetering</h1>
+          </h1>
           <p className="figma-hero-lead">
             Pragmatisch versneld AI voor Care &amp; Cure in productie
           </p>

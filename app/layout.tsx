@@ -6,13 +6,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://carecogni-concept.jepsmeets.chatgpt.site"),
   title: {
-    default: "Carecogni — Van incidentmelding naar verbetering",
+    default: "Carecogni — AI voor Care & Cure in productie",
     template: "%s | Carecogni",
   },
   description:
     "Carecogni ontwikkelt veilige, uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
   openGraph: {
-    title: "Carecogni — Van incidentmelding naar verbetering",
+    title: "Carecogni — AI voor Care & Cure in productie",
     description:
       "Veilige en uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carecogni — Van incidentmelding naar verbetering",
+    title: "Carecogni — AI voor Care & Cure in productie",
     description:
       "Veilige en uitlegbare AI-toepassingen voor de zorg, met de professional in regie.",
     images: ["/og.png"],

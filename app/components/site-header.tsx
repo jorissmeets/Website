@@ -68,6 +68,13 @@ export function SiteHeader() {
           >
             Over ons
           </Link>
+          <Link
+            className="nav-link"
+            href="/#contact"
+            onClick={closeMenu}
+          >
+            Contact
+          </Link>
         </nav>
         <span className="nav-language" aria-label="Taal: Nederlands">
           <span aria-hidden="true">◎</span> NL

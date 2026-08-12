@@ -3710,6 +3710,24 @@ textarea:focus-visible {
   z-index: 2;
 }
 
+.figma-home .section-cta {
+  padding: 92px 0 102px;
+  scroll-margin-top: 24px;
+  background: var(--cream);
+}
+
+.figma-home .section-cta h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2.5rem, 3.7vw, 3.8rem);
+}
+
+.figma-home .section-cta p {
+  max-width: 760px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
 @media (max-width: 900px) {
   .case-showcase-card {
     grid-template-columns: 1fr;

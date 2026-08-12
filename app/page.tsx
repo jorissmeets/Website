@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SectionCta } from "./components/section-cta";
 
 const customers = [
   {
@@ -327,6 +328,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionCta
+        title="Neem contact op"
+        text="Wil je verkennen wat AI voor jouw organisatie kan betekenen? We denken graag mee over een concrete vraag uit de zorgpraktijk."
+        buttonLabel="Mail ons"
+      />
 
     </main>
   );

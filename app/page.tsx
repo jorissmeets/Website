@@ -54,7 +54,7 @@ const team = [
   },
   {
     name: "Joran Timmerman",
-    role: "Platform Engineer",
+    role: "Platform Lead",
     image: "/assets/joran.jpg",
   },
   {

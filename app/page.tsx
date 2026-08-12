@@ -88,7 +88,7 @@ const team = [
   {
     name: "Tim Schouten",
     role: "AI Engineer",
-    image: "/assets/tim-schouten.png",
+    image: "/assets/tim-schouten-2026.png",
   },
   {
     name: "Piet Hein Zwaal",
@@ -342,8 +342,9 @@ export default function Home() {
                   <Image
                     src={person.image}
                     fill
-                    sizes="(max-width: 620px) 100vw, 50vw"
+                    sizes="(max-width: 540px) 95px, (max-width: 1080px) 120px, 150px"
                     alt={person.name}
+                    unoptimized={person.name === "Tim Schouten"}
                     style={
                       person.imagePosition
                         ? { objectPosition: person.imagePosition }

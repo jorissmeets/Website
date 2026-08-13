@@ -43,8 +43,10 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /Korte positioneringsregel/);
   assert.match(html, /Pragmatisch versneld AI voor Care &amp; Cure in productie/);
   assert.doesNotMatch(html, /Introductie in 2–3 zinnen/);
-  assert.match(html, /Sectietitel over de uitdaging in de zorgpraktijk/);
-  assert.match(html, /Titel voor de AI-assistent — tekst nog te schrijven/);
+  assert.match(html, /Waardevolle informatie blijft te vaak onbenut/);
+  assert.match(html, /Een AI-assistent die het voorwerk uit handen neemt/);
+  assert.match(html, /Gebouwd rond de systemen en processen die er al zijn/);
+  assert.doesNotMatch(html, /tekst nog te schrijven|Hier komt|Lorem ipsum/);
   assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);
   assert.doesNotMatch(html, /Screenen|Classificeren|Leren en verbeteren/);
   assert.match(html, /AI-chatbot ontlast zorgmedewerkers/);
@@ -65,7 +67,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /Korte introductie bij onze klanten/);
   assert.ok(
     html.indexOf("Onze klanten") <
-      html.indexOf("Sectietitel over de uitdaging in de zorgpraktijk"),
+      html.indexOf("Waardevolle informatie blijft te vaak onbenut"),
     "customer section should appear directly after the hero",
   );
   assert.doesNotMatch(html, /Over Carecogni/);
@@ -80,6 +82,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Pascal Venema/);
   assert.match(html, /Tim Schouten/);
   assert.match(html, /tim-schouten-2026\.png/);
+  assert.match(html, /Een multidisciplinair team dat kennis van zorg, AI en software samenbrengt/);
   assert.doesNotMatch(html, /Gabriel Uwaila/);
   assert.doesNotMatch(html, /Hoe gaan wij te werk/);
   assert.doesNotMatch(html, /We build it, you use it, you own it/);

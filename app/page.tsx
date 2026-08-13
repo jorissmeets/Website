@@ -183,12 +183,14 @@ export default function Home() {
 
       <section className="figma-intro">
         <div className="container figma-intro-copy">
-          <h2 className="content-placeholder">
-            [Sectietitel over de uitdaging in de zorgpraktijk]
-          </h2>
-          <p className="content-placeholder">
-            [Toelichting in 3–4 zinnen: welk probleem ervaren zorgorganisaties
-            en waarom is dit belangrijk?]
+          <h2>Waardevolle informatie blijft te vaak onbenut</h2>
+          <p>
+            Zorgorganisaties beschikken over veel kennis, maar een groot deel
+            daarvan staat verspreid over systemen of verborgen in vrije tekst.
+            Het kost professionals veel tijd om die informatie te verzamelen,
+            te beoordelen en om te zetten in bruikbare inzichten. Carecogni
+            helpt dit voorwerk zorgvuldig te automatiseren, zodat medewerkers
+            sneller kunnen handelen en meer tijd overhouden voor de zorg.
           </p>
         </div>
       </section>
@@ -205,9 +207,7 @@ export default function Home() {
           </div>
           <div className="figma-copy">
             <p className="eyebrow">Onze oplossing</p>
-            <h2 className="content-placeholder">
-              [Titel voor de AI-assistent — tekst nog te schrijven]
-            </h2>
+            <h2>Een AI-assistent die het voorwerk uit handen neemt</h2>
             <p>
               Onze AI-assistent leest vrije tekst, herkent relevante informatie
               en doet een voorstel voor de juiste classificatie.
@@ -227,9 +227,7 @@ export default function Home() {
         <div className="container figma-split">
           <div className="figma-copy">
             <p className="eyebrow">Techniek en integratie</p>
-            <h2 className="content-placeholder">
-              [Titel over aansluiting op bestaande systemen en processen]
-            </h2>
+            <h2>Gebouwd rond de systemen en processen die er al zijn</h2>
             <p>
               Carecogni sluit aan op bestaande gegevens, codeboeken en
               werkwijzen. Gespecialiseerde AI-agents zetten vrije tekst om in
@@ -298,8 +296,9 @@ export default function Home() {
       <section className="about-team one-page-section" id="over-ons">
         <div className="container">
           <p className="eyebrow centered-eyebrow">Ons team</p>
-          <h2 className="content-placeholder">
-            [Korte introductie bij het team — tekst nog te schrijven]
+          <h2>
+            Een multidisciplinair team dat kennis van zorg, AI en software
+            samenbrengt.
           </h2>
           <div className="figma-team-grid">
             {team.map((person) => (

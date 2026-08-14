@@ -18,6 +18,13 @@ export function SiteFooter() {
           <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
           <span>© 2026 Carecogni</span>
           <Link href="/privacy">Privacy statement</Link>
+          <a
+            href="https://cdn.prod.website-files.com/674d8291dcdcdd14e4b0c4ec/6908bc537b5cd2f0b1637991_Algemene%20Voorwaarden%20Carecogni%20BV.pdf"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Algemene voorwaarden ↗
+          </a>
         </div>
         <div className="footer-col">
           <h2>Bezoek</h2>

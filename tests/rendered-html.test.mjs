@@ -95,6 +95,11 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /href="\/#aanpak"/);
   assert.match(html, /href="\/#contact"/);
   assert.match(html, /mailto:hello@carecogni\.com/);
+  assert.match(html, /Algemene voorwaarden ↗/);
+  assert.match(
+    html,
+    /6908bc537b5cd2f0b1637991_Algemene%20Voorwaarden%20Carecogni%20BV\.pdf/,
+  );
   assert.doesNotMatch(html, /Cases uit de praktijk|Meer usecases/);
   assert.doesNotMatch(html, /IoT & Domotica|30\+|4–8 weken|6–10 weken|2–4 weken/);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/);

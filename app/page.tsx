@@ -293,10 +293,6 @@ export default function Home() {
       <section className="about-team one-page-section" id="over-ons">
         <div className="container">
           <p className="eyebrow centered-eyebrow">Ons team</p>
-          <h2>
-            Een multidisciplinair team dat kennis van zorg, AI en software
-            samenbrengt.
-          </h2>
           <div className="figma-team-grid">
             {team.map((person) => (
               <article className="figma-team-card" key={person.name}>

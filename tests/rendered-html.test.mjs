@@ -83,7 +83,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /Pascal Venema/);
   assert.match(html, /Tim Schouten/);
   assert.match(html, /tim-schouten-2026\.png/);
-  assert.match(html, /Een multidisciplinair team dat kennis van zorg, AI en software samenbrengt/);
+  assert.doesNotMatch(html, /Een multidisciplinair team/);
   assert.doesNotMatch(html, /Gabriel Uwaila/);
   assert.doesNotMatch(html, /Hoe gaan wij te werk/);
   assert.doesNotMatch(html, /We build it, you use it, you own it/);

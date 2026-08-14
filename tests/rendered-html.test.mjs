@@ -52,6 +52,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.match(html, /AI-chatbot ontlast zorgmedewerkers/);
   assert.match(html, /AI-screeningsassistent voor medicatie-incidenten/);
   assert.match(html, /Rapportagevalidatie van zorginhoudelijk contact/);
+  assert.doesNotMatch(html, /case-showcase-arrow/);
   assert.match(html, /circa 20.000 meldingen per jaar/);
   assert.match(html, /carecogni-logo-dark\.svg/);
   assert.match(html, /v3-hero-caregiver-devices\.png/);

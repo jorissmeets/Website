@@ -283,9 +283,6 @@ export default function Home() {
                     alt={item.imageAlt}
                     unoptimized={item.image.endsWith(".gif")}
                   />
-                  <span className="case-showcase-arrow" aria-hidden="true">
-                    →
-                  </span>
                 </div>
               </article>
             ))}

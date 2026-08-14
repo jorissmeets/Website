@@ -132,11 +132,11 @@ export default function Home() {
             alt="Carecogni"
           />
           <h1>
-            Wij bestaan om de grenzen te verleggen van wat mogelijk wordt
-            geacht met AI in de zorg
+            Wij verleggen de grenzen van wat mogelijk is met AI in de zorg
           </h1>
           <p className="figma-hero-lead">
-            Pragmatisch versneld AI voor Care &amp; Cure in productie
+            We brengen AI pragmatisch van idee naar productie voor Care &amp;
+            Cure.
           </p>
           <div className="hero-actions">
             <Link className="button button-dark" href="#werkwijze">

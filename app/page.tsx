@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { SectionCta } from "./components/section-cta";
 
 const customers = [
@@ -139,15 +138,15 @@ export default function Home() {
             Cure.
           </p>
           <div className="hero-actions">
-            <Link className="button button-dark" href="#werkwijze">
+            <a className="button button-dark" href="#werkwijze">
               Bekijk hoe het werkt
-            </Link>
-            <Link
+            </a>
+            <a
               className="button button-dark"
               href="mailto:hello@carecogni.com"
             >
               Mail ons
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -239,12 +238,12 @@ export default function Home() {
               eerst één concrete workflow en bouwen van daaruit gecontroleerd
               verder.
             </p>
-            <Link
+            <a
               className="button button-teal button-small"
               href="#cases"
             >
               Bekijk onze cases
-            </Link>
+            </a>
           </div>
           <div className="figma-dashboard figma-dashboard-architecture">
             <Image

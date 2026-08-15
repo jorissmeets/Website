@@ -1,23 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
-        <Link className="footer-brand" href="/#top" aria-label="Carecogni home">
+        <a className="footer-brand" href="/#top" aria-label="Carecogni home">
           <Image
             src="/assets/carecogni-mark-light.svg"
             width={269}
             height={138}
+            unoptimized
             alt="Carecogni"
           />
-        </Link>
+        </a>
         <div className="footer-col">
           <h2>Contact</h2>
           <a href="mailto:hello@carecogni.com">hello@carecogni.com</a>
           <span>© 2026 Carecogni</span>
-          <Link href="/privacy">Privacy statement</Link>
+          <a href="/privacy">Privacy statement</a>
           <a
             href="https://cdn.prod.website-files.com/674d8291dcdcdd14e4b0c4ec/6908bc537b5cd2f0b1637991_Algemene%20Voorwaarden%20Carecogni%20BV.pdf"
             rel="noreferrer"

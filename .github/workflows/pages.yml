@@ -1,0 +1,53 @@
+name: Publiceer Carecogni-website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Haal de website op
+        uses: actions/checkout@v6
+
+      - name: Installeer Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installeer afhankelijkheden
+        run: npm ci
+
+      - name: Maak de statische website
+        run: npm run export:github-pages
+
+      - name: Configureer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload de website
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: github-pages
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Publiceer naar GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

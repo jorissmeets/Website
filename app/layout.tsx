@@ -4,7 +4,7 @@ import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://carecogni-concept.jepsmeets.chatgpt.site"),
+  metadataBase: new URL("https://carecogni.com"),
   title: {
     default: "Carecogni — AI voor Care & Cure in productie",
     template: "%s | Carecogni",

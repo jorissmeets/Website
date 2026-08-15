@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -16,7 +15,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header${pathname === "/" ? " home-header" : ""}`}>
       <div className="container nav-inner">
-        <Link className="nav-logo" href="/" onClick={closeMenu} aria-label="Carecogni home">
+        <a className="nav-logo" href="/" onClick={closeMenu} aria-label="Carecogni home">
           <Image
             src="/assets/carecogni-logo.svg"
             width={499}
@@ -24,7 +23,7 @@ export function SiteHeader() {
             unoptimized
             alt="Carecogni"
           />
-        </Link>
+        </a>
 
         <button
           className="menu-toggle"
@@ -39,42 +38,42 @@ export function SiteHeader() {
         </button>
 
         <nav className={`nav-links${open ? " is-open" : ""}`} aria-label="Hoofdnavigatie">
-          <Link
+          <a
             className={pathname === "/" ? "nav-link active" : "nav-link"}
             href="/#top"
             onClick={closeMenu}
           >
             Home
-          </Link>
+          </a>
 
-          <Link
+          <a
             className="nav-link"
             href="/#werkwijze"
             onClick={closeMenu}
           >
             Oplossing
-          </Link>
-          <Link
+          </a>
+          <a
             className="nav-link"
             href="/#cases"
             onClick={closeMenu}
           >
             Cases
-          </Link>
-          <Link
+          </a>
+          <a
             className="nav-link"
             href="/#over-ons"
             onClick={closeMenu}
           >
             Over ons
-          </Link>
-          <Link
+          </a>
+          <a
             className="nav-link"
             href="/#contact"
             onClick={closeMenu}
           >
             Contact
-          </Link>
+          </a>
         </nav>
         <span className="nav-language" aria-label="Taal: Nederlands">
           <span aria-hidden="true">◎</span> NL

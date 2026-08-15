@@ -54,6 +54,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /Sectietitel voor de werkwijze/);
   assert.doesNotMatch(html, /Screenen|Classificeren|Leren en verbeteren/);
   assert.match(html, /AI-chatbot ontlast zorgmedewerkers/);
+  assert.doesNotMatch(html, /In de praktijk/);
   assert.match(html, /AI-screeningsassistent voor medicatie-incidenten/);
   assert.match(html, /Rapportagevalidatie van zorginhoudelijk contact/);
   assert.doesNotMatch(html, /case-showcase-arrow/);
@@ -79,6 +80,7 @@ test("server-renders the Carecogni homepage", async () => {
   assert.doesNotMatch(html, /Titel over Carecogni — tekst nog te schrijven/);
   assert.doesNotMatch(html, /Intelligente samenwerking tussen mens en technologie/);
   assert.match(html, /Joris Smeets/);
+  assert.match(html, /<h2>Ons team<\/h2>/);
   assert.match(html, /Tijs Teulings/);
   assert.match(html, /AI Lead/);
   assert.match(html, /Joran Timmerman/);

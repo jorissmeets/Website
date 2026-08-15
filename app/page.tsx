@@ -260,7 +260,6 @@ export default function Home() {
       <section className="case-showcase" id="cases">
         <div className="container">
           <div className="figma-section-heading centered">
-            <p className="eyebrow">In de praktijk</p>
             <h2>Cases</h2>
           </div>
           <div className="case-showcase-list">
@@ -292,7 +291,9 @@ export default function Home() {
 
       <section className="about-team one-page-section" id="over-ons">
         <div className="container">
-          <p className="eyebrow centered-eyebrow">Ons team</p>
+          <div className="figma-section-heading centered">
+            <h2>Ons team</h2>
+          </div>
           <div className="figma-team-grid">
             {team.map((person) => (
               <article className="figma-team-card" key={person.name}>
